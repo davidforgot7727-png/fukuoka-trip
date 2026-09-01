@@ -3,6 +3,7 @@
 已鎖定家人 Google 帳號：
 - Derek: davidforgot7727@gmail.com
 - Jo: timeslatitude@gmail.com
+- Jo（公司）: johsu@beast-kingdom.com.tw
 
 【1. Firebase 開啟 Google 登入】
 Firebase Console → Authentication → Sign-in method / 登入方式 → Google → Enable。
