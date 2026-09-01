@@ -1,244 +1,186 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="2026 福岡 5天4夜親子慢活之旅 行程助手" />
-  <style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#16375b">
+<meta name="description" content="2026 福岡 5天4夜親子慢活之旅 Travel Companion">
+<title>福岡親子慢活之旅｜2026</title>
+<style>
 :root{
-  --bg:#f5f7fb; --card:#fff; --text:#1d2a3b; --muted:#6f7a8a; --line:#e7ebf2;
-  --blue:#2f6fed; --blue2:#5f8df6; --pink:#ef6e9c; --green:#33a672; --orange:#f49a3f; --purple:#7f65d9;
-  --danger:#d94b4b; --shadow:0 10px 30px rgba(41,55,78,.08); --radius:20px;
+  --bg:#f3f5f8;--surface:#fff;--text:#172235;--muted:#6f7a8b;--line:#e8edf3;
+  --navy:#16375b;--blue:#3777d5;--pink:#df6f96;--green:#2d9a70;--orange:#e69042;--purple:#7c63c7;
+  --danger:#c74444;--shadow:0 12px 34px rgba(35,49,70,.10);--radius:22px;
+  --safe-bottom:max(14px,env(safe-area-inset-bottom));
 }
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;color:var(--text)}
-button,a{font:inherit} a{text-decoration:none;color:inherit}
-.app-shell{max-width:820px;margin:0 auto;padding-bottom:84px}.hero{background:linear-gradient(145deg,#2f6fed,#6e98f7);color:#fff;padding:28px 20px 22px;border-radius:0 0 28px 28px;box-shadow:var(--shadow)}
-.hero-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.eyebrow{font-size:11px;letter-spacing:1.5px;opacity:.8;font-weight:700}.hero h1{margin:8px 0 8px;font-size:30px;line-height:1.18}.hero-sub{margin:0;opacity:.92}.hero-icon{font-size:54px}
-.status-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}.status-card{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:10px;text-align:center;display:flex;flex-direction:column;gap:2px}.status-card span{font-size:20px}.status-card b{font-size:13px}.status-card small{font-size:10px;opacity:.85}.countdown{margin-top:12px;font-size:13px;font-weight:700;background:rgba(255,255,255,.13);padding:10px 12px;border-radius:12px}
-.day-tabs{position:sticky;top:0;z-index:10;display:flex;gap:7px;padding:10px 12px;background:rgba(245,247,251,.92);backdrop-filter:blur(12px);overflow:auto}.tab{border:0;background:#fff;color:var(--muted);padding:10px 13px;border-radius:999px;box-shadow:0 3px 12px rgba(30,45,68,.06);font-weight:800;white-space:nowrap}.tab.active{background:var(--blue);color:#fff}
-#content{padding:14px}.section{margin-bottom:18px}.section-title{display:flex;align-items:center;gap:8px;font-size:17px;margin:4px 2px 10px}.section-title .dot{width:8px;height:8px;border-radius:50%;background:var(--blue)}
-.card{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);border:1px solid #eef1f6;margin-bottom:12px}.card h2,.card h3,.card p{margin-top:0}.muted{color:var(--muted);font-size:13px}.pill{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border-radius:999px;background:#edf3ff;color:#2f6fed;font-size:12px;font-weight:800}.pill.warn{background:#fff2e7;color:#bc651a}.pill.green{background:#eaf8f1;color:#28845b}.pill.red{background:#fdecec;color:#b93c3c}
-.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.quick{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow)}.quick .emoji{font-size:27px}.quick b{display:block;margin-top:5px;font-size:14px}.quick small{color:var(--muted)}
-.day-header{border-radius:22px;padding:18px;color:#fff;margin-bottom:14px;box-shadow:var(--shadow)}.day-header h2{margin:0 0 4px;font-size:23px}.day-header p{margin:0;opacity:.9}.d1{background:linear-gradient(135deg,var(--blue),#6f9cff)}.d2{background:linear-gradient(135deg,var(--pink),#f49ab9)}.d3{background:linear-gradient(135deg,var(--green),#65c79b)}.d4{background:linear-gradient(135deg,var(--orange),#f7bb6d)}.d5{background:linear-gradient(135deg,var(--purple),#a48cec)}
-.timeline{position:relative;padding-left:20px}.timeline:before{content:"";position:absolute;left:6px;top:6px;bottom:8px;width:2px;background:#dbe2ee}.event{position:relative;padding:0 0 16px 14px}.event:before{content:"";position:absolute;left:-18px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px #edf3ff}.event-time{font-size:12px;color:var(--muted);font-weight:900}.event-title{font-size:16px;font-weight:900;margin:3px 0}.event-desc{font-size:13px;line-height:1.55;color:#4d5867}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;border:0;border-radius:12px;padding:9px 11px;font-size:12px;font-weight:900;background:#eef3ff;color:#2f6fed}.btn.primary{background:var(--blue);color:#fff}.btn.green{background:#eaf8f1;color:#28845b}.btn.dark{background:#26364d;color:white}.btn.soft{background:#f2f3f6;color:#475569}
-.notice{border-left:4px solid var(--blue);background:#f7f9ff;border-radius:12px;padding:12px 13px;font-size:13px;line-height:1.55}.notice.warn{border-color:#f49a3f;background:#fff8ef}.notice.danger{border-color:#d94b4b;background:#fff2f2}
-.checklist label{display:flex;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}.checklist label:last-child{border:0}.checklist input{width:20px;height:20px;accent-color:var(--blue)}
-.route{display:flex;align-items:center;gap:8px;overflow:auto;padding:3px 0}.route .stop{flex:0 0 auto;border-radius:14px;background:#f7f9fc;padding:10px 12px;text-align:center;font-size:12px;font-weight:800}.route .arrow{color:#9aa4b2}
-.weather-toggle{display:flex;gap:8px;margin-bottom:12px}.weather-toggle button{flex:1;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px;font-weight:900}.weather-toggle button.active{background:#26364d;color:#fff}.hidden{display:none!important}
-.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.kpi{background:#f7f9fc;border-radius:14px;text-align:center;padding:12px 6px}.kpi b{display:block;font-size:18px}.kpi small{color:var(--muted)}
-.shop-list{display:grid;gap:8px}.shop{display:flex;justify-content:space-between;align-items:center;background:#fafbfc;border:1px solid var(--line);padding:11px;border-radius:13px}.shop b{font-size:14px}.shop span{font-size:12px;color:var(--muted)}
-footer{text-align:center;color:#8b95a5;font-size:12px;padding:20px 12px}
-@media(min-width:700px){#content{padding:18px}.quick-grid{grid-template-columns:repeat(4,1fr)}.hero{padding:32px}.hero h1{font-size:36px}}
-
-  </style>
-  <title>福岡親子慢活之旅</title>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}button,a{font:inherit}a{text-decoration:none;color:inherit}button{cursor:pointer}.app{max-width:920px;margin:auto;padding-bottom:105px}.hero{position:relative;min-height:380px;overflow:hidden;background:#16375b}.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,27,49,.12),rgba(7,27,49,.48) 45%,rgba(7,27,49,.92))}.hero-inner{position:relative;z-index:1;min-height:380px;padding:28px 20px 24px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}.hero-kicker{font-size:11px;font-weight:900;letter-spacing:2px;opacity:.9}.hero h1{font-size:35px;line-height:1.08;margin:8px 0 8px;max-width:620px}.hero-sub{margin:0 0 16px;font-weight:650;opacity:.95}.hero-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.hero-stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(9px);border-radius:15px;padding:10px}.hero-stat b{display:block;font-size:13px}.hero-stat small{display:block;font-size:10px;margin-top:2px;opacity:.86}.countdown{margin-top:10px;padding:10px 12px;border-radius:13px;background:rgba(255,255,255,.14);backdrop-filter:blur(7px);font-size:13px;font-weight:800}.photo-credit{position:absolute;top:14px;right:14px;z-index:2;font-size:9px;color:#fff;background:rgba(0,0,0,.36);border-radius:999px;padding:5px 8px}.content{padding:15px}.section{margin:0 0 20px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 3px 10px}.section-head h2{font-size:17px;margin:0}.eyebrow{font-size:11px;color:var(--muted);font-weight:850;letter-spacing:.8px}.card{background:var(--surface);border:1px solid #edf0f4;border-radius:var(--radius);box-shadow:var(--shadow)}.pad{padding:16px}.today-card{overflow:hidden;position:relative}.today-card .cover{height:188px;position:relative}.today-card .cover img{width:100%;height:100%;object-fit:cover}.today-card .cover:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(10,25,43,.72))}.today-label{position:absolute;left:14px;top:14px;background:#fff;color:var(--navy);font-weight:950;font-size:12px;border-radius:999px;padding:7px 10px;box-shadow:0 5px 20px rgba(0,0,0,.12)}.today-cover-title{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;color:#fff}.today-cover-title b{font-size:22px;display:block}.today-cover-title small{font-size:12px;opacity:.9}.today-meta{display:flex;gap:8px;flex-wrap:wrap;padding:14px}.pill{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border-radius:999px;background:#eef4ff;color:#3269b7;font-size:11px;font-weight:900}.pill.red{background:#fff0f0;color:#b63d3d}.pill.green{background:#eaf7f1;color:#267e5b}.pill.orange{background:#fff4e9;color:#b36d2d}.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.quick{background:#fff;border-radius:18px;border:1px solid var(--line);padding:14px;box-shadow:0 8px 23px rgba(35,49,70,.06);transition:.15s transform}.quick:active{transform:scale(.98)}.quick .ico{font-size:25px}.quick b{display:block;font-size:14px;margin-top:6px}.quick small{font-size:11px;color:var(--muted)}.mini-gallery{display:grid;grid-template-columns:1.35fr .65fr;gap:8px}.mini-gallery .tile{position:relative;overflow:hidden;border-radius:18px;min-height:130px;background:#dbe3ec}.mini-gallery .tile:nth-child(2){display:grid;grid-template-rows:1fr 1fr;gap:8px;background:transparent}.mini-gallery .subtile{position:relative;overflow:hidden;border-radius:18px;background:#dbe3ec}.tile img,.subtile img{width:100%;height:100%;object-fit:cover;display:block}.tile span,.subtile span{position:absolute;left:10px;bottom:9px;color:#fff;background:rgba(0,0,0,.45);font-size:10px;padding:5px 7px;border-radius:999px;font-weight:800}.day-cover{position:relative;overflow:hidden;border-radius:25px;min-height:235px;margin-bottom:13px;box-shadow:var(--shadow)}.day-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.day-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(9,20,35,.77))}.day-cover-content{position:absolute;z-index:2;left:17px;right:17px;bottom:17px;color:#fff}.day-cover-content .day-num{font-size:12px;font-weight:950;letter-spacing:1.4px}.day-cover-content h2{font-size:26px;line-height:1.15;margin:5px 0 4px}.day-cover-content p{font-size:13px;margin:0;opacity:.92}.today-ribbon{display:inline-flex;margin-top:9px;background:#fff;color:#152a43;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:950}.timeline{position:relative}.timeline:before{content:"";position:absolute;left:17px;top:16px;bottom:16px;width:2px;background:#dfe5ed}.event{position:relative;margin:0 0 12px 34px;overflow:hidden;border-radius:20px;background:#fff;border:1px solid #ebeff4;box-shadow:0 9px 27px rgba(34,47,65,.07);transition:.18s}.event:before{content:"";position:absolute;width:12px;height:12px;border-radius:50%;left:-24px;top:18px;background:#86a4ca;border:3px solid var(--bg);box-shadow:0 0 0 2px #d5dfeb;z-index:2}.event.current-event{border:2px solid #efb74d;box-shadow:0 13px 34px rgba(207,150,39,.18)}.event.current-event:before{background:#f2aa28;box-shadow:0 0 0 4px #fff0c7}.event.current-event .event-body:before{content:"現在 / NEXT";display:inline-block;margin-bottom:7px;font-size:9px;background:#fff1c9;color:#a66905;border-radius:999px;padding:5px 7px;font-weight:950}.event-photo{height:154px;background:#e7ebf0;position:relative;overflow:hidden}.event-photo img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}.event-photo .photo-tag{position:absolute;right:9px;bottom:9px;background:rgba(8,18,30,.60);color:white;border-radius:999px;padding:5px 7px;font-size:9px;font-weight:850}.event-body{padding:14px}.event-time{font-size:11px;font-weight:950;color:#647389}.event-title{font-size:17px;font-weight:950;line-height:1.3;margin:4px 0 6px}.event-desc{font-size:13px;color:#566273;line-height:1.6}.actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.btn{border:0;border-radius:12px;padding:9px 11px;font-size:11px;font-weight:900;background:#edf3fd;color:#326abb;display:inline-flex;gap:5px;align-items:center}.btn.primary{background:var(--navy);color:#fff}.btn.dark{background:#202d3e;color:#fff}.btn.green{background:#e8f7ef;color:#267a57}.notice{border-radius:16px;padding:13px;font-size:13px;line-height:1.6;background:#f4f8ff;border-left:4px solid var(--blue)}.notice.warn{background:#fff8ee;border-color:#e89a44}.notice.danger{background:#fff1f1;border-color:var(--danger)}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.kpi{background:#f6f8fb;border-radius:15px;padding:12px 7px;text-align:center}.kpi b{display:block;font-size:18px}.kpi small{font-size:10px;color:var(--muted)}.checklist label{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.checklist label:last-child{border:0}.checklist input{width:20px;height:20px;accent-color:var(--navy)}.shop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.shop-card{overflow:hidden}.shop-card img{width:100%;height:115px;object-fit:cover;display:block;cursor:zoom-in}.shop-card .info{padding:11px}.shop-card b{display:block;font-size:13px}.shop-card small{font-size:10px;color:var(--muted);display:block;margin:3px 0 8px}.weather-toggle{display:flex;gap:8px;margin-bottom:10px}.weather-toggle button{flex:1;border:1px solid var(--line);background:#fff;border-radius:14px;padding:11px;font-weight:900;color:#566273}.weather-toggle button.active{background:var(--navy);color:#fff}.route{display:flex;align-items:center;gap:7px;overflow:auto;padding:5px 0}.stop{flex:0 0 auto;background:#f4f7fa;border:1px solid var(--line);border-radius:13px;padding:10px 11px;font-size:11px;font-weight:900}.arrow{color:#a0aabc}.hidden{display:none!important}.bottom-nav{position:fixed;z-index:50;left:50%;transform:translateX(-50%);bottom:0;width:min(920px,100%);background:rgba(255,255,255,.94);border-top:1px solid rgba(220,227,235,.9);backdrop-filter:blur(14px);padding:7px 6px var(--safe-bottom);display:grid;grid-template-columns:repeat(6,1fr);box-shadow:0 -10px 30px rgba(32,47,66,.08)}.nav-btn{position:relative;border:0;background:none;padding:6px 1px;color:#8390a0;border-radius:13px;min-width:0}.nav-btn .nav-ico{display:block;font-size:19px;line-height:1}.nav-btn .nav-txt{display:block;margin-top:3px;font-size:9px;font-weight:900}.nav-btn.active{color:var(--navy);background:#edf3f8}.nav-btn.today:after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:#f0a72d;right:14%;top:4px}.photo-modal{display:none;position:fixed;z-index:100;inset:0;background:rgba(4,11,20,.92);padding:20px;align-items:center;justify-content:center}.photo-modal.show{display:flex}.photo-modal img{max-width:100%;max-height:85vh;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.4)}.photo-close{position:absolute;right:18px;top:18px;border:0;border-radius:999px;background:#fff;color:#172235;width:40px;height:40px;font-size:20px}.credits{font-size:10px;color:#8a94a2;line-height:1.65}.credits a{text-decoration:underline}.site-footer{text-align:center;color:#8994a2;font-size:11px;padding:10px 16px 26px}.broken{background:linear-gradient(135deg,#dbe4ee,#f2f4f8)!important}.broken:after{content:"圖片暫時無法載入";position:absolute;inset:0;display:grid;place-items:center;color:#758196;font-size:11px}.top-chip{position:absolute;left:14px;top:14px;z-index:3;border:0;background:rgba(255,255,255,.92);color:var(--navy);padding:7px 10px;border-radius:999px;font-size:10px;font-weight:950;box-shadow:0 5px 18px rgba(0,0,0,.12)}
+@media(min-width:680px){.content{padding:20px}.hero-inner{padding:36px;min-height:430px}.hero{min-height:430px;border-radius:0 0 32px 32px}.hero h1{font-size:46px}.quick-grid{grid-template-columns:repeat(4,1fr)}.event{display:grid;grid-template-columns:235px 1fr}.event-photo{height:100%;min-height:185px}.shop-grid{grid-template-columns:repeat(4,1fr)}.mini-gallery{min-height:250px}.mini-gallery .tile{min-height:250px}.bottom-nav{border-radius:18px 18px 0 0}.nav-btn .nav-txt{font-size:10px}}
+</style>
 </head>
 <body>
-  <div class="app-shell">
-    <header class="hero">
-      <div class="hero-top">
-        <div>
-          <div class="eyebrow">FUKUOKA FAMILY TRIP</div>
-          <h1>福岡 5天4夜<br>親子慢活之旅</h1>
-          <p class="hero-sub">2026/09/09（三）— 09/13（日）</p>
-        </div>
-        <div class="hero-icon">🇯🇵</div>
-      </div>
-      <div class="status-row">
-        <div class="status-card"><span>✈️</span><b>BR106</b><small>08:00 → 11:20</small></div>
-        <div class="status-card"><span>🏨</span><b>Quintessa</b><small>Tenjin Minami</small></div>
-        <div class="status-card"><span>✈️</span><b>BR105</b><small>12:20 → 13:45</small></div>
-      </div>
-      <div id="countdown" class="countdown"></div>
-    </header>
-
-    <nav class="day-tabs" aria-label="行程日期">
-      <button data-day="home" class="tab active">首頁</button>
-      <button data-day="1" class="tab">D1</button>
-      <button data-day="2" class="tab">D2</button>
-      <button data-day="3" class="tab">D3</button>
-      <button data-day="4" class="tab">D4</button>
-      <button data-day="5" class="tab">D5</button>
-    </nav>
-
-    <main id="content"></main>
-
-    <footer>
-      慢慢走・好好吃・好好休息，就是最棒的親子旅行 ✨<br><small>HTML v1.1</small>
-    </footer>
+<div class="app">
+<header class="hero">
+  <img src="https://komc.visit-kyushu.com/assets/photo/13/large/ce4173779156354ee83efb53e0e68c3f.jpg" alt="福岡市海濱景觀" referrerpolicy="no-referrer" onerror="imageFallback(this)">
+  <a class="photo-credit" href="https://komc.visit-kyushu.com/library/detail/1536?narrow_contents=photo" target="_blank" rel="noopener">Photo: KYUSHU MEDIA CENTER</a>
+  <div class="hero-inner">
+    <div class="hero-kicker">FUKUOKA FAMILY TRAVEL COMPANION</div>
+    <h1>福岡 5天4夜<br>親子慢活之旅</h1>
+    <p class="hero-sub">2026/09/09（三）— 09/13（日）｜孕婦 × 1歲7個月幼兒友善節奏</p>
+    <div class="hero-grid">
+      <div class="hero-stat"><b>✈️ BR106</b><small>08:00 → 11:20</small></div>
+      <div class="hero-stat"><b>🏨 Quintessa</b><small>藥院站旁</small></div>
+      <div class="hero-stat"><b>✈️ BR105</b><small>12:20 → 13:45</small></div>
+    </div>
+    <div id="countdown" class="countdown"></div>
   </div>
-  <script>
-const HOTEL_MAPS = 'https://www.google.com/maps/search/?api=1&query=Quintessa+Hotel+Fukuoka+Tenjin+Minami';
+</header>
+<main id="content" class="content"></main>
+<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行 ✨<br>Travel Companion HTML v2.0</footer>
+</div>
 
-const trip = {
-  hotel: {name:'Quintessa Hotel Fukuoka Tenjin Minami', jp:'クインテッサホテル福岡天神南', maps:HOTEL_MAPS},
-  days: {
-    1:{date:'09/09（三）',theme:'抵達福岡・LaLaport・喜水丸',class:'d1',events:[
-      ['11:20','✈️ 抵達福岡機場','國際線抵達。通關＋行李預留約 60–90 分鐘。','https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal'],
-      ['12:30 前後','🧳 DELIBAG 交寄大件行李','9/6–9/7 前先完成預約／付款。尿布、奶、文件、藥品、換洗衣物留隨身。',null],
-      ['12:45–13:10','🚕 計程車前往 LaLaport','機場 Taxi Stand 有車就直接搭；否則 Uber。', 'https://www.google.com/maps/search/?api=1&query=LaLaport+Fukuoka'],
-      ['13:00–17:20','🛍️ LaLaport Fukuoka','3F 午餐、阿卡將、推車午睡、1F 鋼彈。16:30 起可依體力提早撤。','https://www.google.com/maps/search/?api=1&query=LaLaport+Fukuoka'],
-      ['17:30','🚕 前往博多站筑紫口','建議 17:20 開始收東西，避免晚高峰與找餐廳壓力。','https://www.google.com/maps/search/?api=1&query=Hakata+Station+Chikushi+Exit'],
-      ['18:30','🍚 晚餐｜博多の名物料理 喜水丸','已預約。孕婦以烤魚、煮魚、天婦羅等熟食為主。','https://www.google.com/maps/search/?api=1&query=博多の名物料理+喜水丸+博多デイトスアネックス店'],
-      ['20:00–20:15','🚇 博多 → 藥院 → 飯店入住','七隈線約 3 個區間；藥院站至飯店步行約 2–3 分鐘。',null]
-    ]},
-    2:{date:'09/10（四）',theme:'麵包超人・櫛田神社・燒肉上',class:'d2',events:[
-      ['09:00–09:45','🍳 飯店早餐','不用趕，讓寶寶先吃飽再出發。',null],
-      ['10:00','🚕 前往博多 Riverain','飯店門口叫 Uber/GO。','https://www.google.com/maps/search/?api=1&query=Hakata+Riverain'],
-      ['10:15–12:30','👶 福岡麵包超人兒童博物館','館內不能推嬰兒車，要停 5F；爸爸主力陪玩/抱，媽媽不要長時間抱小孩。','https://www.google.com/maps/search/?api=1&query=Fukuoka+Anpanman+Children%27s+Museum'],
-      ['12:30–13:30','🍴 館內午餐','吃完先判斷寶寶睡意與媽媽體力。',null],
-      ['13:30–14:15','⛩️ 川端商店街 → 櫛田神社（Optional）','體力好才去；累了直接 Taxi 回飯店。','https://www.google.com/maps/search/?api=1&query=Kushida+Shrine+Fukuoka'],
-      ['14:30–17:45','😴 飯店深度休息','寶寶完整午睡；媽媽抬腿休息。這段優先級高於任何 Bonus 景點。',null],
-      ['18:45','🥩 晚餐｜燒肉 上','已預約。肉類全熟、生熟夾分開。餐廳在 2F，出發前再確認嬰兒車/電梯動線。','https://www.google.com/maps/search/?api=1&query=ヤキニク+上+福岡']
-    ]},
-    3:{date:'09/11（五）',theme:'Marine World・海豚秀・藥院晚餐',class:'d3',events:[
-      ['09:20–09:30','🚕 飯店出發','建議提早叫車；這段可能 30–45 分鐘以上，視交通而定。','https://www.google.com/maps/search/?api=1&query=Marine+World+Uminonakamichi'],
-      ['10:10','🐠 Marine World 入館','先看外洋大水槽、海豹等。2026 已無海獺展示，行程不要再排海獺餵食。','https://www.google.com/maps/search/?api=1&query=Marine+World+Uminonakamichi'],
-      ['11:00','🐬 海豚・海獅秀','優先看 11:00 這場，避免為下午場延後午睡。',null],
-      ['11:35–12:40','🍴 Restaurant Reilly','水下景觀用餐；孕婦選熟食。',null],
-      ['12:40–13:20','🐟 自由看展／企鵝／大水槽','寶寶若已睏，可直接提前離館。',null],
-      ['13:20–13:40','🚕 返回飯店','不追求把館內全部看完。',HOTEL_MAPS],
-      ['14:30–17:30','😴 飯店休息','Day 3 是體力最高的一天，下午不要再塞景點。',null],
-      ['18:00','🍲 白金／藥院周邊晚餐','水炊鍋、烏龍麵或熟食定食；視體力彈性延後至 18:30。','https://www.google.com/maps/search/?api=1&query=Yakuin+Fukuoka+restaurants']
-    ]},
-    4:{date:'09/12（六）',theme:'大濠公園・敘敘苑・岩田屋',class:'d4',events:[
-      ['08:30–09:20','🍳 早餐＋準備','確認當日降雨與體感溫度。',null],
-      ['09:30','🚕 前往大濠公園','戶外只安排短時間。','https://www.google.com/maps/search/?api=1&query=Ohori+Park'],
-      ['09:45–10:30','🌳 大濠公園慢散步','看湖、拍照即可，不把環湖一圈當目標。','https://www.google.com/maps/search/?api=1&query=Ohori+Park'],
-      ['10:30–11:30','🎨 福岡市美術館／咖啡休息','進室內吹冷氣、坐著休息。','https://www.google.com/maps/search/?api=1&query=Fukuoka+Art+Museum'],
-      ['12:30–14:00','🥩 敘敘苑｜岩田屋新館 7F','已預約。肉品全熟。','https://www.google.com/maps/search/?api=1&query=叙々苑+福岡岩田屋店'],
-      ['14:00–15:30','👶 岩田屋本館 6F Baby / Kids','Familiar、MIKI HOUSE、童鞋、育嬰室。','https://www.google.com/maps/search/?api=1&query=岩田屋本店'],
-      ['15:30 後','🛍️ 體力好才順逛','UNIQLO / GU / Bic Camera / 天神地下街；不排固定時段。',null],
-      ['15:45–17:30','😴 回飯店休息','如果購物狀況很好，可延後；媽媽累就直接回飯店。',HOTEL_MAPS],
-      ['18:00','🍜 飯店周邊清淡晚餐','早點回房整理行李。','https://www.google.com/maps/search/?api=1&query=Yakuin+Fukuoka+restaurants']
-    ]},
-    5:{date:'09/13（日）',theme:'退房・福岡機場・回台',class:'d5',events:[
-      ['08:00–09:00','🍳 早餐＋最後打包','MEDIF、診斷證明、媽媽手冊、護照全部留隨身。',null],
-      ['09:15','🧳 退房','檢查房間、充電器、寶寶用品。',null],
-      ['09:30','🚕 前往福岡機場國際線','有行李＋推車，建議叫較大車型。','https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal'],
-      ['09:55 左右','✈️ 抵達機場','先換尿布／整理推車／找長榮櫃台。',null],
-      ['10:20 左右','🧾 長榮人工櫃台報到','BR105 12:20 起飛；孕婦＋2歲以下幼兒以人工櫃台辦理較實際。主動詢問 Priority Lane 與推車 Gate Check。',null],
-      ['11:15–11:50','🛍️ 免稅店／最後補貨','提領線上預約商品、育嬰室整理。',null],
-      ['11:50','🛫 登機門集合','孕婦＋幼兒可詢問優先登機。',null],
-      ['12:20–13:45','✈️ BR105 福岡 → 桃園','平安返台。',null]
-    ]}
-  }
+<nav class="bottom-nav" aria-label="手機行程導覽">
+  <button class="nav-btn active" data-day="home"><span class="nav-ico">🏠</span><span class="nav-txt">首頁</span></button>
+  <button class="nav-btn" data-day="1"><span class="nav-ico">🛍️</span><span class="nav-txt">D1</span></button>
+  <button class="nav-btn" data-day="2"><span class="nav-ico">👶</span><span class="nav-txt">D2</span></button>
+  <button class="nav-btn" data-day="3"><span class="nav-ico">🐬</span><span class="nav-txt">D3</span></button>
+  <button class="nav-btn" data-day="4"><span class="nav-ico">🌳</span><span class="nav-txt">D4</span></button>
+  <button class="nav-btn" data-day="5"><span class="nav-ico">✈️</span><span class="nav-txt">D5</span></button>
+</nav>
+<div id="photoModal" class="photo-modal" onclick="closePhoto(event)"><button class="photo-close" onclick="closePhoto(event)">×</button><img id="modalImage" alt="放大照片"></div>
+
+<script>
+const HOTEL_MAPS='https://www.google.com/maps/search/?api=1&query=Quintessa+Hotel+Fukuoka+Tenjin+Minami';
+const IMG={
+  hero:'https://komc.visit-kyushu.com/assets/photo/13/large/ce4173779156354ee83efb53e0e68c3f.jpg',
+  lalaport:'https://gogojp.tw/wp-content/uploads/2022/12/20230506164504_65.jpg',
+  kisuimaru:'https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000200/img/basic/a2000200_main.jpg',
+  kisuimaru2:'https://gurunavi.com/en/f121208/imgs/s_00n8.jpg',
+  anpanman:'https://www.fukuoka-anpanman.jp/map/images/floor_5f/irca5qvajrrbfj9iw06w9z0sosryp5.jpg',
+  kushida:'https://cdn-ak.f.st-hatena.com/images/fotolife/r/ritocamp/20231202/20231202160848.jpg',
+  yakiniku:'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=82',
+  marine:'https://news.walkerplus.com/article/106069/587647_615.jpg',
+  reilly:'https://fukuhaku-tour.jp/images/convert/fukuhaku-tourjp/20260127162928.png/image.webp',
+  seal:'https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=1200&q=82',
+  ohori:'https://chillchilljapan.com/wp-content/uploads/2024/01/batch_pixta_69701157_M.jpeg',
+  museum:'https://next.jorudan.co.jp/trv/images/640/1481.jpg',
+  iwataya:'https://www.nagazaifu-mania.com/wp/wp-content/uploads/fukuoka_iwatayha.jpg',
+  jojoen:'https://images.keizai.biz/tenjin_keizai/headline/1664361165_photo.jpg',
+  mina:'https://www.fukuoka-now.com/wp-content/uploads/2025/11/fnn_minatenjin-exterior_2025_WEB.jpeg',
+  bic:'https://poiend-pctr.c.yimg.jp/RbvIgEqcLh0WnvgGGwVVgTznkURkbN_CqctDurJdF3RKCgfsn8e3OdkR1Hf8HHuWK_jMkgltrI8HSv0JzaCyiqVOX8vMhPpuWPF2F1HQs06lJdur3DKUDm4rdtdZ5Y678bGun_CzB3hpxmuDNfNTz1B5kyN3mxMLhmbgPW4rosw_GnltAxUYt3ylnVHzWsUWikwxmiKhYu6oK6lcVtkXyI18oVZfeybhOroPUPM-Pb2Aqqe6zFyDkrVbi5CNSKdz9H7FGB8OIkpZtzsbYxtSkTnlpQNHP8Lkeh1_VLNUJ3g%3D',
+  airport:'https://www.crossroadfukuoka.jp/storage/special_feature_paragraphs/6990/responsive_images/GbdCB2BUag4K18PTksk0ukKbZaSR5R99tjcRtZDU__1639_1234.jpg',
+  dutyfree:'https://cdn.4travel.jp/img/thumbnails/imk/tips_pict/15/53/86/650x450_15538674.jpg?updated_at=1526416647',
+  hotel:'https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/270017646.jpg?k=25a869a2bd613b6643b71a6424da6dd8ef9f56a32190133b27269fc84726d38e&o='
 };
-
-const $ = s => document.querySelector(s);
-const content = $('#content');
-
-function mapsButton(url){ return url ? `<a class="btn primary" target="_blank" rel="noopener" href="${url}">📍 Google Maps</a>` : '' }
-function taxiButtons(){ return `<a class="btn dark" target="_blank" rel="noopener" href="https://m.uber.com/">🚕 Uber</a><a class="btn green" target="_blank" rel="noopener" href="https://go.goinc.jp/">🚖 GO</a>` }
-function renderEvents(events){
-  return `<div class="card"><div class="timeline">${events.map(e=>`<div class="event"><div class="event-time">${e[0]}</div><div class="event-title">${e[1]}</div><div class="event-desc">${e[2]}</div><div class="actions">${mapsButton(e[3])}${e[1].includes('🚕')?taxiButtons():''}</div></div>`).join('')}</div></div>`
+const SOURCES={
+  lalaport:'https://gogojp.tw/fukuoka-shopping5/',anpanman:'https://www.fukuoka-anpanman.jp/',kushida:'https://www.ritocamp.com/entry/292',
+  marine:'https://www.walkerplus.com/article/106069/',reilly:'https://fukuhaku-tour.jp/introduction/detail/873947/',ohori:'https://chillchilljapan.com/ohori-park/',
+  museum:'https://next.jorudan.co.jp/trv/fukuoka/3325.html',iwataya:'https://www.nagazaifu-mania.com/city/fukuoka.html',jojoen:'https://tenjin.keizai.biz/headline/7484/',
+  mina:'https://www.fukuoka-now.com/en/news/uniqlo-expands-tenjin-stores-used-clothing-section/',bic:'https://map.yahoo.co.jp/v3/place/YdIR9P3e1rk',airport:'https://www.crossroadfukuoka.jp/feature/fukuoka_airport',dutyfree:'https://4travel.jp/dm_shisetsu/11702717'
+};
+const trip={hotel:{name:'Quintessa Hotel Fukuoka Tenjin Minami',maps:HOTEL_MAPS},days:{
+1:{date:'09/09（三）',theme:'抵達福岡・LaLaport・喜水丸',class:'d1',cover:IMG.lalaport,coverTag:'LaLaport Fukuoka',source:SOURCES.lalaport,events:[
+{time:'11:20',title:'✈️ 抵達福岡機場',desc:'國際線抵達。通關＋行李預留約 60–90 分鐘。',map:'https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal',img:IMG.airport,tag:'福岡機場國際線',source:SOURCES.airport},
+{time:'12:30 前後',title:'🧳 DELIBAG 交寄大件行李',desc:'9/6–9/7 前先完成預約／付款。尿布、奶、文件、藥品、換洗衣物留隨身。'},
+{time:'12:45–13:10',title:'🚕 計程車前往 LaLaport',desc:'機場 Taxi Stand 有車就直接搭；否則 Uber。',map:'https://www.google.com/maps/search/?api=1&query=LaLaport+Fukuoka'},
+{time:'13:00–17:20',title:'🛍️ LaLaport Fukuoka',desc:'3F 午餐、阿卡將、推車午睡、1F 鋼彈。16:30 起可依體力提早撤。',map:'https://www.google.com/maps/search/?api=1&query=LaLaport+Fukuoka',img:IMG.lalaport,tag:'LaLaport × 鋼彈',source:SOURCES.lalaport},
+{time:'17:30',title:'🚕 前往博多站筑紫口',desc:'建議 17:20 開始收東西，避免晚高峰與找餐廳壓力。',map:'https://www.google.com/maps/search/?api=1&query=Hakata+Station+Chikushi+Exit'},
+{time:'18:30',title:'🍚 晚餐｜博多の名物料理 喜水丸',desc:'已預約。孕婦以烤魚、煮魚、天婦羅等熟食為主。',map:'https://www.google.com/maps/search/?api=1&query=博多の名物料理+喜水丸+博多デイトスアネックス店',img:'https://assets.st-note.com/img/1771393809-bysQWRn9ev873HXwgJZIDKAN.jpg',tag:'熟食定食示意｜喜水丸',source:'https://note.com/n_kanno/n/n12bcfe43607a'},
+{time:'20:00–20:15',title:'🚇 博多 → 藥院 → 飯店入住',desc:'七隈線約 3 個區間；藥院站至飯店步行約 2–3 分鐘。',map:HOTEL_MAPS}
+]},
+2:{date:'09/10（四）',theme:'麵包超人・櫛田神社・燒肉上',class:'d2',cover:IMG.anpanman,coverTag:'Anpanman Museum',source:SOURCES.anpanman,events:[
+{time:'09:00–09:45',title:'🍳 飯店早餐',desc:'不用趕，讓寶寶先吃飽再出發。'},
+{time:'10:00',title:'🚕 前往博多 Riverain',desc:'飯店門口叫 Uber / GO。',map:'https://www.google.com/maps/search/?api=1&query=Hakata+Riverain'},
+{time:'10:15–12:30',title:'👶 福岡麵包超人兒童博物館',desc:'館內不能推嬰兒車，要停 5F；爸爸主力陪玩／抱，媽媽不要長時間抱小孩。',map:'https://www.google.com/maps/search/?api=1&query=Fukuoka+Anpanman+Children%27s+Museum',img:IMG.anpanman,tag:'5F–6F 室內親子館',source:SOURCES.anpanman},
+{time:'12:30–13:30',title:'🍴 館內午餐',desc:'吃完先判斷寶寶睡意與媽媽體力。'},
+{time:'13:30–14:15',title:'⛩️ 川端商店街 → 櫛田神社（Optional）',desc:'體力好才去；累了直接 Taxi 回飯店。',map:'https://www.google.com/maps/search/?api=1&query=Kushida+Shrine+Fukuoka',img:IMG.kushida,tag:'櫛田神社',source:SOURCES.kushida},
+{time:'14:30–17:45',title:'😴 飯店深度休息',desc:'寶寶完整午睡；媽媽抬腿休息。這段優先級高於任何 Bonus 景點。'},
+{time:'18:45',title:'🥩 晚餐｜燒肉 上',desc:'已預約。肉類全熟、生熟夾分開。餐廳在 2F，出發前再確認嬰兒車／電梯動線。',map:'https://www.google.com/maps/search/?api=1&query=ヤキニク+上+福岡',img:IMG.yakiniku,tag:'餐點示意｜燒肉 上',source:'https://www.yakiniku-jo.com/'}
+]},
+3:{date:'09/11（五）',theme:'Marine World・海豚秀・藥院晚餐',class:'d3',cover:IMG.marine,coverTag:'Marine World',source:SOURCES.marine,events:[
+{time:'09:20–09:30',title:'🚕 飯店出發',desc:'建議提早叫車；這段可能 30–45 分鐘以上，視交通而定。',map:'https://www.google.com/maps/search/?api=1&query=Marine+World+Uminonakamichi'},
+{time:'10:10',title:'🐠 Marine World 入館',desc:'先看外洋大水槽、海豹等。2026 已無海獺展示，行程不要再排海獺餵食。',map:'https://www.google.com/maps/search/?api=1&query=Marine+World+Uminonakamichi',img:'https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1200&q=82',tag:'海洋世界｜館內示意'},
+{time:'11:00',title:'🐬 海豚・海獅秀',desc:'優先看 11:00 這場，避免為下午場延後午睡。',img:IMG.marine,tag:'海豚表演',source:SOURCES.marine},
+{time:'11:35–12:40',title:'🍴 Restaurant Reilly',desc:'水下景觀用餐；孕婦選熟食。',img:IMG.reilly,tag:'Restaurant Reilly',source:SOURCES.reilly},
+{time:'12:40–13:20',title:'🐟 自由看展／企鵝／大水槽',desc:'寶寶若已睏，可直接提前離館。'},
+{time:'13:20–13:40',title:'🚕 返回飯店',desc:'不追求把館內全部看完。',map:HOTEL_MAPS},
+{time:'14:30–17:30',title:'😴 飯店休息',desc:'Day 3 是體力最高的一天，下午不要再塞景點。'},
+{time:'18:00',title:'🍲 白金／藥院周邊晚餐',desc:'水炊鍋、烏龍麵或熟食定食；視體力彈性延後至 18:30。',map:'https://www.google.com/maps/search/?api=1&query=Yakuin+Fukuoka+restaurants'}
+]},
+4:{date:'09/12（六）',theme:'大濠公園・敘敘苑・岩田屋',class:'d4',cover:IMG.ohori,coverTag:'Ohori Park',source:SOURCES.ohori,events:[
+{time:'08:30–09:20',title:'🍳 早餐＋準備',desc:'確認當日降雨與體感溫度。'},
+{time:'09:30',title:'🚕 前往大濠公園',desc:'戶外只安排短時間。',map:'https://www.google.com/maps/search/?api=1&query=Ohori+Park'},
+{time:'09:45–10:30',title:'🌳 大濠公園慢散步',desc:'看湖、拍照即可，不把環湖一圈當目標。',map:'https://www.google.com/maps/search/?api=1&query=Ohori+Park',img:IMG.ohori,tag:'大濠公園',source:SOURCES.ohori},
+{time:'10:30–11:30',title:'🎨 福岡市美術館／咖啡休息',desc:'進室內吹冷氣、坐著休息。',map:'https://www.google.com/maps/search/?api=1&query=Fukuoka+Art+Museum',img:IMG.museum,tag:'福岡市美術館',source:SOURCES.museum},
+{time:'12:30–14:00',title:'🥩 敘敘苑｜岩田屋新館 7F',desc:'已預約。肉品全熟。',map:'https://www.google.com/maps/search/?api=1&query=叙々苑+福岡岩田屋店',img:IMG.jojoen,tag:'叙々苑 福岡岩田屋店',source:SOURCES.jojoen},
+{time:'14:00–15:30',title:'👶 岩田屋本館 6F Baby / Kids',desc:'Familiar、MIKI HOUSE、童鞋、育嬰室。',map:'https://www.google.com/maps/search/?api=1&query=岩田屋本店',img:IMG.iwataya,tag:'岩田屋本店',source:SOURCES.iwataya},
+{time:'15:30 後',title:'🛍️ 體力好才順逛',desc:'UNIQLO / GU / Bic Camera / 天神地下街；不排固定時段。'},
+{time:'15:45–17:30',title:'😴 回飯店休息',desc:'如果購物狀況很好，可延後；媽媽累就直接回飯店。',map:HOTEL_MAPS},
+{time:'18:00',title:'🍜 飯店周邊清淡晚餐',desc:'早點回房整理行李。',map:'https://www.google.com/maps/search/?api=1&query=Yakuin+Fukuoka+restaurants'}
+]},
+5:{date:'09/13（日）',theme:'退房・福岡機場・回台',class:'d5',cover:IMG.airport,coverTag:'Fukuoka Airport',source:SOURCES.airport,events:[
+{time:'08:00–09:00',title:'🍳 早餐＋最後打包',desc:'MEDIF、診斷證明、媽媽手冊、護照全部留隨身。'},
+{time:'09:15',title:'🧳 退房',desc:'檢查房間、充電器、寶寶用品。'},
+{time:'09:30',title:'🚕 前往福岡機場國際線',desc:'有行李＋推車，建議叫較大車型。',map:'https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal',img:IMG.airport,tag:'福岡機場國際線',source:SOURCES.airport},
+{time:'09:55 左右',title:'✈️ 抵達機場',desc:'先換尿布／整理推車／找長榮櫃台。'},
+{time:'10:20 左右',title:'🧾 長榮人工櫃台報到',desc:'BR105 12:20 起飛；孕婦＋2歲以下幼兒以人工櫃台辦理較實際。主動詢問 Priority Lane 與推車 Gate Check。'},
+{time:'11:15–11:50',title:'🛍️ 免稅店／最後補貨',desc:'提領線上預約商品、育嬰室整理。',img:IMG.dutyfree,tag:'福岡機場免稅店',source:SOURCES.dutyfree},
+{time:'11:50',title:'🛫 登機門集合',desc:'孕婦＋幼兒可詢問優先登機。'},
+{time:'12:20–13:45',title:'✈️ BR105 福岡 → 桃園',desc:'平安返台。'}
+]}}};
+const content=document.getElementById('content');
+let currentPage='home';
+function imageFallback(img){const box=img.parentElement;box.classList.add('broken');img.style.display='none'}
+function mapBtn(url){return url?`<a class="btn primary" target="_blank" rel="noopener" href="${url}">📍 導航</a>`:''}
+function taxiBtns(){return `<a class="btn dark" target="_blank" rel="noopener" href="https://m.uber.com/">🚕 Uber</a><a class="btn green" target="_blank" rel="noopener" href="https://go.goinc.jp/">🚖 GO</a>`}
+function jpNow(){
+  const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const o={};parts.forEach(p=>o[p.type]=p.value);return {date:`${o.year}-${o.month}-${o.day}`,min:Number(o.hour)*60+Number(o.minute)};
 }
-
+function tripDayToday(){const t=jpNow().date;return {'2026-09-09':1,'2026-09-10':2,'2026-09-11':3,'2026-09-12':4,'2026-09-13':5}[t]||null}
+function firstTimeMinutes(s){const m=s.match(/(\d{1,2}):(\d{2})/);return m?Number(m[1])*60+Number(m[2]):null}
+function currentEventIndex(day){if(tripDayToday()!==day)return -1;const ev=trip.days[day].events,now=jpNow().min;let idx=-1;for(let i=0;i<ev.length;i++){const st=firstTimeMinutes(ev[i].time);if(st!==null&&st<=now)idx=i}return idx<0?0:idx}
+function photoBlock(e){if(!e.img||e.img.startsWith('https://r.gnavi.co.jp/b1mjkkgz0000/menu3/'))return '';const srcLink=e.source||e.photoUrl||'';return `<div class="event-photo"><img src="${e.img}" alt="${e.tag||e.title}" loading="lazy" referrerpolicy="no-referrer" onclick="openPhoto(this.src,this.alt)" onerror="imageFallback(this)">${e.tag?`<span class="photo-tag">${e.tag}</span>`:''}${srcLink?`<a class="top-chip" href="${srcLink}" target="_blank" rel="noopener">照片來源 ↗</a>`:''}</div>`}
+function renderEvents(day,events){const cur=currentEventIndex(day);return `<div class="timeline">${events.map((e,i)=>`<article class="event ${i===cur?'current-event':''}">${photoBlock(e)}<div class="event-body"><div class="event-time">${e.time}</div><div class="event-title">${e.title}</div><div class="event-desc">${e.desc}</div><div class="actions">${mapBtn(e.map)}${e.title.includes('🚕')?taxiBtns():''}</div></div></article>`).join('')}</div>`}
+function dayCover(n,d){return `<section class="day-cover"><img src="${d.cover}" alt="${d.coverTag}" referrerpolicy="no-referrer" onerror="imageFallback(this)"><a class="top-chip" href="${d.source}" target="_blank" rel="noopener">真實照片 ↗</a><div class="day-cover-content"><div class="day-num">DAY ${n} · ${d.date}</div><h2>${d.theme}</h2><p>${dayRule(n)}</p>${tripDayToday()===n?'<span class="today-ribbon">✨ 今天行程</span>':''}</div></section>`}
+function dayRule(n){return n===1?'第一天不硬撐，16:30 後隨時可撤。':n===2?'麵包超人是主任務，櫛田神社是 Bonus。':n===3?'11:00 海豚秀＋午餐，午後回飯店。':n===4?'大濠看天氣；敘敘苑＋岩田屋是穩定主線。':'提早到機場，免稅有時間再逛。'}
 function home(){
-  content.innerHTML = `
-  <section class="section">
-    <div class="section-title"><span class="dot"></span><b>這趟旅行的執行原則</b></div>
-    <div class="card">
-      <div class="kpi-row"><div class="kpi"><b>1</b><small>每天 1 個主任務</small></div><div class="kpi"><b>2–3h</b><small>午後休息</small></div><div class="kpi"><b>Taxi</b><small>減少步行</small></div></div>
-      <p class="muted" style="margin-top:12px">景點可以少看，休息不能少。任何 Bonus 行程都以媽媽體力與寶寶午睡為優先。</p>
-    </div>
-  </section>
-  <section class="section"><div class="section-title"><span class="dot"></span><b>快速入口</b></div>
-    <div class="quick-grid">
-      <a class="quick" href="${trip.hotel.maps}" target="_blank"><div class="emoji">🏨</div><b>回飯店</b><small>Quintessa</small></a>
-      <a class="quick" href="https://m.uber.com/" target="_blank"><div class="emoji">🚕</div><b>叫 Uber</b><small>主要叫車</small></a>
-      <a class="quick" href="https://go.goinc.jp/" target="_blank"><div class="emoji">🚖</div><b>開 GO</b><small>備用叫車</small></a>
-      <a class="quick" href="https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal" target="_blank"><div class="emoji">✈️</div><b>福岡機場</b><small>國際線</small></a>
-    </div>
-  </section>
-  <section class="section"><div class="section-title"><span class="dot"></span><b>出發前重要事項</b></div>
-    <div class="card">
-      <span class="pill red">🤰 MEDIF</span>
-      <h3 style="margin:10px 0 8px">9/6（日）產檢＋請醫師開立文件</h3>
-      <div class="notice danger">9/6 取得後當天就依長榮指示提交，9/7 再確認 BR106 與 BR105 兩個航段都已註記／核准。MEDIF、診斷證明、媽媽手冊全部放隨身，不托運。</div>
-    </div>
-    <div class="card">
-      <span class="pill">🧳 DELIBAG</span>
-      <p style="margin:10px 0 0">建議 9/6–9/7 前完成機場→飯店行李配送預約與付款。當天只留下寶寶用品、文件、藥品與換洗衣物。</p>
-    </div>
-  </section>
-  <section class="section"><div class="section-title"><span class="dot"></span><b>每日出門 Checklist</b></div>
-    <div class="card checklist" id="checklist">
-      ${['推車','尿布 × 5–6','濕紙巾','寶寶換洗衣物','水／水杯','奶／點心','帽子＋防曬','常用藥品','MEDIF／媽媽手冊（搭機日）'].map((x,i)=>`<label><input type="checkbox" data-key="c${i}"><span>${x}</span></label>`).join('')}
-    </div>
-  </section>
-  <section class="section"><div class="section-title"><span class="dot"></span><b>緊急資訊</b></div>
-    <div class="card"><div class="shop-list">
-      <div class="shop"><div><b>🚑 119</b><span>救護車／消防</span></div><a class="btn" href="tel:119">撥打</a></div>
-      <div class="shop"><div><b>👮 110</b><span>警察</span></div><a class="btn" href="tel:110">撥打</a></div>
-      <div class="shop"><div><b>☎️ JNTO 旅客熱線</b><span>050-3816-2787</span></div><a class="btn" href="tel:+815038162787">撥打</a></div>
-    </div></div>
-  </section>`;
-  restoreChecklist();
+ const td=tripDayToday();const next=td||1;const d=trip.days[next];const status=td?'今天':'下一站';
+ content.innerHTML=`
+ <section class="section"><div class="section-head"><div><div class="eyebrow">TRIP AT A GLANCE</div><h2>${td?'今天直接看這裡':'準備出發'}</h2></div></div>
+ <div class="card today-card"><div class="cover"><img src="${d.cover}" alt="${d.coverTag}" referrerpolicy="no-referrer" onerror="imageFallback(this)"><span class="today-label">${status} · Day ${next}</span><div class="today-cover-title"><b>${d.theme}</b><small>${d.date} · ${dayRule(next)}</small></div></div><div class="today-meta"><span class="pill">🚕 Taxi 優先</span><span class="pill green">😴 午後休息</span><span class="pill orange">👶 親子慢活</span></div></div></section>
+ <section class="section"><div class="section-head"><h2>快速入口</h2></div><div class="quick-grid">
+ <a class="quick" href="${HOTEL_MAPS}" target="_blank"><span class="ico">🏨</span><b>回飯店</b><small>Quintessa 天神南</small></a>
+ <a class="quick" href="https://m.uber.com/" target="_blank"><span class="ico">🚕</span><b>叫 Uber</b><small>主要叫車方式</small></a>
+ <a class="quick" href="https://go.goinc.jp/" target="_blank"><span class="ico">🚖</span><b>開 GO</b><small>日本計程車備用</small></a>
+ <a class="quick" href="https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal" target="_blank"><span class="ico">✈️</span><b>福岡機場</b><small>國際線航廈</small></a></div></section>
+ <section class="section"><div class="section-head"><h2>旅程畫面</h2></div><div class="mini-gallery"><div class="tile"><img src="${IMG.ohori}" alt="大濠公園" loading="lazy" referrerpolicy="no-referrer" onclick="openPhoto(this.src,this.alt)" onerror="imageFallback(this)"><span>大濠公園</span></div><div class="tile"><div class="subtile"><img src="${IMG.marine}" alt="Marine World" loading="lazy" referrerpolicy="no-referrer" onclick="openPhoto(this.src,this.alt)" onerror="imageFallback(this)"><span>Marine World</span></div><div class="subtile"><img src="${IMG.iwataya}" alt="岩田屋" loading="lazy" referrerpolicy="no-referrer" onclick="openPhoto(this.src,this.alt)" onerror="imageFallback(this)"><span>天神購物</span></div></div></div></section>
+ <section class="section"><div class="section-head"><h2>執行原則</h2></div><div class="card pad"><div class="kpis"><div class="kpi"><b>1</b><small>每天主任務</small></div><div class="kpi"><b>2–3h</b><small>午後休息</small></div><div class="kpi"><b>Taxi</b><small>減少步行</small></div></div><p style="font-size:13px;color:var(--muted);line-height:1.6;margin:12px 0 0">景點可以少看，休息不能少。所有 Bonus 都以媽媽體力與寶寶午睡為優先。</p></div></section>
+ <section class="section"><div class="section-head"><h2>出發前重要事項</h2></div><div class="card pad"><span class="pill red">🤰 MEDIF</span><h3 style="margin:10px 0 8px;font-size:16px">9/6（日）產檢＋請醫師開立文件</h3><div class="notice danger">9/6 取得後當天就依長榮指示提交，9/7 再確認 BR106 與 BR105 兩個航段都已註記／核准。MEDIF、診斷證明、媽媽手冊全部放隨身，不托運。</div></div></section>
+ <section class="section"><div class="section-head"><h2>每日出門 Checklist</h2></div><div class="card pad checklist" id="checklist">${['推車','尿布 × 5–6','濕紙巾','寶寶換洗衣物','水／水杯','奶／點心','帽子＋防曬','常用藥品','MEDIF／媽媽手冊（搭機日）'].map((x,i)=>`<label><input type="checkbox" data-key="c${i}"><span>${x}</span></label>`).join('')}</div></section>
+ <section class="section"><div class="section-head"><h2>緊急資訊</h2></div><div class="card pad"><div style="display:grid;gap:8px"><a class="quick" href="tel:119"><b>🚑 119</b><small>救護車／消防</small></a><a class="quick" href="tel:110"><b>👮 110</b><small>警察</small></a><a class="quick" href="tel:+815038162787"><b>☎️ JNTO 050-3816-2787</b><small>外國旅客熱線</small></a></div></div></section>`;
+ restoreChecklist();
 }
-
-function dayPage(n){
-  const d = trip.days[n];
-  let extra = '';
-  if(n===4){
-    extra = `<section class="section"><div class="section-title"><span class="dot"></span><b>Day 4 天氣模式</b></div>
-      <div class="weather-toggle"><button id="sunBtn" class="active">☀️ 晴天</button><button id="rainBtn">🌧️ 雨天</button></div>
-      <div id="sunPlan" class="card"><b>晴天版</b><div class="route" style="margin-top:10px"><div class="stop">🌳 大濠 45m</div><div class="arrow">→</div><div class="stop">🎨 美術館</div><div class="arrow">→</div><div class="stop">🥩 敘敘苑</div><div class="arrow">→</div><div class="stop">👶 岩田屋</div></div></div>
-      <div id="rainPlan" class="card hidden"><b>雨天版</b><p class="muted" style="margin-top:8px">不硬去大濠。TeamLab 不是優先雨備；直接走舒適室內線。</p><div class="route"><div class="stop">🚕 天神</div><div class="arrow">→</div><div class="stop">☕ 百貨/咖啡</div><div class="arrow">→</div><div class="stop">🥩 敘敘苑</div><div class="arrow">→</div><div class="stop">👶 岩田屋</div></div></div>
-    </section>
-    <section class="section"><div class="section-title"><span class="dot"></span><b>🛍️ 體力好再順逛</b></div><div class="card shop-list">
-      ${[['UNIQLO 天神','Baby / Kids 也可看','https://www.google.com/maps/search/?api=1&query=UNIQLO+Tenjin+Fukuoka'],['GU Mina Tenjin','同區順路','https://www.google.com/maps/search/?api=1&query=GU+Mina+Tenjin'],['Bic Camera 天神','3C / 美容家電 / 藥妝','https://www.google.com/maps/search/?api=1&query=Bic+Camera+Tenjin+Fukuoka'],['天神地下街','下雨也方便','https://www.google.com/maps/search/?api=1&query=Tenjin+Underground+Mall']].map(s=>`<div class="shop"><div><b>${s[0]}</b><span>${s[1]}</span></div><a class="btn" target="_blank" href="${s[2]}">導航</a></div>`).join('')}
-    </div></section>`
-  }
-  content.innerHTML = `<div class="day-header ${d.class}"><h2>Day ${n}｜${d.date}</h2><p>${d.theme}</p></div>${renderEvents(d.events)}${extra}
-  <section class="section"><div class="card notice warn"><b>今日原則：</b> ${n==1?'第一天不硬撐，LaLaport 16:30 後隨時可撤。':n==2?'麵包超人是唯一主任務，櫛田神社只是 Bonus。':n==3?'11:00 海豚秀＋午餐後可撤，不追完整館。':n==4?'大濠是 Bonus；敘敘苑＋岩田屋才是穩定主線。':'到機場最重要，免稅店有時間再逛。'}</div></section>`;
-  if(n===4) bindWeatherToggle();
+function dayPage(n){const d=trip.days[n];let extra='';
+ if(n===4){extra=`<section class="section"><div class="section-head"><h2>☀️ / 🌧️ Day 4 天氣模式</h2></div><div class="weather-toggle"><button id="sunBtn" class="active">☀️ 晴天版</button><button id="rainBtn">🌧️ 雨天版</button></div><div id="sunPlan" class="card pad"><div class="route"><span class="stop">🌳 大濠 45m</span><span class="arrow">→</span><span class="stop">🎨 美術館</span><span class="arrow">→</span><span class="stop">🥩 敘敘苑</span><span class="arrow">→</span><span class="stop">👶 岩田屋</span></div></div><div id="rainPlan" class="card pad hidden"><div class="notice warn">不硬去大濠，也不把 TeamLab 當主要雨備。直接走舒適室內線。</div><div class="route" style="margin-top:8px"><span class="stop">🚕 天神</span><span class="arrow">→</span><span class="stop">☕ 百貨／咖啡</span><span class="arrow">→</span><span class="stop">🥩 敘敘苑</span><span class="arrow">→</span><span class="stop">👶 岩田屋</span></div></div></section>
+ <section class="section"><div class="section-head"><h2>🛍️ 體力好再順逛</h2></div><div class="shop-grid">
+ ${shopCard('UNIQLO / GU','Mina Tenjin｜不排固定時間',IMG.mina,'https://www.google.com/maps/search/?api=1&query=Mina+Tenjin+Fukuoka',SOURCES.mina)}
+ ${shopCard('Bic Camera 天神','3C・美容家電・藥妝',IMG.bic,'https://www.google.com/maps/search/?api=1&query=Bic+Camera+Tenjin+Fukuoka',SOURCES.bic)}
+ ${shopCard('岩田屋本店','Baby / Kids 主線',IMG.iwataya,'https://www.google.com/maps/search/?api=1&query=岩田屋本店',SOURCES.iwataya)}
+ ${shopCard('叙々苑','新館 7F｜已預約',IMG.jojoen,'https://www.google.com/maps/search/?api=1&query=叙々苑+福岡岩田屋店',SOURCES.jojoen)}
+ </div></section>`}
+ content.innerHTML=`${dayCover(n,d)}<section class="section"><div class="section-head"><div><div class="eyebrow">TIMELINE</div><h2>今天的節奏</h2></div></div>${renderEvents(n,d.events)}</section>${extra}<section class="section"><div class="notice warn"><b>今日原則：</b> ${dayRule(n)}</div></section>`;
+ if(n===4)bindWeather();
 }
-
-function bindWeatherToggle(){
-  const s=$('#sunBtn'), r=$('#rainBtn'), sp=$('#sunPlan'), rp=$('#rainPlan');
-  s.onclick=()=>{s.classList.add('active');r.classList.remove('active');sp.classList.remove('hidden');rp.classList.add('hidden')};
-  r.onclick=()=>{r.classList.add('active');s.classList.remove('active');rp.classList.remove('hidden');sp.classList.add('hidden')};
-}
-
-function restoreChecklist(){
-  document.querySelectorAll('#checklist input').forEach(el=>{
-    el.checked = localStorage.getItem(el.dataset.key)==='1';
-    el.onchange=()=>localStorage.setItem(el.dataset.key,el.checked?'1':'0');
-  })
-}
-
-function setTab(day){
-  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.day===String(day)));
-  day==='home'?home():dayPage(Number(day));
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.day)));
-
-function updateCountdown(){
-  const now=new Date(); const start=new Date('2026-09-09T08:00:00+08:00'); const end=new Date('2026-09-13T13:45:00+08:00');
-  let txt='';
-  if(now<start){const d=Math.ceil((start-now)/86400000);txt=`距離出發約 ${d} 天｜9/6 產檢＋MEDIF`}
-  else if(now>end){txt='旅程已完成，歡迎把這份行程頁留作旅行回憶 ✨'}
-  else{txt='旅行進行中｜今天只完成一個主任務也很棒 👍'}
-  $('#countdown').textContent=txt;
-}
-
-function autoOpenToday(){
-  const now=new Date(); const m=now.getMonth()+1, d=now.getDate();
-  const map={'9-9':1,'9-10':2,'9-11':3,'9-12':4,'9-13':5};
-  const k=`${m}-${d}`; if(map[k]) setTab(map[k]); else home();
-}
-
-try {
-  updateCountdown();
-  autoOpenToday();
-} catch (err) {
-  console.error('Fukuoka trip page init failed:', err);
-  content.innerHTML = `<div class="card notice danger"><b>頁面載入失敗：</b>請重新整理頁面。若仍發生，請確認已上傳最新版 index.html。</div>`;
-}
-
-  </script>
+function shopCard(name,sub,img,map,source){return `<div class="card shop-card"><div style="position:relative"><img src="${img}" alt="${name}" loading="lazy" referrerpolicy="no-referrer" onclick="openPhoto(this.src,this.alt)" onerror="imageFallback(this)"><a class="top-chip" href="${source}" target="_blank" rel="noopener">照片 ↗</a></div><div class="info"><b>${name}</b><small>${sub}</small><a class="btn" href="${map}" target="_blank">📍 導航</a></div></div>`}
+function bindWeather(){const s=document.getElementById('sunBtn'),r=document.getElementById('rainBtn'),sp=document.getElementById('sunPlan'),rp=document.getElementById('rainPlan');s.onclick=()=>{s.classList.add('active');r.classList.remove('active');sp.classList.remove('hidden');rp.classList.add('hidden')};r.onclick=()=>{r.classList.add('active');s.classList.remove('active');rp.classList.remove('hidden');sp.classList.add('hidden')}}
+function restoreChecklist(){document.querySelectorAll('#checklist input').forEach(el=>{el.checked=localStorage.getItem(el.dataset.key)==='1';el.onchange=()=>localStorage.setItem(el.dataset.key,el.checked?'1':'0')})}
+function setPage(day,scroll=true){currentPage=String(day);document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.day===String(day)));day==='home'?home():dayPage(Number(day));if(scroll)window.scrollTo({top:0,behavior:'smooth'})}
+function markTodayNav(){const td=tripDayToday();document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('today',td&&b.dataset.day===String(td)))}
+function updateCountdown(){const now=new Date(),start=new Date('2026-09-09T08:00:00+08:00'),end=new Date('2026-09-13T13:45:00+08:00');let txt='';if(now<start){const d=Math.ceil((start-now)/86400000);txt=`距離出發約 ${d} 天｜9/6 產檢＋MEDIF`}else if(now>end){txt='旅程已完成，這份頁面就是我們的福岡旅行紀錄 ✨'}else{const td=tripDayToday();txt=td?`旅行進行中｜今天是 Day ${td}，只完成主任務也很棒 👍`:'旅行進行中｜慢慢走、休息優先'}document.getElementById('countdown').textContent=txt}
+function openPhoto(src,alt){const m=document.getElementById('photoModal'),im=document.getElementById('modalImage');im.src=src;im.alt=alt||'照片';m.classList.add('show');document.body.style.overflow='hidden'}
+function closePhoto(e){if(e&&e.target.id==='modalImage')return;document.getElementById('photoModal').classList.remove('show');document.body.style.overflow=''}
+document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.day)));
+try{updateCountdown();markTodayNav();const td=tripDayToday();td?setPage(td,false):setPage('home',false);setInterval(()=>{updateCountdown();markTodayNav();if(tripDayToday()&&currentPage===String(tripDayToday()))dayPage(Number(currentPage))},60000)}catch(err){console.error(err);content.innerHTML='<div class="notice danger">頁面載入失敗，請重新整理或重新上傳最新版 index.html。</div>'}
+</script>
 </body>
 </html>
