@@ -1,26 +1,78 @@
 {
+  "id": "./",
   "name": "福岡親子慢活小旅行",
   "short_name": "福岡親子旅",
-  "description": "2026 福岡 5天4夜親子旅行小助手",
+  "description": "2026 福岡 5天4夜親子旅行小助手：行程、天氣、Checklist、伴手禮共編。",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
   "background_color": "#fff8f3",
   "theme_color": "#ef9a74",
   "orientation": "portrait-primary",
   "lang": "zh-Hant",
+  "dir": "ltr",
+  "categories": [
+    "travel",
+    "lifestyle",
+    "utilities"
+  ],
   "icons": [
     {
       "src": "./icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "./icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "今日行程",
+      "short_name": "行程",
+      "url": "./?page=trip",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "共同 Checklist",
+      "short_name": "清單",
+      "url": "./?page=checklist",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "伴手禮清單",
+      "short_name": "伴手禮",
+      "url": "./?page=gifts",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }

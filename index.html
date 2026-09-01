@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#ef9a74">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="福岡親子旅">
+<meta name="application-name" content="福岡親子旅">
+<meta name="format-detection" content="telephone=yes">
 <meta name="description" content="2026 福岡 5天4夜親子慢活小旅行 親子旅行小助手">
 <title>福岡親子慢活小旅行｜2026</title>
 <style>
@@ -221,6 +230,15 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.55;ba
 .bottom-nav{overflow:hidden}.nav-btn{min-width:0;flex:1 1 20%;padding:7px 4px}.nav-btn .nav-ico{font-size:20px}.nav-btn .nav-txt{font-size:10px}
 @media(max-width:420px){.next-stop-title{font-size:20px}.next-stop-top{padding:14px 13px 4px}.next-stop-body{padding:6px 13px 14px}.hourly-item{flex-basis:76px}.more-grid{grid-template-columns:1fr 1fr}}
 
+
+
+/* v4.0 PWA */
+.pwa-install-card{background:linear-gradient(135deg,#fff8f1,#fff1e8);border:1px solid #f0d8ca;border-radius:24px;padding:15px;box-shadow:0 12px 26px rgba(199,116,93,.09)}
+.pwa-install-top{display:flex;align-items:center;gap:12px}.pwa-app-icon{width:54px;height:54px;border-radius:16px;box-shadow:0 8px 18px rgba(199,116,93,.18);flex:none}.pwa-install-copy{min-width:0;flex:1}.pwa-install-copy b{display:block;font-size:15px;color:#6f5347}.pwa-install-copy small{display:block;margin-top:3px;font-size:10px;line-height:1.45;color:#98776a}.pwa-install-btn{width:100%;margin-top:11px;border:0;border-radius:15px;padding:12px 14px;background:linear-gradient(135deg,#ef9a74,#d98372);color:#fff;font-size:13px;font-weight:950;box-shadow:0 8px 18px rgba(217,131,114,.18)}.pwa-install-btn:disabled{opacity:.58;box-shadow:none}.pwa-badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.pwa-badge{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:6px 8px;background:#fff;color:#9b6d5b;border:1px solid #efd8cc;font-size:9px;font-weight:900}.pwa-badge.online{background:#eff8ef;color:#57835e;border-color:#d5e8d6}.pwa-badge.offline{background:#fff1e8;color:#c17052;border-color:#f1d2c3}.pwa-badge.installed{background:#f3eef9;color:#8968a3;border-color:#e2d7ec}
+.pwa-offline-note{margin-top:9px;font-size:10px;line-height:1.55;color:#947a6e}.pwa-offline-note b{color:#765b4f}
+.pwa-network-toast{position:fixed;left:50%;bottom:calc(82px + var(--safe-bottom));transform:translate(-50%,20px);z-index:1000;background:#6f5347;color:#fff;border-radius:999px;padding:9px 13px;font-size:11px;font-weight:900;opacity:0;pointer-events:none;transition:.2s;box-shadow:0 8px 22px rgba(83,54,43,.22);white-space:nowrap}.pwa-network-toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:680px){.pwa-install-card{padding:18px}.pwa-install-top{gap:14px}.pwa-app-icon{width:62px;height:62px}.pwa-install-copy b{font-size:17px}.pwa-install-btn{max-width:260px}}
+
 </style>
 </head>
 <body>
@@ -243,7 +261,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.55;ba
   </div>
 </header>
 <main id="content" class="content"></main>
-<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行 ✨<br>親子旅行小助手 HTML v3.5 Travel Mode</footer>
+<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行 ✨<br>親子旅行小助手 PWA v4.0 · Travel Mode · Firebase</footer>
 </div>
 
 <nav class="bottom-nav" aria-label="手機行程導覽">
@@ -455,6 +473,7 @@ async function loadFukuokaWeather(force=false){
  }catch(err){console.warn('Weather load failed',err);if(el)el.innerHTML='<span class="hw-icon">🌥️</span><div><div class="hw-temp">--°</div><div class="hw-text">福岡天氣暫時無法更新</div></div><button onclick="loadFukuokaWeather(true)" aria-label="重新更新福岡天氣">↻</button>';if(forecast)forecast.innerHTML='<div class="weather-advice">目前無法取得預報，行程仍可正常使用。<button onclick="loadFukuokaWeather(true)">重試</button></div>'}
 }
 let sharedDb=null,sharedAuth=null,sharedUser=null,sharedUnsubs=[];
+let firestorePersistenceAttempted=false;
 function firebaseConfigured(){return FIREBASE_CONFIG&&FIREBASE_CONFIG.apiKey&&FIREBASE_CONFIG.projectId&&FIREBASE_CONFIG.appId}
 async function ensureFirebase(){
  if(!firebaseConfigured())return false;
@@ -462,6 +481,10 @@ async function ensureFirebase(){
  try{
   if(!firebase.apps.length)firebase.initializeApp(FIREBASE_CONFIG);
   sharedAuth=firebase.auth();sharedDb=firebase.firestore();
+  if(!firestorePersistenceAttempted){
+   firestorePersistenceAttempted=true;
+   try{await sharedDb.enablePersistence({synchronizeTabs:true})}catch(pErr){console.warn('Firestore offline persistence unavailable',pErr?.code||pErr)}
+  }
   if(!sharedAuth.currentUser)await sharedAuth.signInAnonymously();
   sharedUser=sharedAuth.currentUser;return true;
  }catch(e){console.error('Firebase init',e);return false}
@@ -562,14 +585,48 @@ function renderGiftSummary(rows){const el=document.getElementById('giftSummary')
 async function toggleGift(id,done){if(await ensureFirebase())await giftsRef().doc(id).update({done,updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid,editorName:getEditorName()})}
 async function saveGiftEdit(id){const name=document.getElementById('gname-'+id),recipient=document.getElementById('grecipient-'+id);if(!recipient||!recipient.value.trim())return alert('請填寫對象');const itemName=(name?.value||'').trim();if(await ensureFirebase())await giftsRef().doc(id).update({recipient:recipient.value.trim(),shop:(document.getElementById('gshop-'+id)?.value||'').trim(),name:itemName,priority:document.getElementById('gpriority-'+id)?.value||'normal',giftType:document.getElementById('gtype-'+id)?.value||'split',qty:itemName?(Number(document.getElementById('gqty-'+id)?.value)||1):0,budget:Number(document.getElementById('gbudget-'+id)?.value)||0,note:(document.getElementById('gnote-'+id)?.value||'').trim(),draft:!itemName,updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid,editorName:getEditorName()})}
 async function deleteGift(id){if(confirm('刪除這個伴手禮項目？')&&await ensureFirebase())await giftsRef().doc(id).delete()}
-function morePage(){const name=getEditorName();content.innerHTML=`<section class="section"><div class="section-head"><div><div class="eyebrow">MORE</div><h2>更多資訊</h2></div></div><div class="editor-card"><b style="font-size:15px;color:#6f5347">👤 這台手機的共同編輯名稱</b><div class="editor-current" id="editorNameStatus">Checklist / 伴手禮修改會記錄這個名稱</div><div class="editor-row"><input id="editorNameInput" maxlength="24" value="${esc(name)}" placeholder="例如：爸爸、媽媽、Derek"><button onclick="saveEditorName()">儲存</button></div></div></section><section class="section"><div class="section-head"><h2>旅程重要資訊</h2></div><div class="more-grid"><a class="more-card" href="${HOTEL_MAPS}" target="_blank"><span class="ico">🏨</span><b>住宿飯店</b><small>Quintessa 天神南</small></a><a class="more-card" href="https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal" target="_blank"><span class="ico">✈️</span><b>福岡機場</b><small>國際線航廈</small></a><button class="more-card" onclick="openTripDay(4)" style="text-align:left"><span class="ico">🌦️</span><b>Day 4 晴雨切換</b><small>依當天天氣決定</small></button><a class="more-card" href="${UBER_ANDROID_LINK}"><span class="ico">🚕</span><b>Uber</b><small>Android 直接開 App</small></a></div></section><section class="section"><div class="section-head"><h2>出發前重要事項</h2></div><div class="card pad"><span class="pill red">🤰 MEDIF</span><h3 style="margin:10px 0 8px;font-size:16px">9/6（日）產檢＋醫師開立文件</h3><div class="notice danger">MEDIF、診斷證明、媽媽手冊放隨身；完成後確認 BR106 與 BR105 兩航段。</div></div></section><section class="section"><div class="section-head"><h2>緊急聯絡</h2></div><div class="card pad"><div style="display:grid;gap:8px"><a class="quick" href="tel:119"><b>🚑 119</b><small>救護車／消防</small></a><a class="quick" href="tel:110"><b>👮 110</b><small>警察</small></a><a class="quick" href="tel:+815038162787"><b>☎️ JNTO 050-3816-2787</b><small>外國旅客熱線</small></a></div></div></section>`}
+
+
+// v4.0 PWA install / offline helpers
+let deferredInstallPrompt=null;
+function isStandalonePWA(){return window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true}
+function pwaNetworkText(){return navigator.onLine?'目前有網路，可即時同步 Firebase':'目前離線，已開過的行程仍可閱讀；共編資料會在可用時同步'}
+function pwaCardHTML(){const installed=isStandalonePWA();return `<section class="section"><div class="section-head"><div><div class="eyebrow">PWA</div><h2>安裝與離線</h2></div></div><div class="pwa-install-card"><div class="pwa-install-top"><img class="pwa-app-icon" src="./icons/icon-192.png" alt="福岡親子旅 App 圖示"><div class="pwa-install-copy"><b>${installed?'已用 App 模式開啟':'福岡親子旅 PWA'}</b><small>${installed?'目前是獨立 App 視窗，可直接從桌面開啟。':'可安裝到 Android / 電腦桌面，不影響原本網址與 Firebase 共編。'}</small></div></div><div class="pwa-badges"><span class="pwa-badge ${navigator.onLine?'online':'offline'}">${navigator.onLine?'● 線上':'○ 離線'}</span><span class="pwa-badge ${installed?'installed':''}">${installed?'✓ 已安裝':'📲 可安裝'}</span><span class="pwa-badge">💾 行程離線快取</span></div><button id="pwaInstallButton" class="pwa-install-btn" type="button" onclick="installPWA()" ${installed?'disabled':''}>${installed?'✓ 已安裝到裝置':'📲 安裝「福岡親子旅」'}</button><div class="pwa-offline-note"><b>離線模式：</b>${pwaNetworkText()}。景點外部照片首次看過後會盡量保留快取；即時天氣、導航與第一次 Firebase 登入仍需要網路。</div></div></section>`}
+async function installPWA(){
+ if(isStandalonePWA())return;
+ if(deferredInstallPrompt){
+  deferredInstallPrompt.prompt();
+  try{await deferredInstallPrompt.userChoice}catch(e){}
+  deferredInstallPrompt=null;
+  refreshPWAView();
+  return;
+ }
+ alert('若瀏覽器沒有直接跳出安裝視窗：Android Chrome 請點右上角 ⋮ →「安裝應用程式」或「加到主畫面」；電腦 Chrome / Edge 可使用網址列旁的安裝圖示。');
+}
+function refreshPWAView(){if(currentPage==='more'&&document.getElementById('content'))morePage()}
+function showNetworkToast(text){let el=document.getElementById('pwaNetworkToast');if(!el){el=document.createElement('div');el.id='pwaNetworkToast';el.className='pwa-network-toast';document.body.appendChild(el)}el.textContent=text;el.classList.add('show');clearTimeout(showNetworkToast.t);showNetworkToast.t=setTimeout(()=>el.classList.remove('show'),2400)}
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstallPrompt=e;refreshPWAView()});
+window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null;showNetworkToast('✓ 福岡親子旅已安裝');refreshPWAView()});
+window.addEventListener('online',()=>{showNetworkToast('● 已恢復網路連線');refreshPWAView()});
+window.addEventListener('offline',()=>{showNetworkToast('○ 目前離線，使用快取內容');refreshPWAView()});
+async function registerPWA(){
+ if(!('serviceWorker' in navigator))return;
+ try{
+  const reg=await navigator.serviceWorker.register('./sw.js',{scope:'./'});
+  setTimeout(()=>reg.update().catch(()=>{}),3000);
+  console.log('PWA service worker ready',reg.scope);
+ }catch(e){console.warn('PWA service worker registration failed',e)}
+}
+window.addEventListener('load',registerPWA);
+
+function morePage(){const name=getEditorName();content.innerHTML=`<section class="section"><div class="section-head"><div><div class="eyebrow">MORE</div><h2>更多資訊</h2></div></div><div class="editor-card"><b style="font-size:15px;color:#6f5347">👤 這台手機的共同編輯名稱</b><div class="editor-current" id="editorNameStatus">Checklist / 伴手禮修改會記錄這個名稱</div><div class="editor-row"><input id="editorNameInput" maxlength="24" value="${esc(name)}" placeholder="例如：爸爸、媽媽、Derek"><button onclick="saveEditorName()">儲存</button></div></div></section>${pwaCardHTML()}<section class="section"><div class="section-head"><h2>旅程重要資訊</h2></div><div class="more-grid"><a class="more-card" href="${HOTEL_MAPS}" target="_blank"><span class="ico">🏨</span><b>住宿飯店</b><small>Quintessa 天神南</small></a><a class="more-card" href="https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal" target="_blank"><span class="ico">✈️</span><b>福岡機場</b><small>國際線航廈</small></a><button class="more-card" onclick="openTripDay(4)" style="text-align:left"><span class="ico">🌦️</span><b>Day 4 晴雨切換</b><small>依當天天氣決定</small></button><a class="more-card" href="${UBER_ANDROID_LINK}"><span class="ico">🚕</span><b>Uber</b><small>Android 直接開 App</small></a></div></section><section class="section"><div class="section-head"><h2>出發前重要事項</h2></div><div class="card pad"><span class="pill red">🤰 MEDIF</span><h3 style="margin:10px 0 8px;font-size:16px">9/6（日）產檢＋醫師開立文件</h3><div class="notice danger">MEDIF、診斷證明、媽媽手冊放隨身；完成後確認 BR106 與 BR105 兩航段。</div></div></section><section class="section"><div class="section-head"><h2>緊急聯絡</h2></div><div class="card pad"><div style="display:grid;gap:8px"><a class="quick" href="tel:119"><b>🚑 119</b><small>救護車／消防</small></a><a class="quick" href="tel:110"><b>👮 110</b><small>警察</small></a><a class="quick" href="tel:+815038162787"><b>☎️ JNTO 050-3816-2787</b><small>外國旅客熱線</small></a></div></div></section>`}
 function setPage(day,scroll=true){currentPage=String(day);document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.day===String(day)));clearSharedListeners();if(day==='home')home();else if(day==='trip')tripHubPage();else if(day==='checklist')checklistPage();else if(day==='gifts')giftsPage();else if(day==='more')morePage();else{selectedTripDay=Number(day)||selectedTripDay;currentPage='trip';dayPage(selectedTripDay)}if(scroll)window.scrollTo({top:0,behavior:'smooth'})}
 function markTodayNav(){const td=tripDayToday();document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('today',!!td&&b.dataset.day==='trip'))}
 function updateCountdown(){const now=new Date(),start=new Date('2026-09-09T08:00:00+08:00'),end=new Date('2026-09-13T13:45:00+08:00');let txt='';if(now<start){const d=Math.ceil((start-now)/86400000);txt=`距離出發約 ${d} 天｜9/6 產檢＋MEDIF`}else if(now>end){txt='旅程已完成，這份頁面就是我們的福岡旅行紀錄 ✨'}else{const td=tripDayToday();txt=td?`旅行進行中｜今天是 Day ${td}，只完成主任務也很棒 👍`:'旅行進行中｜慢慢走、休息優先'}document.getElementById('countdown').textContent=txt}
 function openPhoto(src,alt){const m=document.getElementById('photoModal'),im=document.getElementById('modalImage');im.src=src;im.alt=alt||'照片';m.classList.add('show');document.body.style.overflow='hidden'}
 function closePhoto(e){if(e&&e.target.id==='modalImage')return;document.getElementById('photoModal').classList.remove('show');document.body.style.overflow=''}
 document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.day)));
-try{updateCountdown();markTodayNav();setPage('home',false);loadFukuokaWeather();setInterval(()=>{updateCountdown();markTodayNav();if(currentPage==='home')home();else if(currentPage==='trip'&&tripDayToday()===selectedTripDay)dayPage(selectedTripDay)},60000)}catch(err){console.error(err);content.innerHTML='<div class="notice danger">頁面載入失敗，請重新整理或重新上傳最新版 index.html。</div>'}
+try{updateCountdown();markTodayNav();const launchPage=new URLSearchParams(location.search).get('page');const allowedLaunchPages=new Set(['home','trip','checklist','gifts','more']);setPage(allowedLaunchPages.has(launchPage)?launchPage:'home',false);loadFukuokaWeather();setInterval(()=>{updateCountdown();markTodayNav();if(currentPage==='home')home();else if(currentPage==='trip'&&tripDayToday()===selectedTripDay)dayPage(selectedTripDay)},60000)}catch(err){console.error(err);content.innerHTML='<div class="notice danger">頁面載入失敗，請重新整理或重新上傳最新版 index.html。</div>'}
 </script>
 </body>
 </html>

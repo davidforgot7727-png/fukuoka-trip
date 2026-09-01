@@ -1,76 +1,84 @@
-const CACHE_NAME = "fukuoka-trip-v1";
-
-const APP_SHELL = [
-  "./",
-  "./index.html",
-  "./manifest.json",
-  "./icons/icon-192.png",
-  "./icons/icon-512.png"
+const VERSION='4.0.0';
+const SHELL_CACHE=`fukuoka-shell-${VERSION}`;
+const RUNTIME_CACHE=`fukuoka-runtime-${VERSION}`;
+const APP_SHELL=[
+  './',
+  './index.html',
+  './manifest.json',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
+  './icons/icon-maskable-512.png',
+  './icons/apple-touch-icon.png'
 ];
 
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(APP_SHELL))
-  );
-
+self.addEventListener('install',event=>{
+  event.waitUntil(caches.open(SHELL_CACHE).then(cache=>cache.addAll(APP_SHELL)));
   self.skipWaiting();
 });
 
-
-self.addEventListener("activate", event => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(
-        keys
-          .filter(key => key !== CACHE_NAME)
-          .map(key => caches.delete(key))
-      )
-    )
-  );
-
-  self.clients.claim();
+self.addEventListener('activate',event=>{
+  event.waitUntil((async()=>{
+    const keys=await caches.keys();
+    await Promise.all(keys.filter(k=>k!==SHELL_CACHE&&k!==RUNTIME_CACHE&&k.startsWith('fukuoka-')).map(k=>caches.delete(k)));
+    await self.clients.claim();
+  })());
 });
 
+function isDynamicNetworkOnly(url){
+  return url.hostname.includes('open-meteo.com') ||
+         url.hostname.includes('firestore.googleapis.com') ||
+         url.hostname.includes('identitytoolkit.googleapis.com') ||
+         url.hostname.includes('securetoken.googleapis.com') ||
+         url.hostname.includes('googleapis.com') && !url.hostname.includes('fonts.googleapis.com');
+}
 
-self.addEventListener("fetch", event => {
+async function cachePutSafe(cacheName,request,response){
+  if(!response || !(response.ok || response.type==='opaque')) return response;
+  try{const cache=await caches.open(cacheName);await cache.put(request,response.clone())}catch(e){}
+  return response;
+}
 
-  if (event.request.method !== "GET") return;
+self.addEventListener('fetch',event=>{
+  const request=event.request;
+  if(request.method!=='GET')return;
+  const url=new URL(request.url);
 
-  const url = new URL(event.request.url);
+  if(isDynamicNetworkOnly(url))return;
 
-  // Firebase / API 不由 Service Worker 快取
-  if (
-    url.hostname.includes("firebase") ||
-    url.hostname.includes("googleapis") ||
-    url.hostname.includes("open-meteo")
-  ) {
+  if(request.mode==='navigate'){
+    event.respondWith((async()=>{
+      try{
+        const fresh=await fetch(request);
+        cachePutSafe(SHELL_CACHE,new Request(new URL('./index.html',self.location).href),fresh.clone());
+        return fresh;
+      }catch(e){
+        return (await caches.match('./index.html')) || (await caches.match('./')) || Response.error();
+      }
+    })());
     return;
   }
 
-  // 導覽頁面：優先網路，失敗才讀快取
-  if (event.request.mode === "navigate") {
-    event.respondWith(
-      fetch(event.request)
-        .then(response => {
-          const copy = response.clone();
+  const sameOrigin=url.origin===self.location.origin;
+  const cacheableExternal=['image','script','style','font'].includes(request.destination);
 
-          caches.open(CACHE_NAME)
-            .then(cache => cache.put("./index.html", copy));
-
-          return response;
-        })
-        .catch(() => caches.match("./index.html"))
-    );
-
+  if(sameOrigin){
+    event.respondWith((async()=>{
+      const cached=await caches.match(request);
+      if(cached)return cached;
+      try{return await cachePutSafe(RUNTIME_CACHE,request,await fetch(request))}catch(e){return Response.error()}
+    })());
     return;
   }
 
-  // 靜態資源：Cache First
-  event.respondWith(
-    caches.match(event.request)
-      .then(cached => {
-        return cached || fetch(event.request);
-      })
-  );
+  if(cacheableExternal){
+    event.respondWith((async()=>{
+      const cached=await caches.match(request);
+      const network=fetch(request).then(r=>cachePutSafe(RUNTIME_CACHE,request,r)).catch(()=>null);
+      return cached || (await network) || Response.error();
+    })());
+  }
+});
+
+self.addEventListener('message',event=>{
+  if(event.data==='SKIP_WAITING')self.skipWaiting();
 });
