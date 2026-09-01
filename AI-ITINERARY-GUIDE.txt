@@ -1,0 +1,38 @@
+v4.8 AI 行程整理／匯回
+
+這個功能不會直接呼叫 AI API，也不需要把 API Key 放進 GitHub。
+
+流程：PWA → 匯出 Prompt → ChatGPT → 回傳 JSON → PWA 預覽 → 套用 Firestore。
+
+支援範圍：
+- 單日目前模式
+- 完整 5 天（包含 Day 4 晴天 + 雨天）
+
+AI 回傳格式識別碼：fukuoka-itinerary-ai-v1
+
+每個行程 items 欄位：
+- time
+- tz: TW / JP
+- title
+- location
+- category: main / transport / meal / rest / bonus / other
+- desc
+- map
+- img
+- tag
+- order
+
+安全：
+- 不匯出登入帳號
+- 不匯出 Firebase config
+- 不匯出 Google Drive 重要資料捷徑
+- 不匯出護照或 Visit Japan 文件
+
+匯入保護：
+- 先解析與驗證 JSON
+- 顯示受影響 Day / mode 與項目數
+- 使用者再次確認後才套用
+- 每個受影響 Day / mode 套用前先建立最近備份
+
+
+使用前請先在行程頁按「✏️ 修改模式」。一般模式不顯示 AI 整理／匯回按鈕。

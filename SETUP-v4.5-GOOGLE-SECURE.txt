@@ -1,4 +1,4 @@
-福岡親子旅 v4.6 Editable Itinerary + Family Secure — 設定
+福岡親子旅 v4.8 Browse / Modify Mode + AI Itinerary Bridge + Family Secure — 設定
 
 已鎖定家人 Google 帳號：
 - Derek: davidforgot7727@gmail.com
@@ -27,4 +27,4 @@ Google Drive 檔案請只分享給 Derek / Jo 的 Google 帳號，不要設成�
 若某台裝置手動設定過自訂暱稱，仍會以該裝置暱稱優先；可在「更多」頁清空暱稱恢復 Derek / Jo。
 
 
-v4.6：行程資料存於 trips/fukuoka-2026-family/itinerary；最近備份存於 itineraryBackups。現有白名單 Firestore Rules 已涵蓋，不需新增額外規則。
+v4.8：行程資料存於 trips/fukuoka-2026-family/itinerary；最近備份存於 itineraryBackups。現有白名單 Firestore Rules 已涵蓋，不需新增額外規則。
