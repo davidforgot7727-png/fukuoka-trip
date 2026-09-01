@@ -64,12 +64,14 @@ footer{text-align:center;color:#8b95a5;font-size:12px;padding:20px 12px}
     <main id="content"></main>
 
     <footer>
-      慢慢走・好好吃・好好休息，就是最棒的親子旅行 ✨
+      慢慢走・好好吃・好好休息，就是最棒的親子旅行 ✨<br><small>HTML v1.1</small>
     </footer>
   </div>
   <script>
+const HOTEL_MAPS = 'https://www.google.com/maps/search/?api=1&query=Quintessa+Hotel+Fukuoka+Tenjin+Minami';
+
 const trip = {
-  hotel: {name:'Quintessa Hotel Fukuoka Tenjin Minami', jp:'クインテッサホテル福岡天神南', maps:'https://www.google.com/maps/search/?api=1&query=Quintessa+Hotel+Fukuoka+Tenjin+Minami'},
+  hotel: {name:'Quintessa Hotel Fukuoka Tenjin Minami', jp:'クインテッサホテル福岡天神南', maps:HOTEL_MAPS},
   days: {
     1:{date:'09/09（三）',theme:'抵達福岡・LaLaport・喜水丸',class:'d1',events:[
       ['11:20','✈️ 抵達福岡機場','國際線抵達。通關＋行李預留約 60–90 分鐘。','https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal'],
@@ -95,7 +97,7 @@ const trip = {
       ['11:00','🐬 海豚・海獅秀','優先看 11:00 這場，避免為下午場延後午睡。',null],
       ['11:35–12:40','🍴 Restaurant Reilly','水下景觀用餐；孕婦選熟食。',null],
       ['12:40–13:20','🐟 自由看展／企鵝／大水槽','寶寶若已睏，可直接提前離館。',null],
-      ['13:20–13:40','🚕 返回飯店','不追求把館內全部看完。',trip.hotel.maps],
+      ['13:20–13:40','🚕 返回飯店','不追求把館內全部看完。',HOTEL_MAPS],
       ['14:30–17:30','😴 飯店休息','Day 3 是體力最高的一天，下午不要再塞景點。',null],
       ['18:00','🍲 白金／藥院周邊晚餐','水炊鍋、烏龍麵或熟食定食；視體力彈性延後至 18:30。','https://www.google.com/maps/search/?api=1&query=Yakuin+Fukuoka+restaurants']
     ]},
@@ -107,7 +109,7 @@ const trip = {
       ['12:30–14:00','🥩 敘敘苑｜岩田屋新館 7F','已預約。肉品全熟。','https://www.google.com/maps/search/?api=1&query=叙々苑+福岡岩田屋店'],
       ['14:00–15:30','👶 岩田屋本館 6F Baby / Kids','Familiar、MIKI HOUSE、童鞋、育嬰室。','https://www.google.com/maps/search/?api=1&query=岩田屋本店'],
       ['15:30 後','🛍️ 體力好才順逛','UNIQLO / GU / Bic Camera / 天神地下街；不排固定時段。',null],
-      ['15:45–17:30','😴 回飯店休息','如果購物狀況很好，可延後；媽媽累就直接回飯店。',trip.hotel.maps],
+      ['15:45–17:30','😴 回飯店休息','如果購物狀況很好，可延後；媽媽累就直接回飯店。',HOTEL_MAPS],
       ['18:00','🍜 飯店周邊清淡晚餐','早點回房整理行李。','https://www.google.com/maps/search/?api=1&query=Yakuin+Fukuoka+restaurants']
     ]},
     5:{date:'09/13（日）',theme:'退房・福岡機場・回台',class:'d5',events:[
@@ -229,7 +231,13 @@ function autoOpenToday(){
   const k=`${m}-${d}`; if(map[k]) setTab(map[k]); else home();
 }
 
-updateCountdown(); autoOpenToday();
+try {
+  updateCountdown();
+  autoOpenToday();
+} catch (err) {
+  console.error('Fukuoka trip page init failed:', err);
+  content.innerHTML = `<div class="card notice danger"><b>頁面載入失敗：</b>請重新整理頁面。若仍發生，請確認已上傳最新版 index.html。</div>`;
+}
 
   </script>
 </body>
