@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#16375b">
-<meta name="description" content="2026 福岡 5天4夜親子慢活之旅 Travel Companion">
-<title>福岡親子慢活之旅｜2026</title>
+<meta name="theme-color" content="#ef9a74">
+<meta name="description" content="2026 福岡 5天4夜親子慢活小旅行 親子旅行小助手">
+<title>福岡親子慢活小旅行｜2026</title>
 <style>
 :root{
   --bg:#f3f5f8;--surface:#fff;--text:#172235;--muted:#6f7a8b;--line:#e8edf3;
@@ -60,6 +60,167 @@
   .recipient-head b{font-size:15px}
 }
 
+
+
+/* v3.2 warm cute family theme */
+:root{
+  --bg:#fff8f3;
+  --surface:#fffdfb;
+  --text:#5e4a43;
+  --muted:#9a8176;
+  --line:#f1ddd3;
+  --navy:#c7745d;
+  --blue:#f4a261;
+  --pink:#ef8f9a;
+  --green:#86b889;
+  --orange:#f0a45d;
+  --purple:#b58ad6;
+  --danger:#d66868;
+  --shadow:0 14px 32px rgba(198,129,104,.14);
+  --radius:24px;
+}
+html,body{background:
+  radial-gradient(circle at 8% 8%, rgba(255,214,193,.65) 0 80px, transparent 81px),
+  radial-gradient(circle at 92% 12%, rgba(255,236,179,.55) 0 95px, transparent 96px),
+  radial-gradient(circle at 85% 88%, rgba(255,210,222,.45) 0 110px, transparent 111px),
+  linear-gradient(180deg,#fff8f3 0%,#fff3ea 55%,#fff9f5 100%);
+}
+body{color:var(--text)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.55;background-image:
+  radial-gradient(circle at 15px 15px, rgba(255,255,255,.55) 0 2px, transparent 2.5px),
+  radial-gradient(circle at 55px 35px, rgba(255,222,196,.6) 0 3px, transparent 3.5px),
+  radial-gradient(circle at 110px 24px, rgba(255,230,190,.55) 0 2px, transparent 2.5px);
+  background-size:140px 90px;mix-blend-mode:soft-light;z-index:-1}
+.app{padding-bottom:110px}
+.hero{background:linear-gradient(135deg,#f6b089 0%,#ef8f9a 48%,#ffd8a6 100%);min-height:236px;border-radius:0 0 34px 34px;box-shadow:0 18px 40px rgba(210,128,100,.18)}
+.hero:before{content:"";position:absolute;inset:-20% auto auto -10%;width:180px;height:180px;background:rgba(255,255,255,.18);border-radius:46% 54% 60% 40%/48% 38% 62% 52%;filter:blur(2px)}
+.hero:after{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(121,71,50,.18) 42%,rgba(110,69,53,.78))}
+.hero-inner{min-height:236px}
+.hero-kicker{font-size:10px;letter-spacing:1.8px;color:#fff6ef;text-shadow:0 1px 0 rgba(0,0,0,.08)}
+.hero h1{font-size:25px;line-height:1.08;text-shadow:0 2px 14px rgba(91,51,37,.2)}
+.hero-sub{font-size:11px;color:#fff9f5}
+.hero-weather{background:rgba(255,252,248,.2);border:1px solid rgba(255,255,255,.35);box-shadow:0 10px 22px rgba(126,74,56,.12)}
+.hero-weather .hw-text,.hero-weather .hw-temp,.hero-weather .hw-icon{color:#fff}
+.hero-weather button{background:rgba(255,255,255,.2)}
+.hero-grid{gap:8px}
+.hero-stat{background:rgba(255,251,247,.18);border-color:rgba(255,255,255,.26);border-radius:16px}
+.countdown{background:rgba(255,250,246,.2);border:1px solid rgba(255,255,255,.16)}
+.photo-credit{background:rgba(145,84,60,.44)}
+.section-head h2{font-size:18px;color:#7b5a4d;letter-spacing:.2px}
+.section-head h2:before{content:"🧸 ";}
+.eyebrow{color:#c08569;letter-spacing:.9px}
+.card,.today-card,.trip-card,.recipient-group,.gift-editor-card,.check-card,.info-card{border:1px solid #f3ddd1;border-radius:26px;box-shadow:0 14px 30px rgba(202,134,110,.11)}
+.pad{padding:17px}
+.today-card{background:linear-gradient(180deg,#fffefd 0%,#fff8f2 100%)}
+.today-label{background:#fff7ec;color:#c7745d}
+.today-cover-title b{font-size:23px}
+.today-meta .pill{background:#fff2e6;color:#bf754d}
+.pill{background:#fff1e6;color:#c7745d;border:1px solid #f3d7c7}
+.pill.green{background:#eef8ef;color:#4c8757;border-color:#cfe5d1}
+.pill.orange{background:#fff4e6;color:#bc7a3a;border-color:#f0d3b0}
+.pill.red{background:#fff1ef;color:#c96565;border-color:#f3cfcb}
+.quick{background:linear-gradient(180deg,#fffdfa 0%,#fff5ed 100%);border:1px solid #f2ded3;border-radius:22px;box-shadow:0 12px 24px rgba(206,143,116,.09)}
+.quick .ico{filter:drop-shadow(0 4px 8px rgba(198,120,93,.12))}
+.quick b{color:#7b5a4d}
+.quick small{color:#9c8172}
+.live-weather{background:linear-gradient(135deg,#f3b07d 0%,#ef8f9a 50%,#f8c48a 100%);box-shadow:0 16px 32px rgba(219,140,105,.2)}
+.weather-metric{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.2)}
+.mini-gallery .tile,.mini-gallery .subtile{border-radius:22px}
+.day-cover{border-radius:28px;box-shadow:0 16px 34px rgba(192,126,102,.17)}
+.day-cover:after{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(110,67,52,.72))}
+.day-cover-content .day-num{display:inline-block;background:rgba(255,250,246,.24);padding:6px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+.today-ribbon{background:#fff6ea;color:#c7745d}
+.timeline:before{background:linear-gradient(180deg,#f3c4b5 0%,#f0d0a8 100%);left:18px;width:3px}
+.event{background:linear-gradient(180deg,#fffefe 0%,#fff8f4 100%);border:1px solid #f3ddd1;border-radius:24px;box-shadow:0 10px 24px rgba(197,132,107,.10)}
+.event:before{background:#ef9a74;box-shadow:0 0 0 2px #f5ddce}
+.event.current-event{border:2px solid #f2b967;box-shadow:0 14px 32px rgba(226,162,73,.18)}
+.event.current-event .event-body:before{background:#fff0c9;color:#ac6c05}
+.event-photo{background:#f7e7de}
+.event-photo .photo-tag{background:rgba(119,77,58,.62)}
+.event-time{color:#be856d}
+.event-title{color:#6f5448}
+.event-desc{color:#7e6a61}
+.btn{background:#fff0e8;color:#bf754d;border:1px solid #efd6c8;border-radius:14px}
+.btn.primary{background:linear-gradient(135deg,#e9906d,#c7745d);color:#fff;border:0}
+.btn.dark{background:#8b6d63;color:#fff;border:0}
+.btn.ghost{background:#fffaf6;color:#8b6d63}
+.notice{background:#fffaf4;border-color:#f1ddcf;border-radius:18px}
+.notice b{color:#8d6553}
+.mode-switch{background:#fffaf6;border-color:#f1ddd0}
+.mode-switch .mode-btn{border-radius:999px;border:1px solid #f1ddd0;background:#fff;color:#986e5b}
+.mode-switch .mode-btn.active{background:linear-gradient(135deg,#f6b07c,#ef8f9a);color:#fff;border-color:transparent;box-shadow:0 6px 14px rgba(226,144,104,.18)}
+.shop-card{background:linear-gradient(180deg,#fffefd 0%,#fff7f0 100%);border:1px solid #f1ddd0;border-radius:22px}
+.shop-card b{color:#6f5448}.shop-card small{color:#9a8176}
+.info-list li{color:#7e6a61}
+.bottom-nav{background:rgba(255,252,248,.95);border-top:1px solid #f0dbce;box-shadow:0 -10px 22px rgba(198,132,107,.08)}
+.nav-btn{color:#b58a76}.nav-btn.active{color:#d67b5c}.nav-btn.active .nav-ico{background:#fff1e6;color:#d67b5c}.nav-btn .nav-ico{border-radius:14px;padding:6px 10px}
+.sheet{background:#fffdfb}.sheet-inner{border-radius:28px 28px 0 0}
+.modal{background:#fffdfb}
+.sync-badge{background:#fff5ec;color:#bf754d;border:1px solid #f2dccd}
+.setup-box{background:#fff5e9;border-color:#e9c796;color:#8a6641}
+/* checklist warm */
+.check-tab{background:#fffdfb;border-color:#f0ddd0;color:#9b7b6d}
+.check-tab.active{background:linear-gradient(135deg,#ef9a74,#d98372);border-color:transparent;color:#fff}
+.check-tools{background:#fff8f2}
+.copy-btn{background:#fff0e8;color:#bf754d}
+.checklist-item{background:linear-gradient(180deg,#fffefd 0%,#fff7f0 100%);border:1px solid #f1ddd0;border-radius:18px}
+.checkmark{border-color:#efc3b0;background:#fffaf5}.checkmark.done{background:#e38f70;border-color:#e38f70}
+/* gifts */
+.gift-editor-card{background:linear-gradient(180deg,#fffaf6 0%,#fff5ed 100%);border-color:#f1ddd0;box-shadow:0 14px 28px rgba(198,132,107,.11)}
+.gift-editor-head h3:before{content:"🎁 ";}
+.gift-cancel{background:#fff0e8;color:#a46b58}
+.gift-collapse-btn,.recipient-tool-btn{border-color:#efd9cd;background:#fffaf5;color:#b06f58}
+.gift-field,.gift-choice-block{background:#fffefd;border-color:#f1ddd0;border-radius:18px}
+.gift-field:focus-within{border-color:#efad91;box-shadow:0 0 0 3px #fff0e7}
+.gift-field label,.gift-choice-title{color:#b78873}
+.gift-field input,.gift-field textarea{color:#6f5448}
+.gift-submit{background:linear-gradient(135deg,#ef9a74,#d98372);box-shadow:0 10px 20px rgba(217,131,114,.2)}
+.choice-pill{border-color:#ecdcd0;background:#fff9f5;color:#8b6d63}
+.choice-pill.active{box-shadow:0 6px 14px rgba(205,135,107,.14)}
+.choice-pill.must.active{background:#df7c73;border-color:#df7c73}
+.choice-pill.high.active{background:#e29b58;border-color:#e29b58}
+.choice-pill.low.active{background:#a28f85;border-color:#a28f85}
+.choice-pill.split.active{background:#6ba176;border-color:#6ba176}
+.choice-pill.single.active{background:#b083cd;border-color:#b083cd}
+.gift-preset{border-color:#efd9cd;background:#fffdfa;border-radius:15px}
+.gift-preset b{color:#6f5448}
+.gift-preset small{color:#998175}
+.recipient-toolbar b{color:#b16f58}
+.recipient-group{background:linear-gradient(180deg,#fffefd 0%,#fff8f3 100%);border-radius:22px;border:1px solid #f0ddd0}
+.recipient-head{background:transparent}
+.recipient-chevron{background:#fff1e6;color:#d67b5c}
+.gift-item{background:#fff;border-color:#f1ddd0;border-radius:18px}
+.gift-item-head b{color:#6f5448}
+.gift-item-line{color:#8f786d}
+.gift-badge{background:#fff0e5;color:#bf754d;border-color:#f1d7c8}
+.gift-badge.done{background:#e9f5ea;border-color:#cfe2d1;color:#5b8a63}
+.gift-summary{background:linear-gradient(180deg,#fff6ef 0%,#fffaf6 100%);border-color:#f0ddd0}
+.purchase-item-row{background:#fffefe;border:1px solid #f1ddd0}
+.purchase-item-qty strong{color:#c7745d}
+/* headings and stickers */
+.section-head .eyebrow{position:relative;padding-left:2px}
+.section-head .eyebrow:after{content:" ✨"}
+@media(max-width:560px){
+  .hero{min-height:226px}
+  .hero-inner{min-height:226px;padding-bottom:15px}
+  .hero h1{font-size:23px;max-width:180px}
+  .hero-weather{max-width:215px;border-radius:20px}
+  .today-cover-title b{font-size:21px}
+  .event-title{font-size:16px}
+}
+
+
+/* v3.5 travel-use upgrade */
+.next-stop-card{overflow:hidden;background:linear-gradient(145deg,#fffdf9 0%,#fff2e8 100%);border:1px solid #f0d8ca;border-radius:27px;box-shadow:0 15px 34px rgba(198,132,107,.13)}
+.next-stop-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:16px 16px 4px}.next-stop-kicker{font-size:10px;font-weight:950;color:#c2765e;letter-spacing:.7px}.next-stop-count{font-size:12px;font-weight:950;background:#fff0df;color:#b46a4e;border-radius:999px;padding:7px 10px;white-space:nowrap}.next-stop-body{padding:7px 16px 16px}.next-stop-time{font-size:13px;font-weight:950;color:#ca8065}.next-stop-title{font-size:23px;line-height:1.25;font-weight:950;color:#674d42;margin:4px 0 7px}.next-stop-desc{font-size:12.5px;color:#8a7166;line-height:1.55}.next-stop-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.next-stop-actions .btn{font-size:12px;padding:10px 13px}
+.hourly-weather-card{background:linear-gradient(135deg,#f7b47f,#ee9298);color:#fff;border:0;border-radius:25px;padding:15px;box-shadow:0 15px 30px rgba(218,139,106,.19)}
+.hourly-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.hourly-head b{font-size:16px}.hourly-head small{display:block;font-size:10px;opacity:.85;margin-top:2px}.hourly-strip{display:flex;gap:8px;overflow-x:auto;padding:12px 1px 3px;scrollbar-width:none}.hourly-strip::-webkit-scrollbar{display:none}.hourly-item{flex:0 0 82px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.22);border-radius:17px;padding:10px 7px;text-align:center;backdrop-filter:blur(5px)}.hourly-item .time{font-size:10px;font-weight:900}.hourly-item .icon{font-size:23px;margin:5px 0}.hourly-item .temp{font-size:16px;font-weight:950}.hourly-item .pop{font-size:9px;margin-top:3px;opacity:.9}.weather-advice{margin-top:10px;background:rgba(255,255,255,.19);border:1px solid rgba(255,255,255,.2);border-radius:15px;padding:10px 11px;font-size:11px;font-weight:800;line-height:1.45}.weather-advice button{border:0;background:#fff;color:#c66f56;border-radius:999px;padding:6px 9px;margin-left:5px;font-size:10px;font-weight:950}
+.trip-day-tabs{display:flex;gap:7px;overflow-x:auto;padding:2px 1px 11px;scrollbar-width:none}.trip-day-tabs::-webkit-scrollbar{display:none}.trip-day-tab{flex:0 0 auto;border:1px solid #efd9cd;background:#fffdf9;color:#9c7b6c;border-radius:999px;padding:9px 13px;font-size:11px;font-weight:950}.trip-day-tab.active{background:linear-gradient(135deg,#ef9a74,#d98372);color:#fff;border-color:transparent}.trip-day-tab.today:after{content:' •';color:#ffe29d}.trip-hub-note{font-size:11px;color:#93786c;margin:0 2px 10px}
+.gift-view-toggle{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:6px;background:#fff3e9;border:1px solid #f0dbcf;border-radius:17px;margin-bottom:13px}.gift-view-btn{border:0;background:transparent;color:#9a7768;border-radius:13px;padding:10px 8px;font-size:12px;font-weight:950}.gift-view-btn.active{background:#fff;box-shadow:0 5px 14px rgba(189,125,101,.11);color:#c46e54}.shop-group{border:1px solid #f0ddd0;border-radius:22px;background:linear-gradient(180deg,#fffefd,#fff8f2);margin-bottom:10px;overflow:hidden}.shop-group-head{padding:13px 14px;border-bottom:1px solid #f3e4da}.shop-group-head b{display:block;font-size:15px;color:#6e5146}.shop-group-head small{font-size:10px;color:#997f73}.shop-buy-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:12px 14px;border-bottom:1px solid #f4e6dc}.shop-buy-row:last-child{border-bottom:0}.shop-buy-main b{display:block;font-size:13px;color:#6e5146}.shop-buy-main small{display:block;font-size:10px;color:#998075;margin-top:3px;line-height:1.4}.shop-buy-qty{text-align:right}.shop-buy-qty strong{display:block;color:#c87459;font-size:15px}.shop-buy-qty span{font-size:9px;color:#9b8175}.shop-buy-btn{border:0;background:#fff0e7;color:#be7055;border-radius:11px;padding:7px 9px;font-size:10px;font-weight:950;margin-top:5px}
+.more-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.more-card{padding:15px;background:linear-gradient(180deg,#fffefd,#fff7ef);border:1px solid #f0ddd0;border-radius:21px}.more-card .ico{font-size:24px}.more-card b{display:block;font-size:14px;color:#6f5347;margin-top:6px}.more-card small{font-size:10px;color:#9c8175}.editor-card{background:linear-gradient(135deg,#fff6ea,#fffaf5);border:1px solid #efd7c9;border-radius:22px;padding:15px}.editor-row{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:10px}.editor-row input{min-width:0;border:1px solid #ead5c9;border-radius:13px;padding:11px 12px;background:#fff;font-size:15px;color:#6e5146}.editor-row button{border:0;border-radius:13px;padding:10px 14px;background:linear-gradient(135deg,#ef9a74,#d98372);color:#fff;font-weight:950}.editor-current{font-size:11px;color:#9b7e70;margin-top:7px}.shared-main small .editor-name,.gift-meta .editor-name{font-weight:900;color:#bd765c}
+.bottom-nav{overflow:hidden}.nav-btn{min-width:0;flex:1 1 20%;padding:7px 4px}.nav-btn .nav-ico{font-size:20px}.nav-btn .nav-txt{font-size:10px}
+@media(max-width:420px){.next-stop-title{font-size:20px}.next-stop-top{padding:14px 13px 4px}.next-stop-body{padding:6px 13px 14px}.hourly-item{flex-basis:76px}.more-grid{grid-template-columns:1fr 1fr}}
+
 </style>
 </head>
 <body>
@@ -82,18 +243,15 @@
   </div>
 </header>
 <main id="content" class="content"></main>
-<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行 ✨<br>Travel Companion HTML v3.1 Firebase</footer>
+<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行 ✨<br>親子旅行小助手 HTML v3.5 Travel Mode</footer>
 </div>
 
 <nav class="bottom-nav" aria-label="手機行程導覽">
   <button class="nav-btn active" data-day="home"><span class="nav-ico">🏠</span><span class="nav-txt">首頁</span></button>
-  <button class="nav-btn" data-day="1"><span class="nav-ico">🛍️</span><span class="nav-txt">D1</span></button>
-  <button class="nav-btn" data-day="2"><span class="nav-ico">👶</span><span class="nav-txt">D2</span></button>
-  <button class="nav-btn" data-day="3"><span class="nav-ico">🐬</span><span class="nav-txt">D3</span></button>
-  <button class="nav-btn" data-day="4"><span class="nav-ico">🌳</span><span class="nav-txt">D4</span></button>
-  <button class="nav-btn" data-day="5"><span class="nav-ico">✈️</span><span class="nav-txt">D5</span></button>
+  <button class="nav-btn" data-day="trip"><span class="nav-ico">🗓️</span><span class="nav-txt">行程</span></button>
   <button class="nav-btn" data-day="checklist"><span class="nav-ico">✅</span><span class="nav-txt">清單</span></button>
   <button class="nav-btn" data-day="gifts"><span class="nav-ico">🎁</span><span class="nav-txt">伴手禮</span></button>
+  <button class="nav-btn" data-day="more"><span class="nav-ico">☰</span><span class="nav-txt">更多</span></button>
 </nav>
 <div id="photoModal" class="photo-modal" onclick="closePhoto(event)"><button class="photo-close" onclick="closePhoto(event)">×</button><img id="modalImage" alt="放大照片"></div>
 
@@ -114,7 +272,7 @@ const SHARED_TRIP_ID='fukuoka-2026-family';
 <script>
 const HOTEL_MAPS='https://www.google.com/maps/search/?api=1&query=Quintessa+Hotel+Fukuoka+Tenjin+Minami';
 const UBER_ANDROID_LINK='intent://riderequest?pickup=my_location#Intent;scheme=uber;package=com.ubercab;S.browser_fallback_url=https%3A%2F%2Fm.uber.com%2F;end';
-const FUKUOKA_WEATHER_URL='https://api.open-meteo.com/v1/forecast?latitude=33.5902&longitude=130.4017&current=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weather_code,wind_speed_10m&timezone=Asia%2FTokyo';
+const FUKUOKA_WEATHER_URL='https://api.open-meteo.com/v1/forecast?latitude=33.5902&longitude=130.4017&current=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weather_code,wind_speed_10m&hourly=temperature_2m,precipitation_probability,weather_code&forecast_days=2&timezone=Asia%2FTokyo';
 const IMG={
   hero:'https://komc.visit-kyushu.com/assets/photo/13/large/ce4173779156354ee83efb53e0e68c3f.jpg',
   lalaport:'https://gogojp.tw/wp-content/uploads/2022/12/20230506164504_65.jpg',
@@ -203,6 +361,11 @@ const trip={hotel:{name:'Quintessa Hotel Fukuoka Tenjin Minami',maps:HOTEL_MAPS}
 ]}}};
 const content=document.getElementById('content');
 let currentPage='home';
+let selectedTripDay=Number(localStorage.getItem('fukuokaSelectedTripDay'))||tripDayToday()||1;
+let giftViewMode=localStorage.getItem('fukuokaGiftViewMode')||'recipient';
+function getEditorName(){return (localStorage.getItem('fukuokaEditorName')||'家人').trim()||'家人'}
+function saveEditorName(){const el=document.getElementById('editorNameInput');if(!el)return;const v=el.value.trim()||'家人';localStorage.setItem('fukuokaEditorName',v);const status=document.getElementById('editorNameStatus');if(status)status.textContent=`這台手機會以「${v}」記錄共同清單修改`;alert(`已設定為：${v}`)}
+function timestampText(ts){try{const d=ts?.toDate?ts.toDate():null;if(!d)return '';return new Intl.DateTimeFormat('zh-TW',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Tokyo'}).format(d)}catch(e){return ''}}
 function imageFallback(img){const box=img.parentElement;box.classList.add('broken');img.style.display='none'}
 function mapBtn(url){return url?`<a class="btn primary" target="_blank" rel="noopener" href="${url}">📍 導航</a>`:''}
 function taxiBtns(){return `<a class="btn dark" href="${UBER_ANDROID_LINK}">🚕 開 Uber App</a><a class="btn green" target="_blank" rel="noopener" href="https://go.goinc.jp/">🚖 GO</a>`}
@@ -213,29 +376,42 @@ function jpNow(){
 function tripDayToday(){const t=jpNow().date;return {'2026-09-09':1,'2026-09-10':2,'2026-09-11':3,'2026-09-12':4,'2026-09-13':5}[t]||null}
 function firstTimeMinutes(s){const m=s.match(/(\d{1,2}):(\d{2})/);return m?Number(m[1])*60+Number(m[2]):null}
 function currentEventIndex(day,events){if(tripDayToday()!==day)return -1;const ev=events||trip.days[day].events,now=jpNow().min;let idx=-1;for(let i=0;i<ev.length;i++){const st=firstTimeMinutes(ev[i].time);if(st!==null&&st<=now)idx=i}return idx<0?0:idx}
+function eventsForDay(day){const d=trip.days[day];return day===4&&day4Mode()==='rain'?d.rainEvents:d.events}
+function nextStopInfo(){
+ const td=tripDayToday();
+ if(!td){const before=new Date()<new Date('2026-09-09T00:00:00+09:00');const d=before?1:5;return {day:d,event:before?trip.days[1].events[0]:trip.days[5].events.at(-1),label:before?'旅程第一站':'旅程已結束',minutes:null}}
+ const evs=eventsForDay(td),now=jpNow().min;let upcoming=null;
+ for(const e of evs){const st=firstTimeMinutes(e.time);if(st!==null&&st>now){upcoming={event:e,minutes:st-now};break}}
+ if(upcoming)return {day:td,event:upcoming.event,label:'下一站',minutes:upcoming.minutes};
+ const idx=currentEventIndex(td,evs);return {day:td,event:evs[Math.max(0,idx)],label:'目前行程',minutes:null}
+}
+function minsText(m){if(m==null)return '';if(m<60)return `${m} 分鐘後`;const h=Math.floor(m/60),r=m%60;return r?`${h} 小時 ${r} 分後`:`${h} 小時後`}
+function nextStopCardHTML(){const n=nextStopInfo(),e=n.event;if(!e)return '';const map=e.map||'';return `<section class="section"><div class="section-head"><div><div class="eyebrow">RIGHT NOW</div><h2>現在最重要</h2></div></div><div class="next-stop-card"><div class="next-stop-top"><div><div class="next-stop-kicker">${n.label} · DAY ${n.day}</div></div>${n.minutes!=null?`<div class="next-stop-count">⏱ ${minsText(n.minutes)}</div>`:''}</div><div class="next-stop-body"><div class="next-stop-time">${esc(e.time)}</div><div class="next-stop-title">${esc(e.title)}</div><div class="next-stop-desc">${esc(e.desc||'')}</div><div class="next-stop-actions">${mapBtn(map)}${map?`<a class="btn dark" href="${UBER_ANDROID_LINK}">🚕 Uber</a>`:''}<button class="btn" onclick="openTripDay(${n.day})">🗓️ 看今日行程</button></div></div></div></section>`}
+
 function photoBlock(e){if(!e.img||e.img.startsWith('https://r.gnavi.co.jp/b1mjkkgz0000/menu3/'))return '';const srcLink=e.source||e.photoUrl||'';return `<div class="event-photo"><img src="${e.img}" alt="${e.tag||e.title}" loading="lazy" referrerpolicy="no-referrer" onclick="openPhoto(this.src,this.alt)" onerror="imageFallback(this)">${e.tag?`<span class="photo-tag">${e.tag}</span>`:''}${srcLink?`<a class="top-chip" href="${srcLink}" target="_blank" rel="noopener">照片來源 ↗</a>`:''}</div>`}
 function renderEvents(day,events){const cur=currentEventIndex(day,events);return `<div class="timeline">${events.map((e,i)=>`<article class="event ${i===cur?'current-event':''}">${photoBlock(e)}<div class="event-body"><div class="event-time">${e.time}</div><div class="event-title">${e.title}</div><div class="event-desc">${e.desc}</div><div class="actions">${mapBtn(e.map)}${e.title.includes('🚕')?taxiBtns():''}</div></div></article>`).join('')}</div>`}
 function dayCover(n,d){return `<section class="day-cover"><img src="${d.cover}" alt="${d.coverTag}" referrerpolicy="no-referrer" onerror="imageFallback(this)"><a class="top-chip" href="${d.source}" target="_blank" rel="noopener">真實照片 ↗</a><div class="day-cover-content"><div class="day-num">DAY ${n} · ${d.date}</div><h2>${d.theme}</h2><p>${dayRule(n)}</p>${tripDayToday()===n?'<span class="today-ribbon">✨ 今天行程</span>':''}</div></section>`}
 function dayRule(n){return n===1?'第一天不硬撐，16:30 後隨時可撤。':n===2?'麵包超人是主任務，櫛田神社是 Bonus。':n===3?'11:00 海豚秀＋午餐，午後回飯店。':n===4?'大濠看天氣；敘敘苑＋岩田屋是穩定主線。':'提早到機場，免稅有時間再逛。'}
 function home(){
- const td=tripDayToday();const next=td||1;const d=trip.days[next];const status=td?'今天':'下一站';
+ const td=tripDayToday();const next=td||1;const d=trip.days[next];const status=td?'今天':'旅程預覽';
  content.innerHTML=`
- <section class="section"><div class="section-head"><div><div class="eyebrow">TRIP AT A GLANCE</div><h2>${td?'今天直接看這裡':'準備出發'}</h2></div></div>
+ ${nextStopCardHTML()}
+ <section class="section"><div class="section-head"><div><div class="eyebrow">WEATHER & PLAN</div><h2>福岡接下來幾小時</h2></div></div><div id="weatherForecast" class="hourly-weather-card"><div class="hourly-head"><div><b>⏳ 正在取得福岡天氣</b><small>會依降雨機率提醒行程</small></div></div></div></section>
+ <section class="section"><div class="section-head"><div><div class="eyebrow">TRIP AT A GLANCE</div><h2>${td?'今天的主線':'準備出發'}</h2></div><button class="btn" onclick="setPage('trip')">全部行程</button></div>
  <div class="card today-card"><div class="cover"><img src="${d.cover}" alt="${d.coverTag}" referrerpolicy="no-referrer" onerror="imageFallback(this)"><span class="today-label">${status} · Day ${next}</span><div class="today-cover-title"><b>${d.theme}</b><small>${d.date} · ${dayRule(next)}</small></div></div><div class="today-meta"><span class="pill">🚕 Taxi 優先</span><span class="pill green">😴 午後休息</span><span class="pill orange">👶 親子慢活</span></div></div></section>
  <section class="section"><div class="section-head"><h2>快速入口</h2></div><div class="quick-grid">
  <a class="quick" href="${HOTEL_MAPS}" target="_blank"><span class="ico">🏨</span><b>回飯店</b><small>Quintessa 天神南</small></a>
- <a class="quick" href="${UBER_ANDROID_LINK}"><span class="ico">🚕</span><b>開 Uber App</b><small>Android 直接喚起已安裝 App</small></a>
- <a class="quick" href="https://go.goinc.jp/" target="_blank"><span class="ico">🚖</span><b>開 GO</b><small>日本計程車備用</small></a>
- <a class="quick" href="https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal" target="_blank"><span class="ico">✈️</span><b>福岡機場</b><small>國際線航廈</small></a></div></section>
- <section class="section"><div class="section-head"><h2>旅程畫面</h2></div><div class="mini-gallery"><div class="tile"><img src="${IMG.ohori}" alt="大濠公園" loading="lazy" referrerpolicy="no-referrer" onclick="openPhoto(this.src,this.alt)" onerror="imageFallback(this)"><span>大濠公園</span></div><div class="tile"><div class="subtile"><img src="${IMG.marine}" alt="Marine World" loading="lazy" referrerpolicy="no-referrer" onclick="openPhoto(this.src,this.alt)" onerror="imageFallback(this)"><span>Marine World</span></div><div class="subtile"><img src="${IMG.iwataya}" alt="岩田屋" loading="lazy" referrerpolicy="no-referrer" onclick="openPhoto(this.src,this.alt)" onerror="imageFallback(this)"><span>天神購物</span></div></div></div></section>
- <section class="section"><div class="section-head"><h2>執行原則</h2></div><div class="card pad"><div class="kpis"><div class="kpi"><b>1</b><small>每天主任務</small></div><div class="kpi"><b>2–3h</b><small>午後休息</small></div><div class="kpi"><b>Taxi</b><small>減少步行</small></div></div><p style="font-size:13px;color:var(--muted);line-height:1.6;margin:12px 0 0">景點可以少看，休息不能少。所有 Bonus 都以媽媽體力與寶寶午睡為優先。</p></div></section>
- <section class="section"><div class="section-head"><h2>出發前重要事項</h2></div><div class="card pad"><span class="pill red">🤰 MEDIF</span><h3 style="margin:10px 0 8px;font-size:16px">9/6（日）產檢＋請醫師開立文件</h3><div class="notice danger">9/6 取得後當天就依長榮指示提交，9/7 再確認 BR106 與 BR105 兩個航段都已註記／核准。MEDIF、診斷證明、媽媽手冊全部放隨身，不托運。</div></div></section>
- <section class="section"><div class="section-head"><h2>緊急資訊</h2></div><div class="card pad"><div style="display:grid;gap:8px"><a class="quick" href="tel:119"><b>🚑 119</b><small>救護車／消防</small></a><a class="quick" href="tel:110"><b>👮 110</b><small>警察</small></a><a class="quick" href="tel:+815038162787"><b>☎️ JNTO 050-3816-2787</b><small>外國旅客熱線</small></a></div></div></section>`;
+ <a class="quick" href="${UBER_ANDROID_LINK}"><span class="ico">🚕</span><b>開 Uber App</b><small>Android 直接喚起</small></a>
+ <button class="quick" onclick="setPage('checklist')" style="text-align:left"><span class="ico">✅</span><b>共同清單</b><small>出發前／Day 1–5／回程</small></button>
+ <button class="quick" onclick="setPage('gifts')" style="text-align:left"><span class="ico">🎁</span><b>伴手禮</b><small>送禮模式／購物模式</small></button></div></section>`;
  loadFukuokaWeather();
 }
 function day4Mode(){return localStorage.getItem('day4Mode')==='rain'?'rain':'sun'}
-function day4ModeSwitch(mode){localStorage.setItem('day4Mode',mode);if(currentPage==='4')dayPage(4)}
-function dayPage(n){const d=trip.days[n];const mode=n===4?day4Mode():'sun';const events=(n===4&&mode==='rain')?d.rainEvents:d.events;const view=(n===4&&mode==='rain')?{...d,theme:'雨天室內・敘敘苑・岩田屋',cover:IMG.iwataya,coverTag:'Iwataya Tenjin',source:SOURCES.iwataya}:d;let modeBar='',extra='';
+function day4ModeSwitch(mode){localStorage.setItem('day4Mode',mode);if((currentPage==='trip'&&selectedTripDay===4)||currentPage==='4')dayPage(4)}
+function tripTabsHTML(){const td=tripDayToday();return `<div class="trip-day-tabs">${[1,2,3,4,5].map(n=>`<button class="trip-day-tab ${selectedTripDay===n?'active':''} ${td===n?'today':''}" onclick="openTripDay(${n})">Day ${n}<br><span style="font-size:9px">${trip.days[n].date.split('（')[0]}</span></button>`).join('')}</div>`}
+function openTripDay(n){selectedTripDay=Number(n);localStorage.setItem('fukuokaSelectedTripDay',String(n));currentPage='trip';document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.day==='trip'));dayPage(selectedTripDay);window.scrollTo({top:0,behavior:'smooth'})}
+function tripHubPage(){selectedTripDay=tripDayToday()||selectedTripDay||1;dayPage(selectedTripDay)}
+function dayPage(n){selectedTripDay=Number(n)||selectedTripDay;const d=trip.days[n];const mode=n===4?day4Mode():'sun';const events=(n===4&&mode==='rain')?d.rainEvents:d.events;const view=(n===4&&mode==='rain')?{...d,theme:'雨天室內・敘敘苑・岩田屋',cover:IMG.iwataya,coverTag:'Iwataya Tenjin',source:SOURCES.iwataya}:d;let modeBar='',extra='';
  if(n===4){modeBar=`<section class="section d4-mode-section"><div class="section-head"><div><div class="eyebrow">DAY 4 WEATHER MODE</div><h2>依天氣切換完整行程</h2></div></div><div class="weather-toggle d4-toggle"><button class="${mode==='sun'?'active':''}" onclick="day4ModeSwitch('sun')">☀️ 晴天行程</button><button class="${mode==='rain'?'active':''}" onclick="day4ModeSwitch('rain')">🌧️ 雨天行程</button></div><div class="notice ${mode==='rain'?'warn':''}">${mode==='sun'?'<b>晴天：</b> 大濠只短散步，敘敘苑＋岩田屋是主線。':'<b>雨天：</b> 取消大濠戶外，直接天神室內；整個時間軸已切換為雨天版。'}</div></section>`;
  extra=`<section class="section"><div class="section-head"><h2>🛍️ 體力好再順逛</h2></div><div class="shop-grid">
  ${shopCard('UNIQLO / GU','Mina Tenjin｜不排固定時間',IMG.mina,'https://www.google.com/maps/search/?api=1&query=Mina+Tenjin+Fukuoka',SOURCES.mina)}
@@ -243,7 +419,7 @@ function dayPage(n){const d=trip.days[n];const mode=n===4?day4Mode():'sun';const
  ${shopCard('岩田屋本店','Baby / Kids 主線',IMG.iwataya,'https://www.google.com/maps/search/?api=1&query=岩田屋本店',SOURCES.iwataya)}
  ${shopCard('叙々苑','新館 7F｜已預約',IMG.jojoen,'https://www.google.com/maps/search/?api=1&query=叙々苑+福岡岩田屋店',SOURCES.jojoen)}
  </div></section>`}
- content.innerHTML=`${modeBar}${dayCover(n,view)}<section class="section"><div class="section-head"><div><div class="eyebrow">TIMELINE${n===4?' · '+(mode==='rain'?'RAIN':'SUN'):''}</div><h2>${n===4?(mode==='rain'?'🌧️ 雨天完整行程':'☀️ 晴天完整行程'):'今天的節奏'}</h2></div></div>${renderEvents(n,events)}</section>${extra}<section class="section"><div class="notice warn"><b>今日原則：</b> ${n===4&&mode==='rain'?'雨天不追戶外景點；室內慢逛、午餐與休息優先。':dayRule(n)}</div></section>`;
+ content.innerHTML=`<section class="section"><div class="section-head"><div><div class="eyebrow">ITINERARY</div><h2>5 天行程</h2></div></div>${tripTabsHTML()}<div class="trip-hub-note">旅行期間會自動把今天標示出來；仍可手動查看其他日期。</div></section>${modeBar}${dayCover(n,view)}<section class="section"><div class="section-head"><div><div class="eyebrow">TIMELINE${n===4?' · '+(mode==='rain'?'RAIN':'SUN'):''}</div><h2>${n===4?(mode==='rain'?'🌧️ 雨天完整行程':'☀️ 晴天完整行程'):'今天的節奏'}</h2></div></div>${renderEvents(n,events)}</section>${extra}<section class="section"><div class="notice warn"><b>今日原則：</b> ${n===4&&mode==='rain'?'雨天不追戶外景點；室內慢逛、午餐與休息優先。':dayRule(n)}</div></section>`;
 }
 function shopCard(name,sub,img,map,source){return `<div class="card shop-card"><div style="position:relative"><img src="${img}" alt="${name}" loading="lazy" referrerpolicy="no-referrer" onclick="openPhoto(this.src,this.alt)" onerror="imageFallback(this)"><a class="top-chip" href="${source}" target="_blank" rel="noopener">照片 ↗</a></div><div class="info"><b>${name}</b><small>${sub}</small><a class="btn" href="${map}" target="_blank">📍 導航</a></div></div>`}
 function weatherInfo(code){
@@ -259,14 +435,24 @@ function weatherInfo(code){
  if([95,96,99].includes(c))return {icon:'⛈️',text:'雷雨'};
  return {icon:'🌤️',text:'天氣變化'};
 }
+let latestWeatherData=null;
+function weatherAdvice(d){
+ const h=d.hourly||{},times=h.time||[],pops=h.precipitation_probability||[],codes=h.weather_code||[];const now=Date.now();let maxPop=0,rainSoon=false;
+ times.forEach((t,i)=>{const ms=new Date(t+'+09:00').getTime();if(ms>=now&&ms<=now+6*3600000){maxPop=Math.max(maxPop,Number(pops[i]||0));if([51,53,55,56,57,61,63,65,66,67,80,81,82,95,96,99].includes(Number(codes[i])))rainSoon=true}});
+ if(rainSoon||maxPop>=60)return {type:'rain',text:`接下來 6 小時最高降雨機率 ${maxPop}%｜雨具隨身，戶外行程保留彈性。`};
+ if(maxPop>=35)return {type:'watch',text:`接下來 6 小時最高降雨機率 ${maxPop}%｜建議隨身帶傘。`};
+ return {type:'ok',text:`接下來 6 小時降雨風險較低（最高 ${maxPop}%），仍注意 9 月高溫與補水。`}
+}
+function hourlyForecastHTML(d){const h=d.hourly||{},times=h.time||[],temps=h.temperature_2m||[],pops=h.precipitation_probability||[],codes=h.weather_code||[];const now=Date.now();const rows=[];for(let i=0;i<times.length&&rows.length<6;i++){const ms=new Date(times[i]+'+09:00').getTime();if(ms>=now-1800000){const wi=weatherInfo(codes[i]);rows.push(`<div class="hourly-item"><div class="time">${times[i].slice(11,16)}</div><div class="icon">${wi.icon}</div><div class="temp">${Math.round(temps[i])}°</div><div class="pop">☔ ${Number(pops[i]||0)}%</div></div>`)}}const advice=weatherAdvice(d),td=tripDayToday();const day4Btn=(td===4&&advice.type==='rain'&&day4Mode()!=='rain')?`<button onclick="day4ModeSwitch('rain');setPage('trip')">切雨天版</button>`:'';return `<div class="hourly-head"><div><b>🌤️ 福岡未來幾小時</b><small>日本時間 · 每次開啟自動更新</small></div><button class="weather-refresh" onclick="loadFukuokaWeather(true)">↻ 更新</button></div><div class="hourly-strip">${rows.join('')}</div><div class="weather-advice">${advice.type==='rain'?'🌧️':advice.type==='watch'?'☂️':'🌤️'} ${advice.text}${day4Btn}</div>`}
 async function loadFukuokaWeather(force=false){
- const el=document.getElementById('heroWeather');if(!el)return;
- if(force)el.innerHTML='<span class="hw-icon">⏳</span><div><div class="hw-temp">--°</div><div class="hw-text">更新中…</div></div>';
+ const el=document.getElementById('heroWeather'),forecast=document.getElementById('weatherForecast');if(!el&&!forecast)return;
+ if(force&&el)el.innerHTML='<span class="hw-icon">⏳</span><div><div class="hw-temp">--°</div><div class="hw-text">更新中…</div></div>';
  try{
   const r=await fetch(FUKUOKA_WEATHER_URL,{cache:'no-store'});if(!r.ok)throw new Error('weather '+r.status);
-  const d=await r.json(),c=d.current,w=weatherInfo(c.weather_code);const temp=Math.round(c.temperature_2m),feel=Math.round(c.apparent_temperature),hum=Math.round(c.relative_humidity_2m);const rain=Number(c.precipitation||0);
-  el.innerHTML=`<span class="hw-icon">${w.icon}</span><div><div class="hw-temp">${temp}°</div><div class="hw-text">${w.text} · 體感 ${feel}° · 濕度 ${hum}%${rain>0?' · '+rain+'mm':''}</div></div><button onclick="loadFukuokaWeather(true)" aria-label="更新福岡天氣">↻</button>`;
- }catch(err){console.warn('Weather load failed',err);el.innerHTML='<span class="hw-icon">🌥️</span><div><div class="hw-temp">--°</div><div class="hw-text">福岡天氣暫時無法更新</div></div><button onclick="loadFukuokaWeather(true)" aria-label="重新更新福岡天氣">↻</button>'}
+  const d=await r.json();latestWeatherData=d;const c=d.current,w=weatherInfo(c.weather_code);const temp=Math.round(c.temperature_2m),feel=Math.round(c.apparent_temperature),hum=Math.round(c.relative_humidity_2m),rain=Number(c.precipitation||0);
+  if(el)el.innerHTML=`<span class="hw-icon">${w.icon}</span><div><div class="hw-temp">${temp}°</div><div class="hw-text">${w.text} · 體感 ${feel}° · 濕度 ${hum}%${rain>0?' · '+rain+'mm':''}</div></div><button onclick="loadFukuokaWeather(true)" aria-label="更新福岡天氣">↻</button>`;
+  if(forecast)forecast.innerHTML=hourlyForecastHTML(d);
+ }catch(err){console.warn('Weather load failed',err);if(el)el.innerHTML='<span class="hw-icon">🌥️</span><div><div class="hw-temp">--°</div><div class="hw-text">福岡天氣暫時無法更新</div></div><button onclick="loadFukuokaWeather(true)" aria-label="重新更新福岡天氣">↻</button>';if(forecast)forecast.innerHTML='<div class="weather-advice">目前無法取得預報，行程仍可正常使用。<button onclick="loadFukuokaWeather(true)">重試</button></div>'}
 }
 let sharedDb=null,sharedAuth=null,sharedUser=null,sharedUnsubs=[];
 function firebaseConfigured(){return FIREBASE_CONFIG&&FIREBASE_CONFIG.apiKey&&FIREBASE_CONFIG.projectId&&FIREBASE_CONFIG.appId}
@@ -306,7 +492,7 @@ async function checklistPage(){
  if(await ensureFirebase())subscribeChecklist();
 }
 function checklistRef(){return sharedDb.collection('trips').doc(SHARED_TRIP_ID).collection('checklist')}
-async function addChecklistItem(e){e.preventDefault();if(!await ensureFirebase())return alert('尚未設定 Firebase');const el=document.getElementById('checkAdd'),text=el.value.trim();if(!text)return;await checklistRef().add({text,section:activeCheckSection,done:false,createdAt:firebase.firestore.FieldValue.serverTimestamp(),updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid});el.value=''}
+async function addChecklistItem(e){e.preventDefault();if(!await ensureFirebase())return alert('尚未設定 Firebase');const el=document.getElementById('checkAdd'),text=el.value.trim();if(!text)return;await checklistRef().add({text,section:activeCheckSection,done:false,createdAt:firebase.firestore.FieldValue.serverTimestamp(),updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid,editorName:getEditorName()});el.value=''}
 function subscribeChecklist(){const badge=document.getElementById('syncBadge');if(badge){badge.className='sync-badge live';badge.textContent='● 即時同步中'};const unsub=checklistRef().orderBy('createdAt','asc').onSnapshot(s=>{checklistCache=s.docs.map(d=>({id:d.id,...d.data()}));renderChecklistSection()},e=>{console.error(e)});sharedUnsubs.push(unsub)}
 function switchChecklistSection(section){activeCheckSection=normalizeCheckSection(section);localStorage.setItem('fukuokaCheckSection',activeCheckSection);document.querySelectorAll('.check-tab').forEach(b=>b.classList.toggle('active',b.id==='ctab-'+activeCheckSection));const add=document.getElementById('checkAdd');if(add)add.placeholder=`新增到 ${checkSectionLabel(activeCheckSection)}，例如：推車雨罩`;const src=document.getElementById('copySource');if(src){src.innerHTML=checkSectionOptions('',activeCheckSection)};renderChecklistSection()}
 function renderChecklistSection(){
@@ -314,16 +500,16 @@ function renderChecklistSection(){
  const rows=checklistCache.filter(x=>normalizeCheckSection(x.section)===activeCheckSection),el=document.getElementById('checkList'),head=document.getElementById('checkSectionHeading'),prog=document.getElementById('checkSectionProgress');if(!el)return;if(head)head.textContent=checkSectionLabel(activeCheckSection);if(prog)prog.textContent=rows.length?`${rows.filter(x=>x.done).length}/${rows.length} 完成`:'尚無項目';el.innerHTML=rows.length?rows.map(x=>checkItemHTML(x.id,x)).join(''):'<div class="list-empty">這個分頁目前沒有項目，可以新增或從其他分頁複製。</div>'
 }
 function esc(x=''){return String(x).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
-function checkItemHTML(id,x){const sec=normalizeCheckSection(x.section);return `<div class="shared-item ${x.done?'done':''}" id="ci-${id}"><input type="checkbox" ${x.done?'checked':''} onchange="toggleChecklist('${id}',this.checked)"><div class="shared-main"><b>${esc(x.text)}</b><small>${x.done?'已完成':'待完成'} · ${checkSectionLabel(sec)}</small><div id="edit-${id}" class="hidden edit-row with-section"><input value="${esc(x.text)}" id="editInput-${id}" maxlength="80"><select id="editSection-${id}">${checkSectionOptions(sec)}</select><button onclick="saveChecklistEdit('${id}')">儲存</button></div><div id="copy-${id}" class="hidden copy-row"><select id="copyTarget-${id}">${checkSectionOptions('',sec)}</select><button onclick="copyChecklistItem('${id}')">複製</button></div></div><div class="shared-actions"><button class="icon-btn" title="複製到其他分頁" onclick="document.getElementById('copy-${id}').classList.toggle('hidden')">📋</button><button class="icon-btn" title="編輯" onclick="document.getElementById('edit-${id}').classList.toggle('hidden')">✏️</button><button class="icon-btn" title="刪除" onclick="deleteChecklist('${id}')">🗑️</button></div></div>`}
-async function toggleChecklist(id,done){if(await ensureFirebase())await checklistRef().doc(id).update({done,updatedAt:firebase.firestore.FieldValue.serverTimestamp()})}
-async function saveChecklistEdit(id){const el=document.getElementById('editInput-'+id),sec=document.getElementById('editSection-'+id);if(!el||!el.value.trim())return;if(await ensureFirebase())await checklistRef().doc(id).update({text:el.value.trim(),section:normalizeCheckSection(sec?.value),updatedAt:firebase.firestore.FieldValue.serverTimestamp()})}
-async function copyChecklistItem(id){if(!await ensureFirebase())return;const item=checklistCache.find(x=>x.id===id),target=document.getElementById('copyTarget-'+id)?.value;if(!item||!target)return;const duplicate=checklistCache.some(x=>normalizeCheckSection(x.section)===target&&String(x.text).trim().toLowerCase()===String(item.text).trim().toLowerCase());if(duplicate&&!confirm(`「${item.text}」在 ${checkSectionLabel(target)} 已存在，仍要再複製一份嗎？`))return;await checklistRef().add({text:item.text,section:target,done:false,createdAt:firebase.firestore.FieldValue.serverTimestamp(),updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid})}
-async function copyChecklistSectionToCurrent(){if(!await ensureFirebase())return;const source=document.getElementById('copySource')?.value;if(!source||source===activeCheckSection)return;const sourceRows=checklistCache.filter(x=>normalizeCheckSection(x.section)===source);if(!sourceRows.length)return alert(`${checkSectionLabel(source)} 目前沒有項目。`);const existing=new Set(checklistCache.filter(x=>normalizeCheckSection(x.section)===activeCheckSection).map(x=>String(x.text).trim().toLowerCase()));const rows=sourceRows.filter(x=>!existing.has(String(x.text).trim().toLowerCase()));if(!rows.length)return alert('這些項目在目前分頁都已經存在。');if(!confirm(`要把 ${checkSectionLabel(source)} 的 ${rows.length} 個項目複製到 ${checkSectionLabel(activeCheckSection)} 嗎？\n已存在的同名項目會自動略過。`))return;const batch=sharedDb.batch();rows.forEach(x=>{const ref=checklistRef().doc();batch.set(ref,{text:x.text,section:activeCheckSection,done:false,createdAt:firebase.firestore.FieldValue.serverTimestamp(),updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid})});await batch.commit()}
+function checkItemHTML(id,x){const sec=normalizeCheckSection(x.section);return `<div class="shared-item ${x.done?'done':''}" id="ci-${id}"><input type="checkbox" ${x.done?'checked':''} onchange="toggleChecklist('${id}',this.checked)"><div class="shared-main"><b>${esc(x.text)}</b><small>${x.done?'已完成':'待完成'} · ${checkSectionLabel(sec)}${x.editorName?` · <span class="editor-name">${esc(x.editorName)}</span>${timestampText(x.updatedAt)?' '+timestampText(x.updatedAt):''}`:''}</small><div id="edit-${id}" class="hidden edit-row with-section"><input value="${esc(x.text)}" id="editInput-${id}" maxlength="80"><select id="editSection-${id}">${checkSectionOptions(sec)}</select><button onclick="saveChecklistEdit('${id}')">儲存</button></div><div id="copy-${id}" class="hidden copy-row"><select id="copyTarget-${id}">${checkSectionOptions('',sec)}</select><button onclick="copyChecklistItem('${id}')">複製</button></div></div><div class="shared-actions"><button class="icon-btn" title="複製到其他分頁" onclick="document.getElementById('copy-${id}').classList.toggle('hidden')">📋</button><button class="icon-btn" title="編輯" onclick="document.getElementById('edit-${id}').classList.toggle('hidden')">✏️</button><button class="icon-btn" title="刪除" onclick="deleteChecklist('${id}')">🗑️</button></div></div>`}
+async function toggleChecklist(id,done){if(await ensureFirebase())await checklistRef().doc(id).update({done,updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid,editorName:getEditorName()})}
+async function saveChecklistEdit(id){const el=document.getElementById('editInput-'+id),sec=document.getElementById('editSection-'+id);if(!el||!el.value.trim())return;if(await ensureFirebase())await checklistRef().doc(id).update({text:el.value.trim(),section:normalizeCheckSection(sec?.value),updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid,editorName:getEditorName()})}
+async function copyChecklistItem(id){if(!await ensureFirebase())return;const item=checklistCache.find(x=>x.id===id),target=document.getElementById('copyTarget-'+id)?.value;if(!item||!target)return;const duplicate=checklistCache.some(x=>normalizeCheckSection(x.section)===target&&String(x.text).trim().toLowerCase()===String(item.text).trim().toLowerCase());if(duplicate&&!confirm(`「${item.text}」在 ${checkSectionLabel(target)} 已存在，仍要再複製一份嗎？`))return;await checklistRef().add({text:item.text,section:target,done:false,createdAt:firebase.firestore.FieldValue.serverTimestamp(),updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid,editorName:getEditorName()})}
+async function copyChecklistSectionToCurrent(){if(!await ensureFirebase())return;const source=document.getElementById('copySource')?.value;if(!source||source===activeCheckSection)return;const sourceRows=checklistCache.filter(x=>normalizeCheckSection(x.section)===source);if(!sourceRows.length)return alert(`${checkSectionLabel(source)} 目前沒有項目。`);const existing=new Set(checklistCache.filter(x=>normalizeCheckSection(x.section)===activeCheckSection).map(x=>String(x.text).trim().toLowerCase()));const rows=sourceRows.filter(x=>!existing.has(String(x.text).trim().toLowerCase()));if(!rows.length)return alert('這些項目在目前分頁都已經存在。');if(!confirm(`要把 ${checkSectionLabel(source)} 的 ${rows.length} 個項目複製到 ${checkSectionLabel(activeCheckSection)} 嗎？\n已存在的同名項目會自動略過。`))return;const batch=sharedDb.batch();rows.forEach(x=>{const ref=checklistRef().doc();batch.set(ref,{text:x.text,section:activeCheckSection,done:false,createdAt:firebase.firestore.FieldValue.serverTimestamp(),updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid,editorName:getEditorName()})});await batch.commit()}
 async function deleteChecklist(id){if(confirm('刪除這個 Checklist 項目？')&&await ensureFirebase())await checklistRef().doc(id).delete()}
 function giftsRef(){return sharedDb.collection('trips').doc(SHARED_TRIP_ID).collection('gifts')}
 async function giftsPage(){
  const ok=await ensureFirebase();
- content.innerHTML=`<section class="section"><div class="section-head"><div><div class="eyebrow">SHARED SOUVENIRS</div><h2>🎁 預計伴手禮</h2></div>${syncBadge(false)}</div>${sharedSetupNotice()}<div class="card pad"><div class="notice" style="margin-bottom:12px"><b>以「要送的人」為主整理</b><br>可以先只建立「要送的人」，其他資料之後再補；也可以從既有資料快速帶入。按 ✏️ 會把內容完整帶回上方表單修改。</div>
+ content.innerHTML=`<section class="section"><div class="section-head"><div><div class="eyebrow">SHARED SOUVENIRS</div><h2>🎁 預計伴手禮</h2></div>${syncBadge(false)}</div>${sharedSetupNotice()}<div class="card pad"><div class="notice" style="margin-bottom:12px"><b>規劃時看「送禮模式」，到店裡改用「購物模式」</b><br>兩種模式共用同一份 Firebase 資料，不需要重複填寫。</div><div class="gift-view-toggle"><button id="giftModeRecipient" class="gift-view-btn ${giftViewMode==='recipient'?'active':''}" onclick="setGiftViewMode('recipient')">👤 送禮模式</button><button id="giftModeShop" class="gift-view-btn ${giftViewMode==='shop'?'active':''}" onclick="setGiftViewMode('shop')">🏬 購物模式</button></div>
  <div class="gift-editor-card collapsed" id="giftEditor"><div class="gift-editor-head"><div><div class="eyebrow" id="giftFormEyebrow">NEW SOUVENIR</div><h3 id="giftFormTitle">新增伴手禮</h3></div><div class="gift-editor-head-actions"><button id="giftCancelBtn" class="gift-cancel hidden" type="button" onclick="event.stopPropagation();resetGiftForm()">取消編輯</button><button id="giftCollapseBtn" class="gift-collapse-btn" type="button" onclick="toggleGiftEditor()">展開 ▼</button></div></div>
  <div class="gift-editor-body" id="giftEditorBody"><form id="giftForm" class="gift-form-v2" onsubmit="submitGiftForm(event)">
   <div class="gift-field"><label><span class="field-ico">👤</span>要送的人 <span style="color:#b83a32">＊必填</span></label><input id="giftRecipient" list="giftRecipientList" maxlength="60" placeholder="爸媽、同事、朋友…" required><div class="gift-edit-hint">可以先只填這一欄建立對象，其他資料之後再補。</div></div>
@@ -337,7 +523,7 @@ async function giftsPage(){
  </form>
  <datalist id="giftRecipientList"></datalist><datalist id="giftShopList"></datalist><datalist id="giftNameList"></datalist>
  <div id="giftPresets" class="gift-presets"></div></div></div>
- <div id="giftSummary" class="gift-summary"></div><div class="recipient-toolbar"><b>👥 收禮人清單</b><div class="recipient-toolbar-actions"><button type="button" class="recipient-tool-btn" onclick="setAllRecipientGroups(false)">全部展開</button><button type="button" class="recipient-tool-btn" onclick="setAllRecipientGroups(true)">全部收合</button></div></div><div id="giftList" class="gift-list-by-recipient"><div class="list-empty">${firebaseConfigured()?'正在連線…':'Firebase 連線後即可共同新增編輯'}</div></div><div id="giftPurchaseTotals" class="purchase-totals"></div></div></section>`;
+ <div id="giftSummary" class="gift-summary"></div><div id="recipientToolbar" class="recipient-toolbar"><b>👥 收禮人清單</b><div class="recipient-toolbar-actions"><button type="button" class="recipient-tool-btn" onclick="setAllRecipientGroups(false)">全部展開</button><button type="button" class="recipient-tool-btn" onclick="setAllRecipientGroups(true)">全部收合</button></div></div><div id="giftList" class="gift-list-by-recipient"><div class="list-empty">${firebaseConfigured()?'正在連線…':'Firebase 連線後即可共同新增編輯'}</div></div><div id="giftPurchaseTotals" class="purchase-totals"></div></div></section>`;
  initGiftEditorCollapse();
  if(ok)subscribeGifts()
 }
@@ -356,7 +542,7 @@ function fillGiftForm(x){document.getElementById('giftRecipient').value=x.recipi
 function resetGiftForm(){giftEditingId=null;const form=document.getElementById('giftForm');if(form)form.reset();const qty=document.getElementById('giftQty');if(qty)qty.value=1;setGiftChoice('priority','normal');setGiftChoice('type','split');const title=document.getElementById('giftFormTitle'),eye=document.getElementById('giftFormEyebrow'),btn=document.getElementById('giftSubmitBtn'),cancel=document.getElementById('giftCancelBtn'),card=document.getElementById('giftEditor');if(title)title.textContent='新增伴手禮';if(eye)eye.textContent='NEW SOUVENIR';if(btn)btn.textContent='＋ 新增伴手禮';if(cancel)cancel.classList.add('hidden');if(card)card.classList.remove('editing')}
 function editGift(id){const x=giftRowsCache.find(r=>r.id===id);if(!x)return;expandRecipientByName((x.recipient||'').trim()||'未指定對象');giftEditingId=id;fillGiftForm(x);const title=document.getElementById('giftFormTitle'),eye=document.getElementById('giftFormEyebrow'),btn=document.getElementById('giftSubmitBtn'),cancel=document.getElementById('giftCancelBtn'),card=document.getElementById('giftEditor');if(title)title.textContent='編輯伴手禮';if(eye)eye.textContent='EDIT SOUVENIR';if(btn)btn.textContent='✓ 儲存修改';if(cancel)cancel.classList.remove('hidden');if(card)card.classList.add('editing');openGiftEditor()}
 function loadGiftPreset(id){const x=giftRowsCache.find(r=>r.id===id);if(!x)return;resetGiftForm();fillGiftForm(x);const title=document.getElementById('giftFormTitle'),eye=document.getElementById('giftFormEyebrow'),btn=document.getElementById('giftSubmitBtn');if(title)title.textContent='以既有資料新增';if(eye)eye.textContent='QUICK FILL';if(btn)btn.textContent='＋ 另存為新伴手禮';openGiftEditor()}
-async function submitGiftForm(e){e.preventDefault();if(!await ensureFirebase())return alert('尚未設定 Firebase');const name=document.getElementById('giftName').value.trim(),recipient=document.getElementById('giftRecipient').value.trim();if(!recipient)return alert('請先填寫「要送的人」');const hasItem=!!name;const data={recipient,shop:document.getElementById('giftShop').value.trim(),name,priority:document.getElementById('giftPriority').value||'normal',giftType:document.getElementById('giftType').value||'split',qty:hasItem?(Number(document.getElementById('giftQty').value)||1):0,budget:Number(document.getElementById('giftBudget').value)||0,note:document.getElementById('giftNote').value.trim(),draft:!hasItem,updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid};if(giftEditingId){await giftsRef().doc(giftEditingId).update(data)}else{await giftsRef().add({...data,done:false,createdAt:firebase.firestore.FieldValue.serverTimestamp()})}resetGiftForm()}
+async function submitGiftForm(e){e.preventDefault();if(!await ensureFirebase())return alert('尚未設定 Firebase');const name=document.getElementById('giftName').value.trim(),recipient=document.getElementById('giftRecipient').value.trim();if(!recipient)return alert('請先填寫「要送的人」');const hasItem=!!name;const data={recipient,shop:document.getElementById('giftShop').value.trim(),name,priority:document.getElementById('giftPriority').value||'normal',giftType:document.getElementById('giftType').value||'split',qty:hasItem?(Number(document.getElementById('giftQty').value)||1):0,budget:Number(document.getElementById('giftBudget').value)||0,note:document.getElementById('giftNote').value.trim(),draft:!hasItem,updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid,editorName:getEditorName()};if(giftEditingId){await giftsRef().doc(giftEditingId).update(data)}else{await giftsRef().add({...data,done:false,createdAt:firebase.firestore.FieldValue.serverTimestamp()})}resetGiftForm()}
 const RECIPIENT_COLLAPSE_KEY='fukuokaRecipientCollapseV3';
 function recipientCollapseState(){try{return JSON.parse(localStorage.getItem(RECIPIENT_COLLAPSE_KEY)||'{}')||{}}catch(e){return {}}}
 function recipientIsCollapsed(name){const state=recipientCollapseState();return Object.prototype.hasOwnProperty.call(state,name)?!!state[name]:true}
@@ -364,21 +550,26 @@ function saveRecipientCollapsed(name,collapsed){const state=recipientCollapseSta
 function toggleRecipientGroup(btn){const group=btn.closest('.recipient-group');if(!group)return;const name=btn.dataset.recipient||'';const collapsed=!group.classList.contains('collapsed');group.classList.toggle('collapsed',collapsed);btn.setAttribute('aria-expanded',collapsed?'false':'true');saveRecipientCollapsed(name,collapsed)}
 function setAllRecipientGroups(collapsed){const state=recipientCollapseState();document.querySelectorAll('.recipient-group').forEach(group=>{const btn=group.querySelector('.recipient-head'),name=btn?.dataset.recipient||'';group.classList.toggle('collapsed',collapsed);if(btn)btn.setAttribute('aria-expanded',collapsed?'false':'true');if(name)state[name]=!!collapsed});try{localStorage.setItem(RECIPIENT_COLLAPSE_KEY,JSON.stringify(state))}catch(e){}}
 function expandRecipientByName(name){document.querySelectorAll('.recipient-head').forEach(btn=>{if((btn.dataset.recipient||'')===name){const group=btn.closest('.recipient-group');group?.classList.remove('collapsed');btn.setAttribute('aria-expanded','true');saveRecipientCollapsed(name,false)}})}
-function subscribeGifts(){const badge=document.getElementById('syncBadge');if(badge){badge.className='sync-badge live';badge.textContent='● 即時同步中'};const unsub=giftsRef().orderBy('createdAt','asc').onSnapshot(s=>{const el=document.getElementById('giftList');if(!el)return;giftRowsCache=s.docs.map(d=>({id:d.id,...d.data()}));el.innerHTML=giftRowsCache.length?giftGroupsHTML(giftRowsCache):'<div class="list-empty">目前沒有伴手禮，從上方新增第一個吧。</div>';renderGiftSummary(giftRowsCache);renderGiftPurchaseTotals(giftRowsCache);renderGiftSuggestions();renderGiftPresets(giftRowsCache)},e=>console.error(e));sharedUnsubs.push(unsub)}
+function setGiftViewMode(mode){giftViewMode=mode==='shop'?'shop':'recipient';localStorage.setItem('fukuokaGiftViewMode',giftViewMode);document.getElementById('giftModeRecipient')?.classList.toggle('active',giftViewMode==='recipient');document.getElementById('giftModeShop')?.classList.toggle('active',giftViewMode==='shop');document.getElementById('recipientToolbar')?.classList.toggle('hidden',giftViewMode==='shop');renderGiftMainList()}
+function renderGiftMainList(){const el=document.getElementById('giftList');if(!el)return;document.getElementById('recipientToolbar')?.classList.toggle('hidden',giftViewMode==='shop');if(!giftRowsCache.length){el.innerHTML='<div class="list-empty">目前沒有伴手禮，從上方新增第一個吧。</div>';return}el.innerHTML=giftViewMode==='shop'?giftShopGroupsHTML(giftRowsCache):giftGroupsHTML(giftRowsCache)}
+function giftShopGroupsHTML(rows){const filled=rows.filter(x=>(x.name||'').trim()),groups={};filled.forEach(x=>{const shop=(x.shop||x.place||'').trim()||'尚未指定店名';const key=shop+'||'+x.name.trim();if(!groups[key])groups[key]={shop,name:x.name.trim(),rows:[]};groups[key].rows.push(x)});if(!filled.length)return '<div class="list-empty">目前只有收禮人，補上「店名／品項」後就會出現購物模式。</div>';const byShop={};Object.values(groups).forEach(g=>(byShop[g.shop]||(byShop[g.shop]=[])).push(g));return Object.entries(byShop).sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant')).map(([shop,items])=>`<section class="shop-group"><div class="shop-group-head"><b>🏬 ${esc(shop)}</b><small>${items.length} 種品項</small></div>${items.sort((a,b)=>a.name.localeCompare(b.name,'zh-Hant')).map(g=>{const planned=g.rows.reduce((n,x)=>n+Math.max(1,Number(x.qty)||1),0),bought=g.rows.filter(x=>x.done).reduce((n,x)=>n+Math.max(1,Number(x.qty)||1),0),remain=Math.max(0,planned-bought),recips=[...new Set(g.rows.map(x=>(x.recipient||'').trim()).filter(Boolean))];return `<div class="shop-buy-row"><div class="shop-buy-main"><b>${esc(g.name)}</b><small>送：${esc(recips.join('、')||'未指定')} · ${remain?`還差 ${remain}`:'已買齊'}</small></div><div class="shop-buy-qty"><strong>× ${planned}</strong><span>已買 ${bought}</span>${remain?`<button class="shop-buy-btn" onclick="markGiftGroupDone('${encodeURIComponent(shop)}','${encodeURIComponent(g.name)}')">✓ 全部買齊</button>`:''}</div></div>`}).join('')}</section>`).join('')}
+async function markGiftGroupDone(shopEnc,nameEnc){if(!await ensureFirebase())return;const shop=decodeURIComponent(shopEnc),name=decodeURIComponent(nameEnc),rows=giftRowsCache.filter(x=>(x.name||'').trim()===name&&((x.shop||x.place||'').trim()||'尚未指定店名')===shop&&!x.done);if(!rows.length)return;const batch=sharedDb.batch();rows.forEach(x=>batch.update(giftsRef().doc(x.id),{done:true,updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid,editorName:getEditorName()}));await batch.commit()}
+function subscribeGifts(){const badge=document.getElementById('syncBadge');if(badge){badge.className='sync-badge live';badge.textContent='● 即時同步中'};const unsub=giftsRef().orderBy('createdAt','asc').onSnapshot(s=>{const el=document.getElementById('giftList');if(!el)return;giftRowsCache=s.docs.map(d=>({id:d.id,...d.data()}));renderGiftMainList();renderGiftSummary(giftRowsCache);renderGiftPurchaseTotals(giftRowsCache);renderGiftSuggestions();renderGiftPresets(giftRowsCache)},e=>console.error(e));sharedUnsubs.push(unsub)}
 function giftGroupsHTML(rows){const rank={must:0,high:1,normal:2,low:3};const groups={};rows.forEach(x=>{const recipient=(x.recipient||'').trim()||'未指定對象';(groups[recipient]||(groups[recipient]=[])).push(x)});return Object.entries(groups).sort((a,b)=>a[0].localeCompare(b[0],'zh-Hant')).map(([recipient,items])=>{items.sort((a,b)=>{const an=(a.name||'').trim(),bn=(b.name||'').trim();if(!an&&bn)return 1;if(an&&!bn)return -1;const p=(rank[a.priority||'normal']??2)-(rank[b.priority||'normal']??2);return p||an.localeCompare(bn,'zh-Hant')});const filled=items.filter(x=>(x.name||'').trim()),done=filled.filter(x=>x.done).length,qty=filled.reduce((n,x)=>n+Math.max(1,Number(x.qty)||1),0),drafts=items.length-filled.length,collapsed=recipientIsCollapsed(recipient);const status=filled.length?`${done}/${filled.length} 項完成 · 預計 ${qty} 件${drafts?` · ${drafts} 筆待補資料`:''}`:`尚未填入品項 · 可稍後補資料`;return `<section class="recipient-group ${collapsed?'collapsed':''}"><button type="button" class="recipient-head" data-recipient="${esc(recipient)}" aria-expanded="${collapsed?'false':'true'}" onclick="toggleRecipientGroup(this)"><div class="recipient-head-left"><b>👤 ${esc(recipient)}</b><small>${status}</small></div><div class="recipient-head-right"><span class="recipient-count">${filled.length} 項</span><span class="recipient-chevron">⌃</span></div></button><div class="recipient-items">${items.map(giftHTML).join('')}</div></section>`}).join('')}
 function renderGiftPurchaseTotals(rows){const el=document.getElementById('giftPurchaseTotals');if(!el)return;const filled=rows.filter(x=>(x.name||'').trim());if(!filled.length){el.innerHTML=rows.length?'<div class="purchase-totals-head"><div><div class="eyebrow">PURCHASE TOTAL</div><h3>🧮 要購買的品項總量</h3></div></div><div class="list-empty">已建立收禮人，等補上品項後會自動統整購買總量。</div>':'';return}const map={};let total=0,bought=0;filled.forEach(x=>{const name=x.name.trim(),qty=Math.max(1,Number(x.qty)||1);total+=qty;if(x.done)bought+=qty;if(!map[name])map[name]={name,planned:0,bought:0,shops:new Set()};map[name].planned+=qty;if(x.done)map[name].bought+=qty;const shop=(x.shop||x.place||'').trim();if(shop)map[name].shops.add(shop)});const items=Object.values(map).sort((a,b)=>(b.planned-b.bought)-(a.planned-a.bought)||b.planned-a.planned||a.name.localeCompare(b.name,'zh-Hant'));el.innerHTML=`<div class="purchase-totals-head"><div><div class="eyebrow">PURCHASE TOTAL</div><h3>🧮 要購買的品項總量</h3></div><small>相同品項自動合併</small></div><div class="purchase-total-kpis"><div><b>${total}</b><small>預計總數量</small></div><div><b>${bought}</b><small>已買數量</small></div><div><b>${Math.max(0,total-bought)}</b><small>待買數量</small></div></div><div class="purchase-item-list">${items.map(i=>{const remain=Math.max(0,i.planned-i.bought),shops=[...i.shops];return `<div class="purchase-item-row"><div><b>${esc(i.name)}</b><small>${shops.length?'店名：'+esc(shops.join('／')):'尚未指定店名'}</small></div><div class="purchase-item-qty"><strong>× ${i.planned}</strong><span>${remain?`待買 ${remain}`:'✓ 已完成'}</span></div></div>`}).join('')}</div>`}
-function giftHTML(x){const name=(x.name||'').trim(),isDraft=!name,priority=x.priority||'normal',giftType=x.giftType||'split',shop=x.shop||x.place||'';if(isDraft)return `<div class="gift-item"><div style="width:21px;text-align:center;font-size:17px;margin-top:1px">📝</div><div><div class="gift-name">待補伴手禮資料</div><div class="gift-tags"><span class="gift-tag priority-normal">先建立對象</span></div><div class="gift-meta">已先建立收禮人，店名、品項、數量、預算等可以之後再補。</div><div class="gift-edit-hint">✏️ 點編輯即可補完整資料</div></div><div class="shared-actions"><button class="icon-btn" title="補資料" onclick="editGift('${x.id}')">✏️</button><button class="icon-btn" title="刪除" onclick="deleteGift('${x.id}')">🗑️</button></div></div>`;const meta=[shop?`店名：${esc(shop)}`:'',`數量 ${Math.max(1,Number(x.qty)||1)}`,x.budget?`單件預算 ¥${Number(x.budget).toLocaleString()}`:'',x.note?esc(x.note):''].filter(Boolean).join(' · ');return `<div class="gift-item ${x.done?'done':''}"><input type="checkbox" ${x.done?'checked':''} onchange="toggleGift('${x.id}',this.checked)"><div><div class="gift-name">${esc(name)}</div><div class="gift-tags"><span class="gift-tag priority-${priority}">${priorityLabel(priority)}</span><span class="gift-tag type">${giftTypeLabel(giftType)}</span></div><div class="gift-meta">${meta||'尚未填寫購買資訊'}</div><div class="gift-edit-hint">✏️ 編輯會把這筆資料完整帶回上方表單</div></div><div class="shared-actions"><button class="icon-btn" title="帶入編輯" onclick="editGift('${x.id}')">✏️</button><button class="icon-btn" title="刪除" onclick="deleteGift('${x.id}')">🗑️</button></div></div>`}
+function giftHTML(x){const name=(x.name||'').trim(),isDraft=!name,priority=x.priority||'normal',giftType=x.giftType||'split',shop=x.shop||x.place||'';if(isDraft)return `<div class="gift-item"><div style="width:21px;text-align:center;font-size:17px;margin-top:1px">📝</div><div><div class="gift-name">待補伴手禮資料</div><div class="gift-tags"><span class="gift-tag priority-normal">先建立對象</span></div><div class="gift-meta">已先建立收禮人，店名、品項、數量、預算等可以之後再補。</div><div class="gift-edit-hint">✏️ 點編輯即可補完整資料</div></div><div class="shared-actions"><button class="icon-btn" title="補資料" onclick="editGift('${x.id}')">✏️</button><button class="icon-btn" title="刪除" onclick="deleteGift('${x.id}')">🗑️</button></div></div>`;const meta=[shop?`店名：${esc(shop)}`:'',`數量 ${Math.max(1,Number(x.qty)||1)}`,x.budget?`單件預算 ¥${Number(x.budget).toLocaleString()}`:'',x.note?esc(x.note):''].filter(Boolean).join(' · ');return `<div class="gift-item ${x.done?'done':''}"><input type="checkbox" ${x.done?'checked':''} onchange="toggleGift('${x.id}',this.checked)"><div><div class="gift-name">${esc(name)}</div><div class="gift-tags"><span class="gift-tag priority-${priority}">${priorityLabel(priority)}</span><span class="gift-tag type">${giftTypeLabel(giftType)}</span></div><div class="gift-meta">${meta||'尚未填寫購買資訊'}</div><div class="gift-edit-hint">${x.editorName?`最後修改：<span class="editor-name">${esc(x.editorName)}</span>${timestampText(x.updatedAt)?' · '+timestampText(x.updatedAt):''} · `:''}✏️ 編輯會把這筆資料完整帶回上方表單</div></div><div class="shared-actions"><button class="icon-btn" title="帶入編輯" onclick="editGift('${x.id}')">✏️</button><button class="icon-btn" title="刪除" onclick="deleteGift('${x.id}')">🗑️</button></div></div>`}
 function renderGiftSummary(rows){const el=document.getElementById('giftSummary');if(!el)return;const recipients=new Set(rows.map(x=>(x.recipient||'').trim()).filter(Boolean)),filled=rows.filter(x=>(x.name||'').trim()),done=filled.filter(x=>x.done).length,budget=filled.reduce((a,x)=>a+(Number(x.budget)||0)*Math.max(1,Number(x.qty)||1),0);el.innerHTML=`<div><b>${recipients.size}</b><small>收禮人</small></div><div><b>${filled.length}</b><small>已填品項</small></div><div><b>¥${budget.toLocaleString()}</b><small>估計預算</small></div>`}
-async function toggleGift(id,done){if(await ensureFirebase())await giftsRef().doc(id).update({done,updatedAt:firebase.firestore.FieldValue.serverTimestamp()})}
-async function saveGiftEdit(id){const name=document.getElementById('gname-'+id),recipient=document.getElementById('grecipient-'+id);if(!recipient||!recipient.value.trim())return alert('請填寫對象');const itemName=(name?.value||'').trim();if(await ensureFirebase())await giftsRef().doc(id).update({recipient:recipient.value.trim(),shop:(document.getElementById('gshop-'+id)?.value||'').trim(),name:itemName,priority:document.getElementById('gpriority-'+id)?.value||'normal',giftType:document.getElementById('gtype-'+id)?.value||'split',qty:itemName?(Number(document.getElementById('gqty-'+id)?.value)||1):0,budget:Number(document.getElementById('gbudget-'+id)?.value)||0,note:(document.getElementById('gnote-'+id)?.value||'').trim(),draft:!itemName,updatedAt:firebase.firestore.FieldValue.serverTimestamp()})}
+async function toggleGift(id,done){if(await ensureFirebase())await giftsRef().doc(id).update({done,updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid,editorName:getEditorName()})}
+async function saveGiftEdit(id){const name=document.getElementById('gname-'+id),recipient=document.getElementById('grecipient-'+id);if(!recipient||!recipient.value.trim())return alert('請填寫對象');const itemName=(name?.value||'').trim();if(await ensureFirebase())await giftsRef().doc(id).update({recipient:recipient.value.trim(),shop:(document.getElementById('gshop-'+id)?.value||'').trim(),name:itemName,priority:document.getElementById('gpriority-'+id)?.value||'normal',giftType:document.getElementById('gtype-'+id)?.value||'split',qty:itemName?(Number(document.getElementById('gqty-'+id)?.value)||1):0,budget:Number(document.getElementById('gbudget-'+id)?.value)||0,note:(document.getElementById('gnote-'+id)?.value||'').trim(),draft:!itemName,updatedAt:firebase.firestore.FieldValue.serverTimestamp(),uid:sharedUser.uid,editorName:getEditorName()})}
 async function deleteGift(id){if(confirm('刪除這個伴手禮項目？')&&await ensureFirebase())await giftsRef().doc(id).delete()}
-function setPage(day,scroll=true){currentPage=String(day);document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.day===String(day)));clearSharedListeners();if(day==='home')home();else if(day==='checklist')checklistPage();else if(day==='gifts')giftsPage();else dayPage(Number(day));if(scroll)window.scrollTo({top:0,behavior:'smooth'})}
-function markTodayNav(){const td=tripDayToday();document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('today',td&&b.dataset.day===String(td)))}
+function morePage(){const name=getEditorName();content.innerHTML=`<section class="section"><div class="section-head"><div><div class="eyebrow">MORE</div><h2>更多資訊</h2></div></div><div class="editor-card"><b style="font-size:15px;color:#6f5347">👤 這台手機的共同編輯名稱</b><div class="editor-current" id="editorNameStatus">Checklist / 伴手禮修改會記錄這個名稱</div><div class="editor-row"><input id="editorNameInput" maxlength="24" value="${esc(name)}" placeholder="例如：爸爸、媽媽、Derek"><button onclick="saveEditorName()">儲存</button></div></div></section><section class="section"><div class="section-head"><h2>旅程重要資訊</h2></div><div class="more-grid"><a class="more-card" href="${HOTEL_MAPS}" target="_blank"><span class="ico">🏨</span><b>住宿飯店</b><small>Quintessa 天神南</small></a><a class="more-card" href="https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal" target="_blank"><span class="ico">✈️</span><b>福岡機場</b><small>國際線航廈</small></a><button class="more-card" onclick="openTripDay(4)" style="text-align:left"><span class="ico">🌦️</span><b>Day 4 晴雨切換</b><small>依當天天氣決定</small></button><a class="more-card" href="${UBER_ANDROID_LINK}"><span class="ico">🚕</span><b>Uber</b><small>Android 直接開 App</small></a></div></section><section class="section"><div class="section-head"><h2>出發前重要事項</h2></div><div class="card pad"><span class="pill red">🤰 MEDIF</span><h3 style="margin:10px 0 8px;font-size:16px">9/6（日）產檢＋醫師開立文件</h3><div class="notice danger">MEDIF、診斷證明、媽媽手冊放隨身；完成後確認 BR106 與 BR105 兩航段。</div></div></section><section class="section"><div class="section-head"><h2>緊急聯絡</h2></div><div class="card pad"><div style="display:grid;gap:8px"><a class="quick" href="tel:119"><b>🚑 119</b><small>救護車／消防</small></a><a class="quick" href="tel:110"><b>👮 110</b><small>警察</small></a><a class="quick" href="tel:+815038162787"><b>☎️ JNTO 050-3816-2787</b><small>外國旅客熱線</small></a></div></div></section>`}
+function setPage(day,scroll=true){currentPage=String(day);document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.day===String(day)));clearSharedListeners();if(day==='home')home();else if(day==='trip')tripHubPage();else if(day==='checklist')checklistPage();else if(day==='gifts')giftsPage();else if(day==='more')morePage();else{selectedTripDay=Number(day)||selectedTripDay;currentPage='trip';dayPage(selectedTripDay)}if(scroll)window.scrollTo({top:0,behavior:'smooth'})}
+function markTodayNav(){const td=tripDayToday();document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('today',!!td&&b.dataset.day==='trip'))}
 function updateCountdown(){const now=new Date(),start=new Date('2026-09-09T08:00:00+08:00'),end=new Date('2026-09-13T13:45:00+08:00');let txt='';if(now<start){const d=Math.ceil((start-now)/86400000);txt=`距離出發約 ${d} 天｜9/6 產檢＋MEDIF`}else if(now>end){txt='旅程已完成，這份頁面就是我們的福岡旅行紀錄 ✨'}else{const td=tripDayToday();txt=td?`旅行進行中｜今天是 Day ${td}，只完成主任務也很棒 👍`:'旅行進行中｜慢慢走、休息優先'}document.getElementById('countdown').textContent=txt}
 function openPhoto(src,alt){const m=document.getElementById('photoModal'),im=document.getElementById('modalImage');im.src=src;im.alt=alt||'照片';m.classList.add('show');document.body.style.overflow='hidden'}
 function closePhoto(e){if(e&&e.target.id==='modalImage')return;document.getElementById('photoModal').classList.remove('show');document.body.style.overflow=''}
 document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.day)));
-try{updateCountdown();markTodayNav();loadFukuokaWeather();const td=tripDayToday();td?setPage(td,false):setPage('home',false);setInterval(()=>{updateCountdown();markTodayNav();if(tripDayToday()&&/^\d$/.test(currentPage)&&currentPage===String(tripDayToday()))dayPage(Number(currentPage))},60000)}catch(err){console.error(err);content.innerHTML='<div class="notice danger">頁面載入失敗，請重新整理或重新上傳最新版 index.html。</div>'}
+try{updateCountdown();markTodayNav();setPage('home',false);loadFukuokaWeather();setInterval(()=>{updateCountdown();markTodayNav();if(currentPage==='home')home();else if(currentPage==='trip'&&tripDayToday()===selectedTripDay)dayPage(selectedTripDay)},60000)}catch(err){console.error(err);content.innerHTML='<div class="notice danger">頁面載入失敗，請重新整理或重新上傳最新版 index.html。</div>'}
 </script>
 </body>
 </html>
