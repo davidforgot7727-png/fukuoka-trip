@@ -2,7 +2,7 @@
   "id": "./",
   "name": "福岡親子慢活小旅行",
   "short_name": "福岡親子旅",
-  "description": "2026 福岡親子旅行小助手：行程、天氣、Google 家人登入、Checklist、伴手禮與私人 Drive 重要資料捷徑。",
+  "description": "2026 福岡親子旅行小助手：可共同編輯行程、天氣、Google 家人登入、Checklist、伴手禮與私人 Drive 重要資料捷徑。",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
