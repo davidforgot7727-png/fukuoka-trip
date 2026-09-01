@@ -2,7 +2,7 @@
   "id": "./",
   "name": "福岡親子慢活小旅行",
   "short_name": "福岡親子旅",
-  "description": "2026 福岡 5天4夜親子旅行小助手：行程、天氣、Checklist、伴手禮共編。",
+  "description": "2026 福岡親子旅行小助手：行程、天氣、Google 家人登入、Checklist、伴手禮與私人 Drive 重要資料捷徑。",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -67,6 +67,17 @@
       "name": "伴手禮清單",
       "short_name": "伴手禮",
       "url": "./?page=gifts",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "重要資料",
+      "short_name": "重要資料",
+      "url": "./?page=secure",
       "icons": [
         {
           "src": "./icons/icon-192.png",

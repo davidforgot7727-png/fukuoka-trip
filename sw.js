@@ -1,4 +1,4 @@
-const VERSION='4.0.1';
+const VERSION='4.5.1';
 const SHELL_CACHE=`fukuoka-shell-${VERSION}`;
 const RUNTIME_CACHE=`fukuoka-runtime-${VERSION}`;
 const APP_SHELL=[
@@ -29,6 +29,9 @@ function isDynamicNetworkOnly(url){
          url.hostname.includes('firestore.googleapis.com') ||
          url.hostname.includes('identitytoolkit.googleapis.com') ||
          url.hostname.includes('securetoken.googleapis.com') ||
+         url.hostname.includes('accounts.google.com') ||
+         url.hostname.includes('drive.google.com') ||
+         url.hostname.includes('docs.google.com') ||
          url.hostname.includes('googleapis.com') && !url.hostname.includes('fonts.googleapis.com');
 }
 
