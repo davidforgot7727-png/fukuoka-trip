@@ -1,4 +1,4 @@
-我們與珵的大冒險 v5.4.0 — 路線規劃／旅遊資訊中心／公開瀏覽／家人修改／私人資料保護
+我們與珵的大冒險 v5.5.0 — 內嵌路線地圖／旅遊資訊中心／公開瀏覽／家人修改／私人資料保護
 
 已鎖定家人 Google 帳號：
 - Derek: davidforgot7727@gmail.com
@@ -16,7 +16,7 @@ Firebase Console → Firestore Database → Rules。
 
 【3. GitHub Pages】
 把 ZIP 內的 index.html、manifest.json、sw.js、icons/、assets/ 上傳到 GitHub Pages Repository 根目錄。
-建議第一次使用網址加 ?v=540，避免舊 PWA 快取。
+建議第一次使用網址加 ?v=550，避免舊 PWA 快取。
 
 【4. 重要資料】
 護照影本、Visit Japan QR、機票、訂房等敏感檔案請放在私人 Google Drive。
@@ -34,8 +34,8 @@ trips/fukuoka-2026-family/privateStatus/family
 【7. 修改者名稱】
 Checklist 與伴手禮的最後修改者預設顯示 Google 名稱；若某台裝置設定過自訂暱稱，會以該裝置暱稱優先，可在「更多」頁清空暱稱恢復 Google 名稱。
 
-【8. 行程路線】
-行程地點按鈕會自動尋找同一天前一個不同地點，並產生 Google Maps 路線；可切換為「我的目前位置」。網站不直接讀取 GPS，切換目前位置後由 Google Maps App／網頁取得裝置位置。Maps URL 不需要額外 API Key；若裝置沒有安裝 Google Maps，會改用瀏覽器開啟。
+【8. 內嵌行程路線】
+每日行程頁上方會直接顯示互動地圖。點選行程地點後，網站會用 OpenStreetMap／OSRM 在頁內畫出上一個不同地點到目的地的道路路線、距離與預估車程；可切換為「我的目前位置」。只有按下目前位置時才會向瀏覽器請求定位；座標會傳給 OSRM 做本次路線計算，但只留在當次頁面記憶體，不寫入 localStorage、Firestore 或 GitHub。若內嵌地圖或路線服務暫時無法使用，下方仍有 Google Maps 查看與導航按鈕。
 
 
 行程資料存於 trips/fukuoka-2026-family/itinerary；最近備份存於 itineraryBackups；私人狀態存於 privateStatus/family。每次更新本版都必須確認 firestore-secure.rules 已發布，才能同時得到公開唯讀、家人寫入與敏感資料保護。

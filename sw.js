@@ -1,10 +1,10 @@
-const VERSION='5.4.0';
+const VERSION='5.5.0';
 const SHELL_CACHE=`fukuoka-shell-${VERSION}`;
 const RUNTIME_CACHE=`fukuoka-runtime-${VERSION}`;
 const APP_SHELL=[
   './',
   './index.html',
-  './manifest.json?v=540',
+  './manifest.json?v=550',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon-maskable-512.png',
@@ -36,6 +36,7 @@ function isDynamicNetworkOnly(url){
   return url.hostname.includes('open-meteo.com') ||
          url.hostname.includes('open.er-api.com') ||
          url.hostname.includes('exchangerate-api.com') ||
+         url.hostname.includes('router.project-osrm.org') ||
          url.hostname.includes('firestore.googleapis.com') ||
          url.hostname.includes('identitytoolkit.googleapis.com') ||
          url.hostname.includes('securetoken.googleapis.com') ||
