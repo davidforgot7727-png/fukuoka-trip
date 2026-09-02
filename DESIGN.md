@@ -14,7 +14,7 @@ colors:
   muted: "#6F625A"
   rule: "#D8C8B7"
 typography:
-  display: '"Iowan Old Style", "Noto Serif TC", "Songti TC", "PMingLiU", serif'
+  display: '"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Heiti TC", system-ui, sans-serif'
   body: '-apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif'
 rounded:
   label: "3px"
@@ -44,7 +44,7 @@ Do not reintroduce the old saturated red/blue/yellow poster palette. Status must
 
 ## Typography
 
-Serif display type gives hero, day-cover, event, and section headings the feeling of a personal travel journal. Traditional Chinese body copy, controls, times, labels, and forms use the system sans stack for fast reading. Avoid condensed poster type for prose. Keep itinerary descriptions at 14px or larger with generous line height.
+Traditional Chinese headings use the same reliable system sans family as body copy, with heavier weight and tighter tracking for hierarchy. This prevents inconsistent generic-serif fallback on Android. Avoid condensed Latin display fonts for Chinese. Keep itinerary descriptions at 14px or larger with generous line height.
 
 ## Materials and imagery
 

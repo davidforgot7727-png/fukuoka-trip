@@ -321,7 +321,6 @@ body{caret-color:#b95f43}
 @media(max-width:420px){.section{margin-bottom:24px}.section-head h2{font-size:19px}.next-stop-top{padding:16px 15px 3px}.next-stop-body{padding:7px 15px 16px}.next-stop-desc{font-size:14px}.quick-grid .quick{min-height:106px}}
 
 /* v5.0 Bold Fukuoka editorial redesign — Impeccable × UI UX Pro Max */
-@font-face{font-family:"Fukuoka Display";src:url("./assets/fonts/NimbusSansNarrow-Bold.otf") format("opentype");font-weight:700 950;font-style:normal;font-display:swap}
 :root{--bg:#f4f0e7;--surface:#fffdf7;--text:#171714;--muted:#625f57;--line:#d8d0c1;--navy:#003bc5;--blue:#003bc5;--pink:#e52b20;--green:#087a53;--orange:#f5bd16;--purple:#6942a5;--danger:#bc2119;--red:#e52b20;--yellow:#ffd229;--ink:#171714;--paper:#fffdf7;--shadow:0 16px 34px rgba(39,31,18,.13);--radius:14px;--safe-bottom:max(14px,env(safe-area-inset-bottom));--display:"Fukuoka Display","Noto Sans TC",sans-serif;--body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
 html{scrollbar-color:var(--red) var(--bg);scrollbar-width:thin;scroll-padding-bottom:calc(112px + var(--safe-bottom))}
 body{font-family:var(--body);background:var(--bg);background-image:linear-gradient(90deg,rgba(23,23,20,.035) 1px,transparent 1px);background-size:80px 100%;font-variant-numeric:tabular-nums}
@@ -373,6 +372,40 @@ html{scrollbar-color:#d96b45 #eee5d8}body{background:#eee5d8 url("./assets/plate
 :focus-visible{outline-color:#d96b45!important}.photo-modal{background:rgba(48,38,32,.93)}
 @media(max-width:779px){.hero{min-height:650px}.hero>img:not(.family-line-art){inset:0;top:0;width:100%;height:265px}.hero::before{left:0;top:0;width:210px;height:130px;background-image:url("./assets/plates/mobile-furoshiki.webp")}.hero::after{background:linear-gradient(180deg,rgba(255,249,239,.02) 0 34%,#fff9ef 45% 100%)}.family-line-art{left:auto!important;right:8px!important;bottom:8px!important;inset:auto 8px 8px auto!important;width:145px!important;height:150px!important;opacity:.72}.hero-inner{min-height:650px;padding:244px 14px 16px}.hero-kicker{left:18px;top:284px}.hero-title-row{grid-template-columns:1fr;gap:18px}.hero-title-row>div:first-child{margin:72px 0 0;max-width:none}.hero h1{font-size:2.7rem}.hero-weather{width:100%;transform:none;margin-top:8px}.hero-grid{position:static;grid-template-columns:repeat(3,1fr);margin-top:20px}.countdown{position:static;margin-top:0}.content{padding:22px 12px 30px}.quick-grid{grid-template-columns:repeat(2,1fr)}.quick-grid .quick:nth-child(2){border-right:0}.quick-grid .quick:nth-child(-n+2){border-bottom:1px dashed #cdb9a4}.trip-day-tabs{gap:5px!important}.trip-day-tab{min-height:69px!important}.day-cover{min-height:285px}.event{margin-left:32px}.event-photo{height:190px;min-height:190px}.bottom-nav{padding-bottom:max(8px,env(safe-area-inset-bottom))}}
 @media(max-width:390px){.hero{min-height:680px}.hero h1{font-size:2.35rem}.hero-grid{grid-template-columns:1fr}.hero-stat{border-bottom:1px dashed #d2c1b0}.trip-day-tab{font-size:11px!important}.family-line-art{width:120px!important;height:125px!important}}
+/* v5.1.1 mobile hero + Traditional Chinese type repair */
+:root{--heading:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;--serif:var(--heading);--display:var(--heading)}
+body{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif}
+.hero-inner{z-index:5}.hero::after{z-index:2}
+.hero h1,.section-head h2,.quick-grid .quick b,.today-cover-title b,.day-cover-content h2,.event-title{font-family:var(--heading);font-weight:800;letter-spacing:-.02em}
+.hero h1{line-height:1.12}.section-head h2{line-height:1.25}.event-title{line-height:1.35}
+@media(max-width:779px){
+  .hero,.hero-inner{min-height:510px}
+  .hero{background:#fff9ef}
+  .hero>img:not(.family-line-art){inset:0;top:0;width:100%;height:232px;object-position:center 52%}
+  .hero::before{left:0;top:0;width:176px;height:112px}
+  .hero::after{background:linear-gradient(180deg,rgba(255,249,239,0) 0 31%,rgba(255,249,239,.42) 40%,#fff9ef 49% 100%)}
+  .hero-inner{padding:246px 16px 16px;justify-content:flex-start}
+  .hero-kicker{display:none}
+  .hero-title-row{display:block;margin:0}
+  .hero-title-row>div:first-child{max-width:65%;margin:0}
+  .hero h1{font-size:clamp(2rem,10vw,2.65rem);color:#3b302b;margin:0;text-shadow:none;text-wrap:balance}
+  .hero-sub{font-size:12px;line-height:1.45;color:#873d27;margin:8px 0 0;letter-spacing:.01em}
+  .hero-weather{display:none}
+  .family-line-art{left:auto!important;right:4px!important;top:252px!important;bottom:auto!important;inset:252px 4px auto auto!important;width:31%!important;height:118px!important;opacity:.68}
+  .hero-grid{position:static;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:20px;gap:1px;left:auto;right:auto;bottom:auto;box-shadow:none}
+  .hero-stat{min-width:0;padding:10px 8px;text-align:left}
+  .hero-stat b{font-size:11px;line-height:1.35}.hero-stat small{font-size:9px;line-height:1.35;margin-top:3px}
+  .countdown{position:static;margin-top:8px;padding:9px 11px;left:auto;right:auto;bottom:auto;font-size:11px;line-height:1.35}
+}
+@media(max-width:390px){
+  .hero,.hero-inner{min-height:520px}
+  .hero h1{font-size:2rem}
+  .hero-title-row>div:first-child{max-width:68%}
+  .family-line-art{width:29%!important;height:104px!important;top:258px!important;inset:258px 4px auto auto!important}
+  .hero-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hero-stat{border-right:1px solid #cabaa9;border-bottom:0}
+  .hero-stat:last-child{border-right:0}
+}
 @media(prefers-reduced-motion:reduce){.trip-day-tab,.event,.quick,.nav-btn{transition:none!important}.hero-weather{transform:none}}
 </style>
 </head>
@@ -397,7 +430,7 @@ html{scrollbar-color:#d96b45 #eee5d8}body{background:#eee5d8 url("./assets/plate
   </div>
 </header>
 <main id="content" class="content" tabindex="-1"></main>
-<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>福岡親子慢活之旅 · PWA v5.1.0 · FUROSHIKI FAMILY EDITION</footer>
+<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>福岡親子慢活之旅 · PWA v5.1.1 · FUROSHIKI FAMILY EDITION</footer>
 </div>
 
 <nav class="bottom-nav" aria-label="手機行程導覽">
