@@ -1,4 +1,4 @@
-我們與珵的大冒險 PWA v5.3.2 · Travel Information Center · Public Browse / Family Modify
+我們與珵的大冒險 PWA v5.4.0 · Route Planner · Public Browse / Family Modify
 
 主要功能：
 - 未登入也可瀏覽首頁、完整 Day 1–5 行程、Checklist 與伴手禮
@@ -8,6 +8,8 @@
 - 飯店救援卡含 Quintessa 日／英文地址、電話、導航、複製與給司機看的大字卡
 - 首頁原「出發文件與航班／旅途中快速支援」區塊改為可直接操作的 JPY ↔ TWD 匯率換算；航班、緊急醫療與重要文件入口移至首頁快速入口
 - 匯率換算仍保留獨立 ?page=exchange 工具頁，並支援每日匯率、離線最後匯率、手動匯率與 1.5%／3% 緩衝
+- 行程地點可開啟路線面板，預設以上一個不同地點為起點，並可一鍵切換為裝置目前位置
+- 路線圖與導航使用免 API Key 的 Google Maps 官方 Maps URL；網站不會讀取或儲存 GPS 位置
 - 行程卡新增親子設施提示：育嬰／尿布、電梯／推車、休息與叫車撤退
 - 只有已授權家人帳號可新增、勾選、修改、排序或刪除共同資料
 - 「家人醫療與預約」同步 MEDIF、醫療、保險與預約狀態，只限家人帳號讀寫
@@ -43,7 +45,7 @@ AI 使用方式：
 Firestore Rules 已分層：目前旅程 fukuoka-2026-family 的 itinerary、checklist、gifts 公開唯讀；家人可寫入；privateStatus、itineraryBackups 與其他子集合維持家人專用。
 
 GitHub Pages 更新時請至少上傳：index.html、sw.js；並把 firestore-secure.rules 內容發布到 Firebase Console → Firestore Database → Rules。
-第一次開新版可使用 ?v=532。
+第一次開新版可使用 ?v=540。
 
 
 「修改模式」預設關閉，不顯示新增／修改／排序／刪除／AI／備份工具。已授權家人登入後，在行程頁右上角按「✏️ 修改模式」才會顯示全部編輯工具；按「✓ 完成修改」回到一般模式。重新載入 PWA 會預設回到一般模式。
