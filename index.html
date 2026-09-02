@@ -7,6 +7,7 @@
 <link rel="manifest" href="./manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+<link rel="preload" href="./assets/fonts/chenyuluoyan-2-subset.woff" as="font" type="font/woff" crossorigin>
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -14,8 +15,10 @@
 <meta name="application-name" content="福岡親子旅">
 <meta name="format-detection" content="telephone=yes">
 <meta name="description" content="2026 福岡 5天4夜親子慢活小旅行 親子旅行小助手">
-<title>福岡親子慢活小旅行｜2026</title>
+<title>我們與珵的大冒險｜福岡 2026</title>
 <style>
+@font-face{font-family:"ChenYuLuoYan";src:url("./assets/fonts/chenyuluoyan-2-subset.woff") format("woff");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Yozai";src:url("./assets/fonts/yozai-subset.woff") format("woff");font-style:normal;font-weight:400;font-display:swap}
 :root{
   --bg:#f3f5f8;--surface:#fff;--text:#172235;--muted:#6f7a8b;--line:#e8edf3;
   --navy:#16375b;--blue:#3777d5;--pink:#df6f96;--green:#2d9a70;--orange:#e69042;--purple:#7c63c7;
@@ -339,7 +342,7 @@ body::selection{background:var(--yellow);color:var(--ink)}button,a,input,select,
 @media(min-width:780px){.event{grid-template-columns:260px 1fr}.event-photo{min-height:205px}.bottom-nav{border-radius:0}.nav-btn .nav-txt{font-size:12px}}
 @media(max-width:779px){body{background-image:none}.app{border:0}.hero{min-height:420px}.hero-inner{min-height:420px;padding:24px 16px 20px}.hero::before{font-size:9rem;top:0}.hero:after{background:linear-gradient(0deg,rgba(17,17,14,.95),rgba(17,17,14,.12) 90%),linear-gradient(90deg,rgba(229,43,32,.5),transparent)}.hero-title-row{display:grid;grid-template-columns:1fr;gap:16px}.hero h1{font-size:clamp(3rem,16vw,4.7rem);max-width:430px}.hero-weather{width:100%;min-width:0;box-shadow:6px 7px 0 var(--blue);transform:none}.hero-grid{margin-top:20px}.hero-stat{padding:10px 8px}.hero-stat b{font-size:11px}.hero-stat small{font-size:9px}.content{padding:22px 12px 28px}.section{margin-bottom:34px}.section-head h2{font-size:25px}.quick-grid{grid-template-columns:1fr 1fr}.quick-grid .quick:nth-child(2){border-right:0}.quick-grid .quick:nth-child(-n+2){border-bottom:1px solid var(--ink)}.quick-grid .quick{min-height:112px}.today-card .cover{height:245px}.weather-metrics{grid-template-columns:1fr 1fr}.trip-day-tab{padding:7px 2px!important;font-size:13px!important}.trip-day-tab span{font-size:8px!important}.day-cover{min-height:280px}.event{margin-left:34px}.timeline:before{left:15px}.event:before{left:-26px}.event.current-event{box-shadow:5px 7px 0 var(--yellow)}.shared-form,.gift-form,.secure-form-grid,.itinerary-form-grid,.itinerary-form-grid.two{grid-template-columns:1fr}.shared-form .add-btn{min-height:48px}.gift-form .full{grid-column:auto}.auth-card{grid-template-columns:auto minmax(0,1fr)}.auth-card .auth-btn{grid-column:1/-1}.bottom-nav{padding-bottom:max(7px,env(safe-area-inset-bottom))}}
 @media(max-width:390px){.hero h1{font-size:2.85rem}.hero-weather .hw-temp{font-size:36px}.hero-grid{grid-template-columns:1fr}.hero-stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.5)}.hero-stat:last-child{border-bottom:0}.countdown{font-size:11px}.quick-grid .quick b{font-size:17px}.nav-btn{min-width:0;padding-inline:2px}.nav-btn .nav-txt{font-size:10px}}
-/* v5.2.1 Warm Family Guide — Impeccable × UI UX Pro Max */
+/* v5.2.2 Handwritten Family Guide — Impeccable × UI UX Pro Max */
 :root{--bg:#eee5d8;--surface:#fff9ef;--text:#3b302b;--muted:#6f625a;--line:#d8c8b7;--navy:#345b6f;--blue:#345b6f;--pink:#d96b45;--green:#66785b;--orange:#d96b45;--purple:#77657c;--danger:#a43d32;--shadow:0 14px 34px rgba(77,57,42,.12);--radius:15px;--paper:#fff9ef;--ink:#3b302b;--red:#d96b45;--yellow:#efd9ad;--warm:#f3d8c8;--serif:"Iowan Old Style","Noto Serif TC","Songti TC","PMingLiU",serif}
 html{scrollbar-color:#d96b45 #eee5d8}body{background-color:#eee5d8;background-image:radial-gradient(circle at 12% 8%,rgba(255,249,239,.72),transparent 28%),linear-gradient(135deg,rgba(217,107,69,.035),transparent 44%);color:var(--text)}body::selection{background:#efd9ad;color:#3b302b}
 .app{max-width:1160px;border-inline:0;background:rgba(255,249,239,.97);box-shadow:0 18px 70px rgba(75,55,40,.15)}
@@ -372,11 +375,12 @@ html{scrollbar-color:#d96b45 #eee5d8}body{background-color:#eee5d8;background-im
 :focus-visible{outline-color:#d96b45!important}.photo-modal{background:rgba(48,38,32,.93)}
 @media(max-width:779px){.hero{min-height:650px}.hero>img:not(.family-line-art){inset:0;top:0;width:100%;height:265px}.hero::after{background:linear-gradient(180deg,rgba(255,249,239,.02) 0 34%,#fff9ef 45% 100%)}.family-line-art{left:auto!important;right:8px!important;bottom:8px!important;inset:auto 8px 8px auto!important;width:145px!important;height:150px!important;opacity:.72}.hero-inner{min-height:650px;padding:244px 14px 16px}.hero-kicker{left:18px;top:284px}.hero-title-row{display:block}.hero-title-row>div:first-child{position:static;margin:72px 0 0;max-width:none}.hero h1{font-size:2.7rem}.hero-weather{width:100%;transform:none;margin-top:8px}.hero-grid{position:static;grid-template-columns:repeat(3,1fr);margin-top:20px}.countdown{position:static;margin-top:0}.content{padding:22px 12px 30px}.quick-grid{grid-template-columns:repeat(2,1fr)}.quick-grid .quick:nth-child(2){border-right:0}.quick-grid .quick:nth-child(-n+2){border-bottom:1px dashed #cdb9a4}.trip-day-tabs{gap:5px!important}.trip-day-tab{min-height:69px!important}.day-cover{min-height:285px}.event{margin-left:32px}.event-photo{height:190px;min-height:190px}.bottom-nav{padding-bottom:max(8px,env(safe-area-inset-bottom))}}
 @media(max-width:390px){.hero{min-height:680px}.hero h1{font-size:2.35rem}.hero-grid{grid-template-columns:1fr}.hero-stat{border-bottom:1px dashed #d2c1b0}.trip-day-tab{font-size:11px!important}.family-line-art{width:120px!important;height:125px!important}}
-/* v5.2.1 responsive hero + Traditional Chinese type repair */
-:root{--heading:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;--serif:var(--heading);--display:var(--heading)}
+/* v5.2.2 responsive hero + Traditional Chinese handwriting system */
+:root{--heading:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;--hero-hand:"ChenYuLuoYan",var(--heading);--itinerary-hand:"Yozai",var(--heading);--serif:var(--heading);--display:var(--heading)}
 body{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif}
 .hero-inner{z-index:5}.hero::after{z-index:2}
-.hero h1,.section-head h2,.quick-grid .quick b,.today-cover-title b,.day-cover-content h2,.event-title{font-family:var(--heading);font-weight:800;letter-spacing:-.02em}
+.hero h1{font-family:var(--hero-hand);font-weight:400;letter-spacing:.025em;font-synthesis:none}
+.section-head h2,.quick-grid .quick b,.today-cover-title b,.day-cover-content h2,.event-title{font-family:var(--itinerary-hand);font-weight:400;letter-spacing:.01em;font-synthesis:none}
 .hero h1{line-height:1.12}.section-head h2{line-height:1.25}.event-title{line-height:1.35}
 @media(max-width:779px){
   .hero,.hero-inner{min-height:510px}
@@ -449,7 +453,7 @@ body.inner-page .hero-kicker,body.inner-page .hero-weather,body.inner-page .hero
   <div class="hero-inner">
     <div class="hero-kicker">我們家的福岡旅行手帖</div>
     <div class="hero-title-row">
-      <div><h1>福岡親子<br>慢活之旅</h1><p class="hero-sub">2026.09.09 — 09.13 · 五天四夜家庭旅行</p></div>
+      <div><h1>我們與珵的<br>大冒險</h1><p class="hero-sub">2026.09.09 — 09.13 · 五天四夜家庭旅行</p></div>
       <div id="heroWeather" class="hero-weather" role="status" aria-live="polite"><span class="hw-icon" aria-hidden="true">⏳</span><div><div class="hw-temp">--°</div><div class="hw-text">福岡即時天氣</div></div><button onclick="loadFukuokaWeather(true)" aria-label="更新福岡天氣">↻</button></div>
     </div>
     <div id="heroTripStats" class="hero-grid">
@@ -461,7 +465,7 @@ body.inner-page .hero-kicker,body.inner-page .hero-weather,body.inner-page .hero
   </div>
 </header>
 <main id="content" class="content" tabindex="-1"></main>
-<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>福岡親子慢活之旅 · PWA v5.2.1 · FAMILY JOURNEY EDITION</footer>
+<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>我們與珵的大冒險 · PWA v5.2.2 · FAMILY JOURNEY EDITION</footer>
 </div>
 
 <nav class="bottom-nav" aria-label="主要導覽">
