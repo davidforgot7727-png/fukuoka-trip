@@ -11,6 +11,31 @@ service cloud.firestore {
         ];
     }
 
+    function isPublicTrip(tripId) {
+      return tripId == 'fukuoka-2026-family';
+    }
+
+    // 只有目前這趟行程、共同清單與伴手禮公開可讀；只有家人能修改。
+    match /trips/{tripId}/itinerary/{documentId} {
+      allow read: if isPublicTrip(tripId);
+      allow create, update, delete: if isFamily();
+    }
+
+    match /trips/{tripId}/checklist/{documentId} {
+      allow read: if isPublicTrip(tripId);
+      allow create, update, delete: if isFamily();
+    }
+
+    match /trips/{tripId}/gifts/{documentId} {
+      allow read: if isPublicTrip(tripId);
+      allow create, update, delete: if isFamily();
+    }
+
+    // AI 還原備份與未來其他旅程子集合維持家人專用。
+    match /trips/{tripId}/itineraryBackups/{documentId} {
+      allow read, write: if isFamily();
+    }
+
     match /trips/{tripId}/{document=**} {
       allow read, write: if isFamily();
     }
