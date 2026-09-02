@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#345b6f">
-<link rel="manifest" href="./manifest.json?v=531">
+<link rel="manifest" href="./manifest.json?v=532">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
 <link rel="preload" href="./assets/fonts/chenyuluoyan-2-subset.woff?v=523" as="font" type="font/woff" crossorigin>
@@ -463,12 +463,12 @@ body.inner-page .hero-kicker,body.inner-page .hero-weather,body.inner-page .hero
 .info-action,.travel-center .more-card{min-width:0;overflow-wrap:anywhere}.info-action>*{min-width:0}.info-action .call-no{white-space:normal;text-align:right}.line-ico{display:block;width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.more-card.primary-info .line-ico{color:#fffaf2}
 .currency-field input{min-width:0;font-variant-numeric:tabular-nums}.quick-amounts button,.buffer-options button{min-height:44px}.rate-meta{font-size:11px;overflow-wrap:anywhere}.field-error{min-height:20px;margin-top:5px;color:#8f3027;font-size:11px;font-weight:850}.private-save:disabled,.rate-pill:disabled{cursor:wait;opacity:.55}
 button,a{touch-action:manipulation}.info-action:active,.more-card:active,.copy-btn:active,.subpage-back:active,.currency-swap:active,.quick-amounts button:active,.buffer-options button:active{filter:brightness(.93)}.info-action:focus-visible,.more-card:focus-visible,.copy-btn:focus-visible,.subpage-back:focus-visible,.currency-swap:focus-visible,.quick-amounts button:focus-visible,.buffer-options button:focus-visible{outline:3px solid #d96b45;outline-offset:3px}
-/* v5.3.1 standalone exchange tool */
-.quick-grid .exchange-quick{grid-column:1/-1;display:flex;align-items:center;gap:14px;min-height:88px;border-top:1px dashed #cdb9a4!important;border-right:0!important;text-align:left}.quick-grid .exchange-quick .ico{flex:none;display:grid;place-items:center;width:48px;height:48px;border:1px solid #345b6f;border-radius:9px;background:#345b6f;color:#fff;font:900 24px/1 var(--heading)}.quick-grid .exchange-quick b{margin-top:0}.quick-grid .exchange-quick small{margin-top:3px}
+/* v5.3.2 home exchange tool + support shortcuts */
+.home-quick-grid .quick{min-width:0;text-align:left}.home-quick-grid .quick .line-ico{width:30px;height:30px;color:#345b6f}
 .exchange-entry{display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid #bca993;border-radius:15px;background:#f1e3d1;padding:18px}.exchange-entry h3{margin:0;font:400 24px/1.2 var(--itinerary-hand)}.exchange-entry p{margin:5px 0 0;color:#6f625a;font-size:13px;line-height:1.5}.exchange-entry button{flex:none;min-height:48px;border:0;border-radius:9px;background:#345b6f;color:#fff;padding:11px 15px;font-weight:950}.exchange-page-note{margin-top:-18px}
 @media(max-width:620px){.exchange-entry{align-items:stretch;flex-direction:column}.exchange-entry button{width:100%}}
-@media(min-width:780px){.quick-grid .quick:nth-child(4){border-right:0}}
-@media(max-width:779px){.quick-grid .quick:nth-child(4){border-right:0}.quick-grid .exchange-quick{min-height:84px}}
+@media(min-width:780px){.home-quick-grid{grid-template-columns:repeat(3,1fr)}.home-quick-grid .quick{border-right:1px dashed #cdb9a4;border-bottom:0}.home-quick-grid .quick:nth-child(3n){border-right:0}.home-quick-grid .quick:nth-child(-n+3){border-bottom:1px dashed #cdb9a4}}
+@media(max-width:779px){.home-quick-grid .quick{border-right:1px dashed #cdb9a4;border-bottom:0}.home-quick-grid .quick:nth-child(even){border-right:0}.home-quick-grid .quick:nth-child(-n+4){border-bottom:1px dashed #cdb9a4}}
 </style>
 </head>
 <body>
@@ -492,7 +492,7 @@ button,a{touch-action:manipulation}.info-action:active,.more-card:active,.copy-b
   </div>
 </header>
 <main id="content" class="content" tabindex="-1"></main>
-<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>我們與珵的大冒險 · PWA v5.3.1 · TRAVEL INFORMATION EDITION</footer>
+<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>我們與珵的大冒險 · PWA v5.3.2 · TRAVEL INFORMATION EDITION</footer>
 </div>
 
 <nav class="bottom-nav" aria-label="主要導覽">
@@ -674,22 +674,22 @@ function dayCover(n,d){return `<section class="day-cover"><img src="${dayArt(n)}
 function dayRule(n){return n===1?'第一天不硬撐，16:30 後隨時可撤。':n===2?'麵包超人是主任務，櫛田神社是 Bonus。':n===3?'11:00 海豚秀＋午餐，午後回飯店。':n===4?'大濠看天氣；敘敘苑＋岩田屋是穩定主線。':'提早到機場，免稅有時間再逛。'}
 function weatherContext(){const td=tripDayToday(),start=new Date('2026-09-09T00:00:00+09:00'),hours=(start-Date.now())/3600000;if(td)return {heading:'福岡接下來幾小時',label:'福岡未來幾小時',sub:'日本時間 · 旅行中每 10 分鐘更新'};if(hours>0&&hours<=48)return {heading:'出發前天氣預報',label:'福岡出發前預報',sub:'日本時間 · 已進入可參考的預報範圍'};return {heading:'現在的福岡天氣',label:'福岡現在與未來幾小時',sub:'日本時間 · 出發前先掌握當地體感'}}
 function uiIcon(name){const p={alert:'<path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5M12 17.5h.01"/>',plane:'<path d="m3 11 18-7-7 17-3-7-8-3Z"/><path d="m11 14 4-4"/>',hotel:'<path d="M4 21V4h11v17M15 9h5v12M8 8h3M8 12h3M8 16h3M2 21h20"/>',heart:'<path d="M20.8 5.8a5.5 5.5 0 0 0-7.8 0L12 6.8l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 22l8.8-8.4a5.5 5.5 0 0 0 0-7.8Z"/><path d="M8 13h2l1-3 2 6 1-3h2"/>',lock:'<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/>',weather:'<path d="M4 15a4 4 0 0 1 4-4 5 5 0 0 1 9.7 1.5A3.5 3.5 0 1 1 18 19H7a3 3 0 0 1-3-4Z"/><path d="M5 5h2M6 2v2M2.5 8H4M9.5 3.5 8 5"/>',taxi:'<path d="M5 17h14l-1-7H6l-1 7ZM7 10l2-4h6l2 4M5 17v3M19 17v3M8 14h.01M16 14h.01"/>'};return `<svg class="line-ico" viewBox="0 0 24 24" aria-hidden="true">${p[name]||p.alert}</svg>`}
-function homeTravelStatusHTML(){const td=tripDayToday(),before=Date.now()<new Date('2026-09-09T00:00:00+09:00').getTime();const title=td?'旅途中快速支援':before?'出發文件與航班':'旅行資訊留存';return `<section class="section"><div class="section-head"><div><div class="eyebrow">TRAVEL SUPPORT</div><h2>${title}</h2></div><button class="btn" onclick="setPage('more')">全部資訊</button></div><div class="info-action-grid">${td?`<button class="info-action urgent" onclick="setPage('emergency')"><span><b>緊急與醫療</b><small>119、#7119、日文求助卡</small></span>${uiIcon('alert')}</button>`:`<button class="info-action" onclick="setPage('flight')"><span><b>BR106／BR105</b><small>官方航班與機場資訊</small></span>${uiIcon('plane')}</button>`}<button class="info-action" onclick="setPage('${authUserOK()?'family':'secure'}')"><span><b>${authUserOK()?'家人醫療與預約':'重要文件'}</b><small>${authUserOK()?'MEDIF、保險與預約狀態':'登入後開啟私人資料'}</small></span>${uiIcon('lock')}</button></div></section>`}
+function homeSupportQuickHTML(){const td=tripDayToday();return `${td?`<button class="quick" type="button" onclick="setPage('emergency')"><span class="ico">${uiIcon('alert')}</span><b>緊急與醫療</b><small>119、#7119、日文求助卡</small></button>`:`<button class="quick" type="button" onclick="setPage('flight')"><span class="ico">${uiIcon('plane')}</span><b>航班中心</b><small>BR106／BR105 與機場資訊</small></button>`}<button class="quick" type="button" onclick="setPage('${authUserOK()?'family':'secure'}')"><span class="ico">${uiIcon('lock')}</span><b>${authUserOK()?'家人醫療與預約':'重要文件'}</b><small>${authUserOK()?'MEDIF、保險與預約狀態':'登入後開啟私人資料'}</small></button>`}
 function home(){
  const td=tripDayToday();const next=td||1;const d=trip.days[next];const status=td?'今天':'旅程預覽';
  content.innerHTML=`
  ${nextStopCardHTML()}
- ${homeTravelStatusHTML()}
+ ${exchangeWidgetHTML()}
  <section class="section"><div class="section-head"><div><div class="eyebrow">WEATHER & PLAN</div><h2>${weatherContext().heading}</h2></div></div><div id="weatherForecast" class="hourly-weather-card"><div class="hourly-head"><div><b>⏳ 正在取得福岡天氣</b><small>會依降雨機率提醒行程</small></div></div></div></section>
  <section class="section"><div class="section-head"><div><div class="eyebrow">TRIP AT A GLANCE</div><h2>${td?'今天的主線':'準備出發'}</h2></div><button class="btn" onclick="setPage('trip')">全部行程</button></div>
  <div class="card today-card"><div class="cover"><img src="${dayArt(next)}" alt="Day ${next} 行程目的地插畫" onerror="imageFallback(this)"><span class="today-label">${status} · Day ${next}</span><div class="today-cover-title"><b>${d.theme}</b><small>${d.date} · ${dayRule(next)}</small></div></div><div class="today-meta"><span class="pill">🚕 Taxi 優先</span><span class="pill green">😴 午後休息</span><span class="pill orange">👶 親子慢活</span></div></div></section>
- <section class="section"><div class="section-head"><h2>快速入口</h2></div><div class="quick-grid">
+ <section class="section"><div class="section-head"><h2>快速入口</h2></div><div class="quick-grid home-quick-grid">
  <a class="quick" href="${HOTEL_MAPS}" target="_blank"><span class="ico">🏨</span><b>回飯店</b><small>Quintessa 天神南</small></a>
  <a class="quick" href="${uberLink()}"><span class="ico">🚕</span><b>開 Uber</b><small>依裝置開啟 App 或網頁</small></a>
  <button class="quick" onclick="setPage('checklist')" style="text-align:left"><span class="ico">✅</span><b>共同清單</b><small>出發前／Day 1–5／回程</small></button>
  <button class="quick" onclick="setPage('gifts')" style="text-align:left"><span class="ico">🎁</span><b>伴手禮</b><small>送禮模式／購物模式</small></button>
- <button class="quick exchange-quick" type="button" onclick="openExchange()"><span class="ico" aria-hidden="true">¥</span><span><b>匯率換算</b><small>JPY ↔ TWD・離線可用最近匯率</small></span></button></div></section>`;
- loadFukuokaWeather();startItinerarySync();
+ ${homeSupportQuickHTML()}</div></section>`;
+ updateExchangeUI();loadExchangeRate();loadFukuokaWeather();startItinerarySync();
 }
 function day4Mode(){return localStorage.getItem('day4Mode')==='rain'?'rain':'sun'}
 function day4ModeSwitch(mode){localStorage.setItem('day4Mode',mode);if((currentPage==='trip'&&selectedTripDay===4)||currentPage==='4')dayPage(4)}
