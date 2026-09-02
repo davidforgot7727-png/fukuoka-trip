@@ -1,4 +1,4 @@
-const VERSION='5.1.1';
+const VERSION='5.1.2';
 const SHELL_CACHE=`fukuoka-shell-${VERSION}`;
 const RUNTIME_CACHE=`fukuoka-runtime-${VERSION}`;
 const APP_SHELL=[

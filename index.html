@@ -372,7 +372,7 @@ html{scrollbar-color:#d96b45 #eee5d8}body{background:#eee5d8 url("./assets/plate
 :focus-visible{outline-color:#d96b45!important}.photo-modal{background:rgba(48,38,32,.93)}
 @media(max-width:779px){.hero{min-height:650px}.hero>img:not(.family-line-art){inset:0;top:0;width:100%;height:265px}.hero::before{left:0;top:0;width:210px;height:130px;background-image:url("./assets/plates/mobile-furoshiki.webp")}.hero::after{background:linear-gradient(180deg,rgba(255,249,239,.02) 0 34%,#fff9ef 45% 100%)}.family-line-art{left:auto!important;right:8px!important;bottom:8px!important;inset:auto 8px 8px auto!important;width:145px!important;height:150px!important;opacity:.72}.hero-inner{min-height:650px;padding:244px 14px 16px}.hero-kicker{left:18px;top:284px}.hero-title-row{grid-template-columns:1fr;gap:18px}.hero-title-row>div:first-child{margin:72px 0 0;max-width:none}.hero h1{font-size:2.7rem}.hero-weather{width:100%;transform:none;margin-top:8px}.hero-grid{position:static;grid-template-columns:repeat(3,1fr);margin-top:20px}.countdown{position:static;margin-top:0}.content{padding:22px 12px 30px}.quick-grid{grid-template-columns:repeat(2,1fr)}.quick-grid .quick:nth-child(2){border-right:0}.quick-grid .quick:nth-child(-n+2){border-bottom:1px dashed #cdb9a4}.trip-day-tabs{gap:5px!important}.trip-day-tab{min-height:69px!important}.day-cover{min-height:285px}.event{margin-left:32px}.event-photo{height:190px;min-height:190px}.bottom-nav{padding-bottom:max(8px,env(safe-area-inset-bottom))}}
 @media(max-width:390px){.hero{min-height:680px}.hero h1{font-size:2.35rem}.hero-grid{grid-template-columns:1fr}.hero-stat{border-bottom:1px dashed #d2c1b0}.trip-day-tab{font-size:11px!important}.family-line-art{width:120px!important;height:125px!important}}
-/* v5.1.1 mobile hero + Traditional Chinese type repair */
+/* v5.1.2 mobile hero + Traditional Chinese type repair */
 :root{--heading:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;--serif:var(--heading);--display:var(--heading)}
 body{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif}
 .hero-inner{z-index:5}.hero::after{z-index:2}
@@ -390,7 +390,10 @@ body{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",sy
   .hero-title-row>div:first-child{max-width:65%;margin:0}
   .hero h1{font-size:clamp(2rem,10vw,2.65rem);color:#3b302b;margin:0;text-shadow:none;text-wrap:balance}
   .hero-sub{font-size:12px;line-height:1.45;color:#873d27;margin:8px 0 0;letter-spacing:.01em}
-  .hero-weather{display:none}
+  .hero-weather{display:flex;position:absolute;z-index:6;left:16px;right:auto;top:166px;width:198px;min-width:0;margin:0;padding:10px 10px;gap:8px;justify-content:flex-start;background:rgba(255,249,239,.96);box-shadow:0 8px 24px rgba(58,44,34,.22);transform:none}
+  .hero-weather::before{content:"福岡即時天氣";left:9px;top:-19px;padding:5px 9px;font-size:9px;letter-spacing:.06em}
+  .hero-weather .hw-icon{font-size:29px}.hero-weather .hw-temp{font-size:29px}.hero-weather .hw-text{font-size:10px;white-space:nowrap}
+  .hero-weather button{width:44px;height:44px;min-width:44px;margin-left:auto}
   .family-line-art{left:auto!important;right:4px!important;top:252px!important;bottom:auto!important;inset:252px 4px auto auto!important;width:31%!important;height:118px!important;opacity:.68}
   .hero-grid{position:static;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:20px;gap:1px;left:auto;right:auto;bottom:auto;box-shadow:none}
   .hero-stat{min-width:0;padding:10px 8px;text-align:left}
@@ -430,7 +433,7 @@ body{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",sy
   </div>
 </header>
 <main id="content" class="content" tabindex="-1"></main>
-<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>福岡親子慢活之旅 · PWA v5.1.1 · FUROSHIKI FAMILY EDITION</footer>
+<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>福岡親子慢活之旅 · PWA v5.1.2 · FUROSHIKI FAMILY EDITION</footer>
 </div>
 
 <nav class="bottom-nav" aria-label="手機行程導覽">
