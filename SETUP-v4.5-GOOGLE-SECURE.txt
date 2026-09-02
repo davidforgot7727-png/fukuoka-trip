@@ -1,4 +1,4 @@
-我們與珵的大冒險 v5.3.0 — 旅遊資訊中心／公開瀏覽／家人修改／私人資料保護
+我們與珵的大冒險 v5.3.1 — 旅遊資訊中心／公開瀏覽／家人修改／私人資料保護
 
 已鎖定家人 Google 帳號：
 - Derek: davidforgot7727@gmail.com
@@ -16,7 +16,7 @@ Firebase Console → Firestore Database → Rules。
 
 【3. GitHub Pages】
 把 ZIP 內的 index.html、manifest.json、sw.js、icons/、assets/ 上傳到 GitHub Pages Repository 根目錄。
-建議第一次使用網址加 ?v=530，避免舊 PWA 快取。
+建議第一次使用網址加 ?v=531，避免舊 PWA 快取。
 
 【4. 重要資料】
 護照影本、Visit Japan QR、機票、訂房等敏感檔案請放在私人 Google Drive。
@@ -29,7 +29,7 @@ trips/fukuoka-2026-family/privateStatus/family
 最新版 firestore-secure.rules 限制為三個家人帳號才能讀寫。請勿把診斷證明、護照影本或完整醫療文件上傳到這個文件；檔案本體仍放私人 Google Drive。
 
 【6. 匯率與離線】
-匯率來自 ExchangeRate-API 的 JPY 每日參考值，最近一次成功資料只快取在裝置 localStorage。Service Worker 不快取匯率 API 回應。沒有網路與舊匯率時，可以手動輸入 1 JPY 對 TWD。
+匯率換算已獨立為 ?page=exchange 工具頁，可從首頁快速入口或「更多」開啟。匯率來自 ExchangeRate-API 的 JPY 每日參考值，最近一次成功資料只快取在裝置 localStorage。Service Worker 不快取匯率 API 回應。沒有網路與舊匯率時，可以手動輸入 1 JPY 對 TWD。
 
 【7. 修改者名稱】
 Checklist 與伴手禮的最後修改者預設顯示 Google 名稱；若某台裝置設定過自訂暱稱，會以該裝置暱稱優先，可在「更多」頁清空暱稱恢復 Google 名稱。
