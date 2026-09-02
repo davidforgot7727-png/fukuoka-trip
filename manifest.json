@@ -2,7 +2,7 @@
   "id": "./",
   "name": "我們與珵的大冒險",
   "short_name": "我們與珵的大冒險",
-  "description": "2026 福岡親子旅行小助手：可共同編輯行程、天氣、Google 家人登入、Checklist、伴手禮與私人 Drive 重要資料捷徑。",
+  "description": "2026 福岡親子旅行小助手：公開行程、天氣、緊急醫療、航班飯店、匯率、共同清單與家人私人資料。",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -41,6 +41,17 @@
     }
   ],
   "shortcuts": [
+    {
+      "name": "緊急與醫療求助",
+      "short_name": "緊急求助",
+      "url": "./?page=emergency",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
     {
       "name": "今日行程",
       "short_name": "行程",

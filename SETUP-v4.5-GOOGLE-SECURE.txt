@@ -1,4 +1,4 @@
-我們與珵的大冒險 v5.2.5 — 公開瀏覽／家人修改／重要資料保護設定
+我們與珵的大冒險 v5.3.0 — 旅遊資訊中心／公開瀏覽／家人修改／私人資料保護
 
 已鎖定家人 Google 帳號：
 - Derek: davidforgot7727@gmail.com
@@ -12,19 +12,27 @@ Firebase Console → Authentication → Sign-in method / 登入方式 → Google
 【2. 套用 Firestore 安全規則】
 Firebase Console → Firestore Database → Rules。
 把本 ZIP 的 firestore-secure.rules 全部貼上並 Publish。
-完成後目前旅程 fukuoka-2026-family 的 itinerary、checklist、gifts 可公開讀取；只有上述三個已驗證 Google 帳號可以寫入。其他旅程、itineraryBackups 與其他旅程子集合仍只有家人可讀寫。
+完成後目前旅程 fukuoka-2026-family 的 itinerary、checklist、gifts 可公開讀取；只有上述三個已驗證 Google 帳號可以寫入。privateStatus（醫療／MEDIF／保險／預約狀態）、itineraryBackups 與其他旅程子集合仍只有家人可讀寫。
 
 【3. GitHub Pages】
 把 ZIP 內的 index.html、manifest.json、sw.js、icons/、assets/ 上傳到 GitHub Pages Repository 根目錄。
-建議第一次使用網址加 ?v=525，避免舊 PWA 快取。
+建議第一次使用網址加 ?v=530，避免舊 PWA 快取。
 
 【4. 重要資料】
 護照影本、Visit Japan QR、機票、訂房等敏感檔案請放在私人 Google Drive。
 PWA 的「重要資料」頁只保存 Drive 連結捷徑，不會把文件本體放到 GitHub / Firestore / Service Worker Cache。
 Google Drive 檔案請只分享給需要存取的家人 Google 帳號，不要設成「知道連結的任何人」。
 
-【5. 修改者名稱】
+【5. 家人醫療與預約】
+MEDIF 完成狀態、孕期與孩子醫療摘要、保險資訊、訂房／訂位代碼會存於 Firestore：
+trips/fukuoka-2026-family/privateStatus/family
+最新版 firestore-secure.rules 限制為三個家人帳號才能讀寫。請勿把診斷證明、護照影本或完整醫療文件上傳到這個文件；檔案本體仍放私人 Google Drive。
+
+【6. 匯率與離線】
+匯率來自 ExchangeRate-API 的 JPY 每日參考值，最近一次成功資料只快取在裝置 localStorage。Service Worker 不快取匯率 API 回應。沒有網路與舊匯率時，可以手動輸入 1 JPY 對 TWD。
+
+【7. 修改者名稱】
 Checklist 與伴手禮的最後修改者預設顯示 Google 名稱；若某台裝置設定過自訂暱稱，會以該裝置暱稱優先，可在「更多」頁清空暱稱恢復 Google 名稱。
 
 
-行程資料存於 trips/fukuoka-2026-family/itinerary；最近備份存於 itineraryBackups。每次更新本版都必須確認 firestore-secure.rules 已發布，才能同時得到公開唯讀與家人寫入保護。
+行程資料存於 trips/fukuoka-2026-family/itinerary；最近備份存於 itineraryBackups；私人狀態存於 privateStatus/family。每次更新本版都必須確認 firestore-secure.rules 已發布，才能同時得到公開唯讀、家人寫入與敏感資料保護。

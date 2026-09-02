@@ -36,6 +36,11 @@ service cloud.firestore {
       allow read, write: if isFamily();
     }
 
+    // 孕期、保險、MEDIF 進度與預約代碼不公開，只限家人帳號同步。
+    match /trips/{tripId}/privateStatus/{documentId} {
+      allow read, write: if isFamily();
+    }
+
     match /trips/{tripId}/{document=**} {
       allow read, write: if isFamily();
     }
