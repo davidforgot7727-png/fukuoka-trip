@@ -1,4 +1,4 @@
-const VERSION='5.2.0';
+const VERSION='5.2.1';
 const SHELL_CACHE=`fukuoka-shell-${VERSION}`;
 const RUNTIME_CACHE=`fukuoka-runtime-${VERSION}`;
 const APP_SHELL=[
@@ -9,8 +9,6 @@ const APP_SHELL=[
   './icons/icon-512.png',
   './icons/icon-maskable-512.png',
   './icons/apple-touch-icon.png',
-  './assets/plates/desktop-furoshiki.webp',
-  './assets/plates/mobile-furoshiki.webp',
   './assets/plates/family-illustration.webp',
   './assets/plates/day1-lalaport.webp',
   './assets/plates/day2-kushida.webp',
