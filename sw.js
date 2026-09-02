@@ -1,4 +1,4 @@
-const VERSION='5.1.2';
+const VERSION='5.2.0';
 const SHELL_CACHE=`fukuoka-shell-${VERSION}`;
 const RUNTIME_CACHE=`fukuoka-runtime-${VERSION}`;
 const APP_SHELL=[
@@ -9,7 +9,6 @@ const APP_SHELL=[
   './icons/icon-512.png',
   './icons/icon-maskable-512.png',
   './icons/apple-touch-icon.png',
-  './assets/plates/washi.png',
   './assets/plates/desktop-furoshiki.webp',
   './assets/plates/mobile-furoshiki.webp',
   './assets/plates/family-illustration.webp',
@@ -76,8 +75,8 @@ self.addEventListener('fetch',event=>{
   if(sameOrigin){
     event.respondWith((async()=>{
       const cached=await caches.match(request);
-      if(cached)return cached;
-      try{return await cachePutSafe(RUNTIME_CACHE,request,await fetch(request))}catch(e){return Response.error()}
+      const network=fetch(request).then(r=>cachePutSafe(RUNTIME_CACHE,request,r)).catch(()=>null);
+      return cached || (await network) || Response.error();
     })());
     return;
   }
