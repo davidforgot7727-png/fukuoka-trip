@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#345b6f">
-<link rel="manifest" href="./manifest.json?v=572">
+<link rel="manifest" href="./manifest.json?v=573">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
 <link rel="preload" href="./assets/fonts/chenyuluoyan-2-subset.woff?v=523" as="font" type="font/woff" crossorigin>
@@ -510,7 +510,7 @@ button,a{touch-action:manipulation}.info-action:active,.more-card:active,.copy-b
   </div>
 </header>
 <main id="content" class="content" tabindex="-1"></main>
-<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>我們與珵的大冒險 · PWA v5.7.2 · FAMILY DOCUMENT SYNC</footer>
+<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>我們與珵的大冒險 · PWA v5.7.3 · FAMILY DOCUMENT SYNC</footer>
 </div>
 
 <nav class="bottom-nav" aria-label="主要導覽">
@@ -1060,7 +1060,7 @@ function saveSecureLocalCache(){localStorage.setItem(secureStorageKey(SECURE_SHO
 function secureFolderURL(){return safeDriveURL(secureSharedCache.folderUrl||'')}
 function secureSharedRef(){return sharedDb.collection('trips').doc(SHARED_TRIP_ID).collection('privateStatus').doc('family')}
 function setSecureSync(text,live=false){const el=document.getElementById('secureSync');if(!el)return;el.textContent=text;el.className=`sync-badge${live?' live':''}`}
-async function persistSecureData(){if(!authUserOK())return false;await secureSharedRef().set({secureFolderUrl:secureFolderURL(),secureRows:loadSecureShortcuts(),secureUpdatedAt:firebase.firestore.FieldValue.serverTimestamp(),secureEditorName:editorDisplayName(),secureEditorEmail:sharedUser?.email||''},{merge:true});return true}
+async function persistSecureData(){if(!authUserOK())return false;await secureSharedRef().set({secureFolderUrl:secureFolderURL(),secureRows:loadSecureShortcuts(),secureUpdatedAt:firebase.firestore.FieldValue.serverTimestamp(),secureEditorName:getEditorName(),secureEditorEmail:sharedUser?.email||''},{merge:true});return true}
 async function saveSecureFolder(){if(!authUserOK())return signInGoogle();const input=document.getElementById('secureFolderInput'),raw=input?.value.trim()||'',url=raw?safeDriveURL(raw):'';if(raw&&!url)return alert('請貼上 Google Drive / Google Docs 的私人資料夾網址');secureSharedCache.folderUrl=url;saveSecureLocalCache();renderSecureFolder();setSecureSync('○ 正在同步');try{await persistSecureData();setSecureSync('● 家人已同步',true);showNetworkToast(url?'✓ 家人共用 Drive 捷徑已儲存':'✓ 家人共用 Drive 捷徑已清除')}catch(e){console.error('Secure folder sync',e);setSecureSync('○ 等待網路同步');showNetworkToast('已保留在這台裝置，恢復網路後請再儲存一次')}}
 function clearSecureFolder(){const input=document.getElementById('secureFolderInput');if(input)input.value='';saveSecureFolder()}
 function renderSecureFolder(){const el=document.getElementById('secureFolderBox');if(!el)return;const url=secureFolderURL();el.innerHTML=`<div class="drive-folder-card"><h3>📁 家人共用 Google Drive 資料夾</h3><p>Drive 分享設定請保持 <b>受限制</b>，並只加入同行家人的 Google 帳號。網站只同步網址，不保存文件本體。</p><div class="drive-folder-row"><input id="secureFolderInput" value="${esc(url)}" placeholder="貼上 Google Drive 私人資料夾網址"><button onclick="saveSecureFolder()">儲存</button></div><div class="drive-folder-actions">${url?`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">📂 開啟私人 Drive</a><button onclick="clearSecureFolder()">清除捷徑</button>`:'<span class="login-mini">家人新增後，其他家人帳號登入即可看見。</span>'}</div></div>`}
