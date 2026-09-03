@@ -36,11 +36,6 @@ service cloud.firestore {
       allow read, write: if isFamily();
     }
 
-    // 重要文件只同步 Drive 捷徑與備註；所有家人帳號可查看與維護。
-    match /trips/{tripId}/secureLinks/{documentId} {
-      allow read, write: if isFamily();
-    }
-
     // 孕期、保險、MEDIF 進度與預約代碼不公開，只限家人帳號同步。
     match /trips/{tripId}/privateStatus/{documentId} {
       allow read, write: if isFamily();

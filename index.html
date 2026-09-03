@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#345b6f">
-<link rel="manifest" href="./manifest.json?v=571">
+<link rel="manifest" href="./manifest.json?v=572">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
 <link rel="preload" href="./assets/fonts/chenyuluoyan-2-subset.woff?v=523" as="font" type="font/woff" crossorigin>
@@ -510,7 +510,7 @@ button,a{touch-action:manipulation}.info-action:active,.more-card:active,.copy-b
   </div>
 </header>
 <main id="content" class="content" tabindex="-1"></main>
-<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>我們與珵的大冒險 · PWA v5.7.1 · FAMILY DOCUMENT SYNC</footer>
+<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>我們與珵的大冒險 · PWA v5.7.2 · FAMILY DOCUMENT SYNC</footer>
 </div>
 
 <nav class="bottom-nav" aria-label="主要導覽">
@@ -1037,7 +1037,7 @@ window.addEventListener('load',registerPWA);
 
 const SECURE_DRIVE_FOLDER_KEY='fukuokaSecureDriveFolderV45';
 const SECURE_SHORTCUTS_KEY='fukuokaSecureShortcutsV45';
-const SECURE_MIGRATION_KEY='fukuokaSecureSharedMigrationV1';
+const SECURE_MIGRATION_KEY='fukuokaSecureSharedMigrationV2';
 function secureStorageKey(base){return `${base}:${sharedUser?.uid||'no-user'}`}
 function migrateLegacySecureStorage(){if(!sharedUser?.uid)return;[SECURE_DRIVE_FOLDER_KEY,SECURE_SHORTCUTS_KEY].forEach(base=>{const scoped=secureStorageKey(base),legacy=localStorage.getItem(base);if(legacy!==null&&localStorage.getItem(scoped)===null)localStorage.setItem(scoped,legacy)})}
 let secureEditingId=null;
@@ -1058,9 +1058,9 @@ function loadLocalSecureShortcuts(){try{const a=JSON.parse(localStorage.getItem(
 function loadSecureShortcuts(){return Array.isArray(secureSharedCache.rows)?secureSharedCache.rows:[]}
 function saveSecureLocalCache(){localStorage.setItem(secureStorageKey(SECURE_SHORTCUTS_KEY),JSON.stringify(loadSecureShortcuts()));if(secureSharedCache.folderUrl)localStorage.setItem(secureStorageKey(SECURE_DRIVE_FOLDER_KEY),secureSharedCache.folderUrl);else localStorage.removeItem(secureStorageKey(SECURE_DRIVE_FOLDER_KEY))}
 function secureFolderURL(){return safeDriveURL(secureSharedCache.folderUrl||'')}
-function secureSharedRef(){return sharedDb.collection('trips').doc(SHARED_TRIP_ID).collection('secureLinks').doc('family')}
+function secureSharedRef(){return sharedDb.collection('trips').doc(SHARED_TRIP_ID).collection('privateStatus').doc('family')}
 function setSecureSync(text,live=false){const el=document.getElementById('secureSync');if(!el)return;el.textContent=text;el.className=`sync-badge${live?' live':''}`}
-async function persistSecureData(){if(!authUserOK())return false;await secureSharedRef().set({folderUrl:secureFolderURL(),rows:loadSecureShortcuts(),updatedAt:firebase.firestore.FieldValue.serverTimestamp(),editorName:editorDisplayName(),editorEmail:sharedUser?.email||''},{merge:true});return true}
+async function persistSecureData(){if(!authUserOK())return false;await secureSharedRef().set({secureFolderUrl:secureFolderURL(),secureRows:loadSecureShortcuts(),secureUpdatedAt:firebase.firestore.FieldValue.serverTimestamp(),secureEditorName:editorDisplayName(),secureEditorEmail:sharedUser?.email||''},{merge:true});return true}
 async function saveSecureFolder(){if(!authUserOK())return signInGoogle();const input=document.getElementById('secureFolderInput'),raw=input?.value.trim()||'',url=raw?safeDriveURL(raw):'';if(raw&&!url)return alert('請貼上 Google Drive / Google Docs 的私人資料夾網址');secureSharedCache.folderUrl=url;saveSecureLocalCache();renderSecureFolder();setSecureSync('○ 正在同步');try{await persistSecureData();setSecureSync('● 家人已同步',true);showNetworkToast(url?'✓ 家人共用 Drive 捷徑已儲存':'✓ 家人共用 Drive 捷徑已清除')}catch(e){console.error('Secure folder sync',e);setSecureSync('○ 等待網路同步');showNetworkToast('已保留在這台裝置，恢復網路後請再儲存一次')}}
 function clearSecureFolder(){const input=document.getElementById('secureFolderInput');if(input)input.value='';saveSecureFolder()}
 function renderSecureFolder(){const el=document.getElementById('secureFolderBox');if(!el)return;const url=secureFolderURL();el.innerHTML=`<div class="drive-folder-card"><h3>📁 家人共用 Google Drive 資料夾</h3><p>Drive 分享設定請保持 <b>受限制</b>，並只加入同行家人的 Google 帳號。網站只同步網址，不保存文件本體。</p><div class="drive-folder-row"><input id="secureFolderInput" value="${esc(url)}" placeholder="貼上 Google Drive 私人資料夾網址"><button onclick="saveSecureFolder()">儲存</button></div><div class="drive-folder-actions">${url?`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">📂 開啟私人 Drive</a><button onclick="clearSecureFolder()">清除捷徑</button>`:'<span class="login-mini">家人新增後，其他家人帳號登入即可看見。</span>'}</div></div>`}
@@ -1072,7 +1072,7 @@ async function deleteSecureShortcut(id){if(!confirm('從家人共用清單刪除
 function renderSecureShortcuts(){const el=document.getElementById('secureShortcutList');if(!el)return;const rows=loadSecureShortcuts();if(!rows.length){el.innerHTML='<div class="list-empty">尚未建立捷徑。可以新增護照影本、Visit Japan 截圖、電子機票等 Google Drive 私人連結。</div>';return}const groups={};rows.forEach(x=>(groups[x.category||'other']||(groups[x.category||'other']=[])).push(x));el.innerHTML=SECURE_CATEGORIES.filter(c=>groups[c.id]?.length).map(c=>`<section class="secure-group"><div class="secure-group-head"><b>${c.label}</b><small>${groups[c.id].length} 筆</small></div>${groups[c.id].map(x=>{const dl=driveDownloadURL(x.url);return `<div class="secure-link"><div><b>${esc(x.title)}</b><small>${x.note?esc(x.note):'Google Drive 私人文件'}</small></div><div class="secure-link-actions"><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">開啟</a>${dl?`<a class="download" href="${esc(dl)}" target="_blank" rel="noopener noreferrer">下載</a>`:''}<button class="edit" onclick="editSecureShortcut('${x.id}')">編輯</button><button class="delete" onclick="deleteSecureShortcut('${x.id}')">刪除</button></div></div>`}).join('')}</section>`).join('')}
 function normalizeSecureRows(rows){return (Array.isArray(rows)?rows:[]).map(x=>({id:String(x?.id||''),title:String(x?.title||'').slice(0,50),url:safeDriveURL(x?.url),category:SECURE_CATEGORIES.some(c=>c.id===x?.category)?x.category:'other',note:String(x?.note||'').slice(0,100)})).filter(x=>x.id&&x.title&&x.url)}
 function mergeSecureRows(remote,local){const out=[...normalizeSecureRows(remote)];normalizeSecureRows(local).forEach(x=>{const duplicate=out.some(y=>y.id===x.id||(y.url===x.url&&y.title===x.title));if(!duplicate)out.push(x)});return out}
-function subscribeSecureData(){const migrationKey=secureStorageKey(SECURE_MIGRATION_KEY),localRows=loadLocalSecureShortcuts(),localFolder=safeDriveURL(localStorage.getItem(secureStorageKey(SECURE_DRIVE_FOLDER_KEY))||'');const unsub=secureSharedRef().onSnapshot(async snap=>{const data=snap.exists?snap.data():{},remoteRows=normalizeSecureRows(data.rows),remoteFolder=safeDriveURL(data.folderUrl||'');if(!localStorage.getItem(migrationKey)){const mergedRows=mergeSecureRows(remoteRows,localRows),mergedFolder=remoteFolder||localFolder;secureSharedCache={folderUrl:mergedFolder,rows:mergedRows};saveSecureLocalCache();localStorage.setItem(migrationKey,'1');renderSecureFolder();renderSecureShortcuts();if(!snap.exists||mergedRows.length!==remoteRows.length||mergedFolder!==remoteFolder){setSecureSync('○ 搬移舊資料中');try{await persistSecureData()}catch(e){console.error('Secure migration',e);localStorage.removeItem(migrationKey);setSecureSync('○ 舊資料待同步');return}}}else{secureSharedCache={folderUrl:remoteFolder,rows:remoteRows};saveSecureLocalCache();renderSecureFolder();renderSecureShortcuts()}setSecureSync('● 家人已同步',true)},e=>{console.error('Secure data',e);setSecureSync(navigator.onLine?'○ 家人資料讀取失敗':'○ 離線顯示本機備份');renderSecureFolder();renderSecureShortcuts()});sharedUnsubs.push(unsub)}
+function subscribeSecureData(){const migrationKey=secureStorageKey(SECURE_MIGRATION_KEY),localRows=loadLocalSecureShortcuts(),localFolder=safeDriveURL(localStorage.getItem(secureStorageKey(SECURE_DRIVE_FOLDER_KEY))||'');const unsub=secureSharedRef().onSnapshot(async snap=>{const data=snap.exists?snap.data():{},remoteRows=normalizeSecureRows(data.secureRows),remoteFolder=safeDriveURL(data.secureFolderUrl||'');if(!localStorage.getItem(migrationKey)){const mergedRows=mergeSecureRows(remoteRows,localRows),mergedFolder=remoteFolder||localFolder;secureSharedCache={folderUrl:mergedFolder,rows:mergedRows};saveSecureLocalCache();localStorage.setItem(migrationKey,'1');renderSecureFolder();renderSecureShortcuts();if(mergedRows.length!==remoteRows.length||mergedFolder!==remoteFolder){setSecureSync('○ 搬移舊資料中');try{await persistSecureData()}catch(e){console.error('Secure migration',e);localStorage.removeItem(migrationKey);setSecureSync('○ 同步失敗，請重新登入');return}}}else{secureSharedCache={folderUrl:remoteFolder,rows:remoteRows};saveSecureLocalCache();renderSecureFolder();renderSecureShortcuts()}setSecureSync('● 家人已同步',true)},e=>{console.error('Secure data',e);setSecureSync(navigator.onLine?'○ 家人資料讀取失敗，請重新登入':'○ 離線顯示本機備份');renderSecureFolder();renderSecureShortcuts()});sharedUnsubs.push(unsub)}
 async function securePage(routeToken=navigationToken){
  clearSharedListeners();await initFirebase();if(routeToken!==navigationToken||currentPage!=='secure')return;
  if(!authUserOK()){content.innerHTML=`<section class="section permission-shell"><div class="secure-hero"><div class="secure-ico">🔐</div><h2>重要資料</h2><p>登入經驗證的家人帳號後，才會顯示護照、Visit Japan、電子機票與醫療文件捷徑。</p></div>${authSetupWarning()}${authGateHTML('重要資料')}</section>`;return}
