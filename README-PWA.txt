@@ -1,4 +1,4 @@
-我們與珵的大冒險 PWA v5.6.1 · Compact Pinned Route Map · Public Browse / Family Modify
+我們與珵的大冒險 PWA v5.7.0 · Quality Audit · Compact Pinned Route Map · Public Browse / Family Modify
 
 主要功能：
 - 未登入也可瀏覽首頁、完整 Day 1–5 行程、Checklist 與伴手禮
@@ -6,7 +6,7 @@
 - 緊急頁含 119／110／福岡 #7119／JNTO、日文求助卡、醫療院所搜尋與失聯／災害流程
 - 航班中心整理 BR106／BR105，並連到長榮、福岡機場與 Visit Japan Web 官方頁面
 - 飯店救援卡含 Quintessa 日／英文地址、電話、導航、複製與給司機看的大字卡
-- 首頁原「出發文件與航班／旅途中快速支援」區塊改為可直接操作的 JPY ↔ TWD 匯率換算；航班、緊急醫療與重要文件入口移至首頁快速入口
+- 首頁提供精簡的 JPY ↔ TWD 匯率工具快速連結；完整換算器集中在獨立工具頁，避免擠壓首頁
 - 匯率換算仍保留獨立 ?page=exchange 工具頁，並支援每日匯率、離線最後匯率、手動匯率與 1.5%／3% 緩衝
 - 行程頁上方新增釘選內嵌地圖；下滑時間軸時地圖持續顯示，點整張行程卡片即可更新起點、目的地、道路折線、距離與預估車程，不再需要另外點路線按鈕
 - 內嵌路線預設以上一個不同地點為起點；上一站、目前位置、查看與導航已精簡成同一排操作。只有點選目前位置時才會請求定位權限，座標會交給 OSRM 做本次計算但不會寫入網站資料
@@ -46,7 +46,7 @@ AI 使用方式：
 Firestore Rules 已分層：目前旅程 fukuoka-2026-family 的 itinerary、checklist、gifts 公開唯讀；家人可寫入；privateStatus、itineraryBackups 與其他子集合維持家人專用。
 
 GitHub Pages 更新時請至少上傳：index.html、sw.js；並把 firestore-secure.rules 內容發布到 Firebase Console → Firestore Database → Rules。
-第一次開新版可使用 ?v=561。
+第一次開新版可使用 ?v=570。
 
 
 「修改模式」預設關閉，不顯示新增／修改／排序／刪除／AI／備份工具。已授權家人登入後，在行程頁右上角按「✏️ 修改模式」才會顯示全部編輯工具；按「✓ 完成修改」回到一般模式。重新載入 PWA 會預設回到一般模式。

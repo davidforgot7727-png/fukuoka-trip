@@ -64,20 +64,9 @@
       ]
     },
     {
-      "name": "共同 Checklist",
-      "short_name": "清單",
-      "url": "./?page=checklist",
-      "icons": [
-        {
-          "src": "./icons/icon-192.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "伴手禮清單",
-      "short_name": "伴手禮",
-      "url": "./?page=gifts",
+      "name": "日幣／台幣匯率換算",
+      "short_name": "匯率換算",
+      "url": "./?page=exchange",
       "icons": [
         {
           "src": "./icons/icon-192.png",
