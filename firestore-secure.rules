@@ -31,8 +31,36 @@ service cloud.firestore {
       allow create, update, delete: if isFamily();
     }
 
+    // 此旅程的折價券公開可讀、可新增；修改與刪除仍由家人管理。
+    match /trips/{tripId}/coupons/{documentId} {
+      allow read: if isPublicTrip(tripId);
+      allow create: if isPublicTrip(tripId)
+        && request.resource.data.keys().hasAll(['imageData', 'title', 'shop', 'url', 'expires', 'note', 'createdAt', 'updatedAt', 'uid', 'editorName'])
+        && request.resource.data.keys().hasOnly(['imageData', 'title', 'shop', 'url', 'expires', 'note', 'createdAt', 'updatedAt', 'uid', 'editorName'])
+        && request.resource.data.imageData is string
+        && request.resource.data.imageData.size() <= 550000
+        && request.resource.data.imageData.matches('data:image/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+')
+        && request.resource.data.title is string
+        && request.resource.data.title.size() > 0 && request.resource.data.title.size() <= 60
+        && request.resource.data.shop is string && request.resource.data.shop.size() <= 60
+        && request.resource.data.url is string && request.resource.data.url.size() <= 500
+        && (request.resource.data.url == '' || request.resource.data.url.matches('https?://.+'))
+        && request.resource.data.expires is string && request.resource.data.expires.size() <= 10
+        && request.resource.data.note is string && request.resource.data.note.size() <= 120
+        && request.resource.data.uid is string && request.resource.data.uid.size() <= 128
+        && request.resource.data.editorName in ['家人', '訪客']
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+      allow update, delete: if isFamily();
+    }
+
     // AI 還原備份與未來其他旅程子集合維持家人專用。
     match /trips/{tripId}/itineraryBackups/{documentId} {
+      allow read, write: if isFamily();
+    }
+
+    // 重要文件只同步 Drive 捷徑與備註；所有家人帳號可查看與維護。
+    match /trips/{tripId}/secureLinks/{documentId} {
       allow read, write: if isFamily();
     }
 
