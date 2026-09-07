@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#345b6f">
-<link rel="manifest" href="./manifest.json?v=583">
+<link rel="manifest" href="./manifest.json?v=584">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
 <link rel="preload" href="./assets/fonts/chenyuluoyan-2-subset.woff?v=523" as="font" type="font/woff" crossorigin>
@@ -497,6 +497,14 @@ button,a{touch-action:manipulation}.info-action:active,.more-card:active,.copy-b
 @media(max-width:520px){.coupon-shop-available{display:none}}
 @media(max-width:390px){.coupon-quick{gap:10px;padding-inline:12px!important}.coupon-source-actions{gap:8px}.coupon-source-btn{font-size:13px}.coupon-uploader{padding:14px}.coupon-shop-toggle{gap:9px;padding:11px 12px}.coupon-shop-icon{width:38px;height:38px}.coupon-shop-copy b{font-size:20px}.coupon-draft-actions{grid-template-columns:1fr}.coupon-draft-actions button{width:100%}}
 @media(prefers-reduced-motion:reduce){.coupon-quick,.coupon-source-btn,.coupon-card-actions button,.coupon-shop-chevron{transition:none!important}}
+/* v5.8.4 souvenir editor narrow-screen containment */
+.gift-form-v2,.gift-field-grid,.gift-field-grid>*,.gift-field input,.gift-field textarea,.gift-presets,.gift-preset-list{min-width:0;max-width:100%;box-sizing:border-box}
+.gift-field-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gift-field input,.gift-field textarea{display:block}
+.gift-presets{width:100%;overflow:hidden}
+.gift-preset-list{width:100%;overscroll-behavior-inline:contain}
+.gift-preset{max-width:min(210px,calc(100vw - 82px))}
+@media(max-width:420px){.gift-field-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -520,7 +528,7 @@ button,a{touch-action:manipulation}.info-action:active,.more-card:active,.copy-b
   </div>
 </header>
 <main id="content" class="content" tabindex="-1"></main>
-<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>我們與珵的大冒險 · PWA v5.8.3 · GO APP</footer>
+<footer class="site-footer">慢慢走・好好吃・好好休息，就是最棒的親子旅行<br>我們與珵的大冒險 · PWA v5.8.4 · GO APP</footer>
 </div>
 
 <nav class="bottom-nav" aria-label="主要導覽">
