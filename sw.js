@@ -1,10 +1,12 @@
-const VERSION='5.8.5';
+const VERSION='5.9.0';
 const SHELL_CACHE=`fukuoka-shell-${VERSION}`;
 const RUNTIME_CACHE=`fukuoka-runtime-${VERSION}`;
 const APP_SHELL=[
   './',
   './index.html',
-  './manifest.json?v=585',
+  './manifest.json?v=590',
+  './receipt-scanner.css?v=590',
+  './receipt-scanner.js?v=590',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon-maskable-512.png',

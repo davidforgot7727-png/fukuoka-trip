@@ -75,6 +75,8 @@ Do not use Dazaifu, generic temples, unrelated street scenes, or invented destin
 - Five fabric day tabs stay in one visible row. They expose `aria-pressed`; today also exposes `aria-current="date"` and a textual screen-reader cue.
 - Event cards use a calm timeline, generous image area, clear time/title/description order, and 44px minimum touch targets.
 - Primary form controls use indigo and at least 48px height. Icon-only and close buttons require meaningful accessible names.
+- Document-capture tools use one visible sequence: choose a source, show processing progress, confirm editable results, then expose the shared record. The captured receipt is temporary evidence, not decorative imagery.
+- OCR confirmation fields keep persistent labels, a reliable system sans stack, and tabular numeric alignment. On narrow screens fields may stack, but quantity, amount, untranslated-copy warnings, and non-color status text must remain visible.
 - The bottom navigation remains fixed, safe-area aware, and labeled. Active and today states must include non-color semantics.
 
 At 779px and below, the hero stacks, quick actions become two columns, forms collapse, itinerary imagery uses a 190px minimum crop, and navigation honors the bottom safe area. At 390px and below, type and decorative art tighten while controls retain their touch size. Traditional Chinese text growth must not clip.

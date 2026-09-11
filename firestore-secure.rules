@@ -54,7 +54,29 @@ service cloud.firestore {
       allow update, delete: if isFamily();
     }
 
-    // AI 還原備份與未來其他旅程子集合維持家人專用。
+    // 發票照片只在使用者裝置上做 OCR，不上傳；確認後的文字與金額限家人共用。
+    match /trips/{tripId}/receipts/{documentId} {
+      allow read: if isFamily();
+      allow create, update: if isFamily()
+        && request.resource.data.keys().hasAll(['shop', 'receiptDate', 'total', 'tax', 'currency', 'items', 'note', 'ocrConfidence', 'createdAt', 'updatedAt', 'uid', 'editorName'])
+        && request.resource.data.keys().hasOnly(['shop', 'receiptDate', 'total', 'tax', 'currency', 'items', 'note', 'ocrConfidence', 'createdAt', 'updatedAt', 'uid', 'editorName'])
+        && request.resource.data.shop is string
+        && request.resource.data.shop.size() > 0 && request.resource.data.shop.size() <= 80
+        && request.resource.data.receiptDate is string && request.resource.data.receiptDate.size() == 10
+        && request.resource.data.total is number && request.resource.data.total > 0 && request.resource.data.total <= 99999999
+        && request.resource.data.tax is number && request.resource.data.tax >= 0 && request.resource.data.tax <= 99999999
+        && request.resource.data.currency == 'JPY'
+        && request.resource.data.items is list && request.resource.data.items.size() <= 60
+        && request.resource.data.note is string && request.resource.data.note.size() <= 240
+        && request.resource.data.ocrConfidence is number && request.resource.data.ocrConfidence >= 0 && request.resource.data.ocrConfidence <= 100
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.editorName is string && request.resource.data.editorName.size() <= 24
+        && request.resource.data.createdAt is timestamp
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if isFamily();
+    }
+
+    // AI 還原備份維持家人專用；這個集合也用來驗證家人權限。
     match /trips/{tripId}/itineraryBackups/{documentId} {
       allow read, write: if isFamily();
     }
@@ -69,8 +91,6 @@ service cloud.firestore {
       allow read, write: if isFamily();
     }
 
-    match /trips/{tripId}/{document=**} {
-      allow read, write: if isFamily();
-    }
+    // 未明確列出的旅程集合預設拒絕，不使用寬鬆的遞迴規則。
   }
 }
